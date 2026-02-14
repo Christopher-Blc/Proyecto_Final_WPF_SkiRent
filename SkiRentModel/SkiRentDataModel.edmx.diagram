@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8aed025c96144caf92b9cafab412e46b" Name="Diagram1">
+        <EntityTypeShape EntityType="SkiRentModel.Alquiler" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkiRentModel.CategoriaMaterial" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkiRentModel.Cliente" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkiRentModel.LineaAlquiler" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkiRentModel.Material" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SkiRentModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="SkiRentModel.FK_Alquiler_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="SkiRentModel.FK_LineaAlquiler_Alquiler" ManuallyRouted="false" />
+        <AssociationConnector Association="SkiRentModel.FK_Material_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="SkiRentModel.FK_LineaAlquiler_Material" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
