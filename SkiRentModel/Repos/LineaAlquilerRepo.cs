@@ -4,18 +4,30 @@ using System.Linq;
 
 namespace SkiRentModel.Repos
 {
+    /// <summary>
+    /// Repo para manejar las lineas de alquiler en la base de datos.
+    /// </summary>
     public class LineaAlquilerRepo
     {
         private readonly SkiRentEntities _context = new SkiRentEntities();
 
+        /// <summary>
+        /// Lista las lineas que pertenecen a un alquiler dado.
+        /// </summary>
+        /// <param name="idAlquiler">Id del alquiler para filtrar las lineas.</param>
+        /// <returns>Lista de lineas del alquiler. Puede estar vacia si no hay lineas.</returns>
         public List<LineaAlquiler> ListarPorAlquiler(int idAlquiler)
-        {
+        {                                                                                               
             return _context.LineaAlquiler
                            .Where(l => l.IdAlquiler == idAlquiler)
                            .ToList();
         }
 
-        //añadir linea solo si el alquiler esta Abierto(stock se reserva)
+        /// <summary>
+        /// Anade una linea al alquiler si el alquiler esta abierto.
+        /// </summary>
+        /// <param name="linea">Objeto linea con los datos a anadir (IdAlquiler, IdMaterial, Cantidad, Dias, PrecioDiaAplicado opcional).</param>
+        /// <returns>true si se anadio la linea y se actualizo el stock y total; false si fallo alguna condicion.</returns>
         public bool Anyadir(LineaAlquiler linea)
         {
             var alquiler = _context.Alquiler.Find(linea.IdAlquiler);
@@ -42,7 +54,11 @@ namespace SkiRentModel.Repos
             return true;
         }
 
-        // Eliminar la linea , solo si el alquiler esta en Abierto(stock se devuelve)
+        /// <summary>
+        /// Elimina una linea de un alquiler si el alquiler esta abierto.
+        /// </summary>
+        /// <param name="idLinea">Id de la linea a eliminar.</param>
+        /// <returns>true si se elimino y se devolvio el stock y se actualizo el total; false si no se pudo eliminar.</returns>
         public bool Eliminar(int idLinea)
         {
             var linea = _context.LineaAlquiler.Find(idLinea);
@@ -66,7 +82,10 @@ namespace SkiRentModel.Repos
             return true;
         }
 
-        // Recalcula total del alquiler
+        /// <summary>
+        /// Recalcula y actualiza el total del alquiler sumando los subtotales de sus lineas.
+        /// </summary>
+        /// <param name="idAlquiler">Id del alquiler cuyo total se debe recalcular.</param>
         private void ActualizarTotal(int idAlquiler)
         {
             var alquiler = _context.Alquiler.Find(idAlquiler);

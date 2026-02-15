@@ -4,26 +4,44 @@ using System.Linq;
 
 namespace SkiRentModel.Repos
 {
+    /// <summary>
+    /// Repositorio para manejar las operaciones con las categorias de material.
+    /// </summary>
     public class CategoriaRepo
     {
+        /// <summary>
+        /// Contexto de la base de datos para acceder a las tablas.
+        /// </summary>
         private readonly SkiRentEntities _context = new SkiRentEntities();
 
-        // Listar todas
+        /// <summary>
+        /// Devuelve todas las categorias.
+        /// </summary>
+        /// <returns>Lista con todas las categorias de material.</returns>
         public List<CategoriaMaterial> Listar()
         {
             return _context.CategoriaMaterial.ToList();
         }
 
-        // Buscar por Id
+        /// <summary>
+        /// Busca una categoria por su id.
+        /// </summary>
+        /// <param name="idCategoria">Id de la categoria a buscar.</param>
+        /// <returns>La categoria encontrada o null si no existe.</returns>
         public CategoriaMaterial BuscarPorId(int idCategoria)
         {
             return _context.CategoriaMaterial.Find(idCategoria);
         }
 
-        // Buscar por nombre o nivel
+        /// <summary>
+        /// Busca categorias por nombre o por nivel.
+        /// Si el texto esta vacio devuelve todas las categorias.
+        /// </summary>
+        /// <param name="texto">Texto para buscar en nombre o nivel.</param>
+        /// <returns>Lista de categorias que coinciden con la busqueda.</returns>
         public List<CategoriaMaterial> Buscar(string texto)
         {
-            if (string.IsNullOrWhiteSpace(texto))
+            if (string.IsNullOrWhiteSpace(texto))                                                                       
                 return Listar();
 
             texto = texto.Trim();
@@ -36,14 +54,20 @@ namespace SkiRentModel.Repos
                 .ToList();
         }
 
-        // Añadir
+        /// <summary>
+        /// Anyade una nueva categoria a la base de datos.
+        /// </summary>
+        /// <param name="categoria">Objeto categoria a anyadir.</param>
         public void Anyadir(CategoriaMaterial categoria)
         {
             _context.CategoriaMaterial.Add(categoria);
             _context.SaveChanges();
         }
 
-        // Editar
+        /// <summary>
+        /// Actualiza los datos de una categoria existente.
+        /// </summary>
+        /// <param name="categoriaActualizada">Categoria con los datos actualizados (debe incluir Id).</param>
         public void Editar(CategoriaMaterial categoriaActualizada)
         {
             var categoriaBD = _context.CategoriaMaterial
@@ -57,7 +81,11 @@ namespace SkiRentModel.Repos
             _context.SaveChanges();
         }
 
-        // Eliminar
+        /// <summary>
+        /// Elimina una categoria por su id.
+        /// </summary>
+        /// <param name="idCategoria">Id de la categoria a eliminar.</param>
+        /// <returns>True si se elimino, false si no se encontro.</returns>
         public bool Eliminar(int idCategoria)
         {
             var categoriaBD = _context.CategoriaMaterial.Find(idCategoria);
@@ -68,7 +96,12 @@ namespace SkiRentModel.Repos
             return true;
         }
 
-        //para no borrar si ya hay materiales con esa categoria
+        /// <summary>
+        /// Comprueba si hay materiales relacionados con la categoria.
+        /// Esto se usa para evitar borrar una categoria que tiene materiales.
+        /// </summary>
+        /// <param name="idCategoria">Id de la categoria a comprobar.</param>
+        /// <returns>True si existe al menos un material con esa categoria, false si no.</returns>
         public bool TieneMateriales(int idCategoria)
         {
             return _context.Material.Any(m => m.IdCategoria == idCategoria);

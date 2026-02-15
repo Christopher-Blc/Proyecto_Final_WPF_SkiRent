@@ -6,26 +6,53 @@ using System.Text.RegularExpressions;
 
 namespace Proyecto_WPF_SkiRent.Controllers
 {
+    /// <summary>
+    /// API para manejar operaciones de cliente desde la capa de presentacion.
+    /// Contiene metodos para listar, buscar, crear, editar y eliminar clientes.
+    /// </summary>
     public class ClienteAPI
     {
         private ClienteRepo repo = new ClienteRepo();
 
+        /// <summary>
+        /// Devuelve todos los clientes.
+        /// </summary>
+        /// <returns>Lista con todos los clientes</returns>
         public List<Cliente> Listar()
         {
             return repo.Listar();
         }
 
+        /// <summary>
+        /// Busca clientes cuyo DNI contiene el texto dado.
+        /// </summary>
+        /// <param name="texto">Texto a buscar dentro del DNI</param>
+        /// <returns>Lista de clientes que coinciden con la busqueda</returns>
         public List<Cliente> Buscar(string texto)
         {
             return repo.BuscarPorDni(texto);
         }
 
+        /// <summary>
+        /// Busca un cliente por su id.
+        /// </summary>
+        /// <param name="id">Id del cliente a buscar</param>
+        /// <returns>Cliente si existe, sino null</returns>
         public Cliente BuscarPorId(int id)
         {
             return repo.BuscarPorId(id);
         }
 
-        //devuelve null si no ha tenido ningun error, o un string con el error si se ha introducido alguna cosa mal
+        /// <summary>
+        /// Crea un nuevo cliente despues de validar sus datos.
+        /// Devuelve null si todo va bien, o un texto con el error.
+        /// </summary>
+        /// <param name="nombre">Nombre del cliente</param>
+        /// <param name="apellidos">Apellidos del cliente</param>
+        /// <param name="telefono">Telefono del cliente</param>
+        /// <param name="email">Email del cliente</param>
+        /// <param name="dni">DNI del cliente</param>
+        /// <returns>Null si se creo bien, o mensaje de error</returns>
         public string Crear(string nombre, string apellidos, string telefono, string email, string dni)
         {
             //validamos con el validator de la clase validaciones que hemos hecho 
@@ -57,6 +84,17 @@ namespace Proyecto_WPF_SkiRent.Controllers
             return null;
         }
 
+        /// <summary>
+        /// Edita un cliente existente tras validar los datos.
+        /// Devuelve null si todo va bien, o un texto con el error.
+        /// </summary>
+        /// <param name="id">Id del cliente a editar</param>
+        /// <param name="nombre">Nombre nuevo</param>
+        /// <param name="apellidos">Apellidos nuevos</param>
+        /// <param name="telefono">Telefono nuevo</param>
+        /// <param name="email">Email nuevo</param>
+        /// <param name="dni">DNI nuevo</param>
+        /// <returns>Null si se edito bien, o mensaje de error</returns>
         public string Editar(int id, string nombre, string apellidos, string telefono, string email, string dni)
         {
             if (id <= 0)
@@ -92,6 +130,12 @@ namespace Proyecto_WPF_SkiRent.Controllers
             return null;
         }
 
+        /// <summary>
+        /// Elimina un cliente por id si es valido y no tiene alquileres.
+        /// Devuelve null si se elimino bien, o un texto con el error.
+        /// </summary>
+        /// <param name="id">Id del cliente a eliminar</param>
+        /// <returns>Null si se elimino bien, o mensaje de error</returns>
         public string Eliminar(int id)
         {
             if (id <= 0)
@@ -108,7 +152,10 @@ namespace Proyecto_WPF_SkiRent.Controllers
             //se devuelve null pq si no hay error no hay string de error a devolver
             return null;
         }
-        //lo que se usara en el dashboard para mostrar cuantos clientes hay
+        /// <summary>
+        /// Devuelve el numero total de clientes para mostrar en el dashboard.
+        /// </summary>
+        /// <returns>Cantidad total de clientes</returns>
         public int Cantidad()
         {
             return repo.Cantidad();

@@ -1,0 +1,138 @@
+﻿/* =========================================================
+   SkiRent  BBDD para SQL Server (SSMS)
+   Tablas: Cliente, CategoriaMaterial, Material, Alquiler, LineaAlquiler
+   Incluye: Stock en Material y Cantidad en LineaAlquiler
+   ========================================================= */
+
+IF DB_ID('SkiRent') IS NULL
+BEGIN
+    CREATE DATABASE SkiRent;
+END
+GO
+
+USE SkiRent;
+GO
+
+/* Limpieza si ya existe */
+IF OBJECT_ID('dbo.LineaAlquiler', 'U') IS NOT NULL DROP TABLE dbo.LineaAlquiler;
+IF OBJECT_ID('dbo.Alquiler', 'U') IS NOT NULL DROP TABLE dbo.Alquiler;
+IF OBJECT_ID('dbo.Material', 'U') IS NOT NULL DROP TABLE dbo.Material;
+IF OBJECT_ID('dbo.CategoriaMaterial', 'U') IS NOT NULL DROP TABLE dbo.CategoriaMaterial;
+IF OBJECT_ID('dbo.Cliente', 'U') IS NOT NULL DROP TABLE dbo.Cliente;
+GO
+
+/* =========================
+   Tabla Cliente
+   ========================= */
+CREATE TABLE dbo.Cliente
+(
+    IdCliente   INT IDENTITY(1,1) NOT NULL,
+    Nombre      VARCHAR(50) NOT NULL,
+    Apellidos   VARCHAR(80) NOT NULL,
+    Telefono    VARCHAR(20) NULL,
+    Email       VARCHAR(100) NULL,
+    DNI         VARCHAR(20) NULL,
+
+    CONSTRAINT PK_Cliente PRIMARY KEY (IdCliente)
+);
+GO
+
+/* =========================
+   Tabla CategoriaMaterial
+   ========================= */
+CREATE TABLE dbo.CategoriaMaterial
+(
+    IdCategoria      INT IDENTITY(1,1) NOT NULL,
+    NombreCategoria  VARCHAR(40) NOT NULL,
+    Nivel            VARCHAR(20) NULL,
+
+    CONSTRAINT PK_CategoriaMaterial PRIMARY KEY (IdCategoria)
+);
+GO
+
+/* =========================
+   Tabla Material
+   ========================= */
+CREATE TABLE dbo.Material
+(
+    IdMaterial     INT IDENTITY(1,1) NOT NULL,
+    Codigo         VARCHAR(30) NOT NULL,
+    Marca          VARCHAR(50) NULL,
+    Modelo         VARCHAR(50) NULL,
+    TallaLongitud  VARCHAR(20) NULL,
+    Estado         VARCHAR(20) NOT NULL,
+    PrecioDia      DECIMAL(10,2) NOT NULL,
+    Stock          INT NOT NULL CONSTRAINT DF_Material_Stock DEFAULT 0,
+    IdCategoria    INT NOT NULL,
+
+    CONSTRAINT PK_Material PRIMARY KEY (IdMaterial),
+    CONSTRAINT UQ_Material_Codigo UNIQUE (Codigo),
+
+    CONSTRAINT FK_Material_Categoria
+        FOREIGN KEY (IdCategoria) REFERENCES dbo.CategoriaMaterial(IdCategoria),
+
+    CONSTRAINT CK_Material_PrecioDia_NoNegativo CHECK (PrecioDia >= 0),
+    CONSTRAINT CK_Material_Stock_NoNegativo CHECK (Stock >= 0),
+
+    CONSTRAINT CK_Material_Estado CHECK (Estado IN ('Disponible','Mantenimiento','Baja'))
+);
+GO
+
+/* =========================
+   Tabla Alquiler
+   ========================= */
+CREATE TABLE dbo.Alquiler
+(
+    IdAlquiler    INT IDENTITY(1,1) NOT NULL,
+    IdCliente     INT NOT NULL,
+    FechaInicio   DATE NOT NULL,
+    FechaFin      DATE NOT NULL,
+    Estado        VARCHAR(20) NOT NULL,
+    Total         DECIMAL(10,2) NULL,
+
+    CONSTRAINT PK_Alquiler PRIMARY KEY (IdAlquiler),
+
+    CONSTRAINT FK_Alquiler_Cliente
+        FOREIGN KEY (IdCliente) REFERENCES dbo.Cliente(IdCliente),
+
+    CONSTRAINT CK_Alquiler_Fechas CHECK (FechaFin >= FechaInicio),
+    CONSTRAINT CK_Alquiler_Estado CHECK (Estado IN ('Abierto','Cerrado','Cancelado'))
+);
+GO
+
+/* =========================
+   Tabla LineaAlquiler
+   Subtotal calculado para evitar inconsistencias
+   Subtotal = PrecioDiaAplicado * Dias * Cantidad
+   ========================= */
+CREATE TABLE dbo.LineaAlquiler
+(
+    IdLinea            INT IDENTITY(1,1) NOT NULL,
+    IdAlquiler         INT NOT NULL,
+    IdMaterial         INT NOT NULL,
+    PrecioDiaAplicado  DECIMAL(10,2) NOT NULL,
+    Dias               INT NOT NULL,
+    Cantidad           INT NOT NULL CONSTRAINT DF_LineaAlquiler_Cantidad DEFAULT 1,
+
+    Subtotal AS (PrecioDiaAplicado * Dias * Cantidad) PERSISTED,
+
+    CONSTRAINT PK_LineaAlquiler PRIMARY KEY (IdLinea),
+
+    CONSTRAINT FK_LineaAlquiler_Alquiler
+        FOREIGN KEY (IdAlquiler) REFERENCES dbo.Alquiler(IdAlquiler),
+
+    CONSTRAINT FK_LineaAlquiler_Material
+        FOREIGN KEY (IdMaterial) REFERENCES dbo.Material(IdMaterial),
+
+    CONSTRAINT CK_LineaAlquiler_Precio_NoNegativo CHECK (PrecioDiaAplicado >= 0),
+    CONSTRAINT CK_LineaAlquiler_Dias_Positive CHECK (Dias > 0),
+    CONSTRAINT CK_LineaAlquiler_Cantidad_Positive CHECK (Cantidad > 0)
+);
+GO
+
+/* Índices útiles para rendimiento */
+CREATE INDEX IX_Alquiler_IdCliente ON dbo.Alquiler(IdCliente);
+CREATE INDEX IX_Material_IdCategoria ON dbo.Material(IdCategoria);
+CREATE INDEX IX_LineaAlquiler_IdAlquiler ON dbo.LineaAlquiler(IdAlquiler);
+CREATE INDEX IX_LineaAlquiler_IdMaterial ON dbo.LineaAlquiler(IdMaterial);
+GO<

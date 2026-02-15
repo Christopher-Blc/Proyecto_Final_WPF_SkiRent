@@ -6,8 +6,20 @@ using System.Text.RegularExpressions;
 
 namespace Proyecto_WPF_SkiRent.Utils
 {
+    /// <summary>
+    /// Metodos para validar datos de clientes, material, categorias y alquileres.
+    /// </summary>
     public static class Validaciones
     {
+        /// <summary>
+        /// Valida los datos basicos de un cliente.
+        /// </summary>
+        /// <param name="nombre">Nombre del cliente.</param>
+        /// <param name="apellidos">Apellidos del cliente.</param>
+        /// <param name="dni">Documento nacional de identidad, formato 8 digitos y letra.</param>
+        /// <param name="telefono">Telefono del cliente, 9 digitos.</param>
+        /// <param name="email">Correo electronico del cliente.</param>
+        /// <returns>Mensaje de error si hay un fallo, o null si todo es valido.</returns>
         public static string ValidarCliente(string nombre, string apellidos, string dni, string telefono, string email)
         {
 
@@ -59,6 +71,19 @@ namespace Proyecto_WPF_SkiRent.Utils
 
 
         //validaciones para el controller de material
+
+        /// <summary>
+        /// Valida los campos de un material antes de guardarlo o editarlo.
+        /// </summary>
+        /// <param name="codigo">Codigo unico del material.</param>
+        /// <param name="marca">Marca del material.</param>
+        /// <param name="modelo">Modelo del material.</param>
+        /// <param name="talla">Talla del material.</param>
+        /// <param name="estado">Estado del material.</param>
+        /// <param name="precioDia">Precio por dia del alquiler.</param>
+        /// <param name="stock">Cantidad disponible en stock.</param>
+        /// <param name="idCategoria">Identificador de la categoria asociada.</param>
+        /// <returns>Mensaje de error si hay un fallo, o null si todo es valido.</returns>
         public static string ValidarMaterial(string codigo,string marca,string modelo,string talla,string estado,decimal precioDia,int stock,int idCategoria)
         {
             if (string.IsNullOrWhiteSpace(codigo))
@@ -93,13 +118,20 @@ namespace Proyecto_WPF_SkiRent.Utils
 
             if (idCategoria <= 0)
             {
-                return "Tienes que seleccionar una categoría.";
+                return "Tienes que seleccionar una categoria.";
             }
 
             return null;
         }
 
-        //validaciones para las categorias
+        //validaciopnes para las categorias
+
+        /// <summary>
+        /// Valida los datos de una categoria.
+        /// </summary>
+        /// <param name="nombreCategoria">Nombre de la categoria.</param>
+        /// <param name="nivel">Nivel asociado a la categoria.</param>
+        /// <returns>Mensaje de error si hay un fallo, o null si todo es valido.</returns>
         public static string ValidarCategoria(string nombreCategoria, string nivel)
         {
 
@@ -117,6 +149,15 @@ namespace Proyecto_WPF_SkiRent.Utils
         }
 
         //para validar los alquileres
+
+        /// <summary>
+        /// Valida los datos basicos de un alquiler.
+        /// </summary>
+        /// <param name="idCliente">Identificador del cliente.</param>
+        /// <param name="fechaInicio">Fecha de inicio del alquiler.</param>
+        /// <param name="fechaFin">Fecha de fin del alquiler.</param>
+        /// <param name="estado">Estado del alquiler (Abierto, Cerrado, Cancelado).</param>
+        /// <returns>Mensaje de error si hay un fallo, o null si todo es valido.</returns>
         public static string ValidarAlquiler(int idCliente, DateTime fechaInicio, DateTime fechaFin, string estado)
         {
             if (idCliente <= 0)
@@ -127,6 +168,12 @@ namespace Proyecto_WPF_SkiRent.Utils
             if (fechaInicio == DateTime.MinValue)
             {
                 return "Fecha inicio no valida.";
+            }
+
+            // Prevent reservations that start before today
+            if (fechaInicio.Date < DateTime.Today)
+            {
+                return "La fecha de inicio no puede ser anterior a hoy.";
             }
 
             if (fechaFin == DateTime.MinValue)
@@ -156,6 +203,15 @@ namespace Proyecto_WPF_SkiRent.Utils
 
 
         //validaciopnes para alquiler linea
+
+        /// <summary>
+        /// Valida una linea de alquiler que relaciona un material con un alquiler.
+        /// </summary>
+        /// <param name="idAlquiler">Identificador del alquiler.</param>
+        /// <param name="idMaterial">Identificador del material.</param>
+        /// <param name="cantidad">Cantidad de unidades.</param>
+        /// <param name="dias">Numero de dias de alquiler.</param>
+        /// <returns>Mensaje de error si hay un fallo, o null si todo es valido.</returns>
         public static string ValidarLineaAlquiler(int idAlquiler, int idMaterial, int cantidad, int dias)
         {
             if (idAlquiler <= 0)

@@ -1,0 +1,14 @@
+﻿<Window x:Class="Proyecto_WPF_SkiRent.Windows.InformeReservaClienteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:cr="clr-namespace:CrystalDecisions.Windows.Forms;assembly=CrystalDecisions.Windows.Forms"
+        Title="Informe" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <wfi:WindowsFormsHost ChildChanged="WindowsFormsHost_ChildChanged">
+            <cr:CrystalReportViewer x:Name="host" />
+        </wfi:WindowsFormsHost>
+    </Grid>
+</Window>

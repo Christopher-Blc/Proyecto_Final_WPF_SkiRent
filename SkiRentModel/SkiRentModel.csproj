@@ -59,7 +59,6 @@
     <Compile Include="CategoriaMaterial.cs">
       <DependentUpon>SkiRentDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Cliente.cs">
       <DependentUpon>SkiRentDataModel.tt</DependentUpon>
     </Compile>

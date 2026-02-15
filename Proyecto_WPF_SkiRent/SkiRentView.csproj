@@ -27,6 +27,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,15 +39,40 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.Viewer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\SAPBusinessObjects.WPF.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,25 +85,48 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="WindowAlquiler.xaml.cs">
+    <Compile Include="Helper.cs" />
+    <Compile Include="Windows\InformeMaterialEstado.xaml.cs">
+      <DependentUpon>InformeMaterialEstado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\InformeMaterialWindow.xaml.cs">
+      <DependentUpon>InformeMaterialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\InformeReservaClienteWindow.xaml.cs">
+      <DependentUpon>InformeReservaClienteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowAlquiler.xaml.cs">
       <DependentUpon>WindowAlquiler.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowCategorias.xaml.cs">
+    <Compile Include="Windows\WindowCategorias.xaml.cs">
       <DependentUpon>WindowCategorias.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowClientes.xaml.cs">
+    <Compile Include="Windows\WindowClientes.xaml.cs">
       <DependentUpon>WindowClientes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowMaterial.xaml.cs">
+    <Compile Include="Windows\WindowMaterial.xaml.cs">
       <DependentUpon>WindowMaterial.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Windows\InformeMaterialEstado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\InformeMaterialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\InformeReservaClienteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -85,23 +134,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WindowAlquiler.xaml">
+    <Page Include="Windows\WindowAlquiler.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowCategorias.xaml">
+    <Page Include="Windows\WindowCategorias.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowClientes.xaml">
+    <Page Include="Windows\WindowClientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowMaterial.xaml">
+    <Page Include="Windows\WindowMaterial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +173,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Multiple files" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -138,31 +188,20 @@
       <Project>{a5017108-51b8-461f-a036-f8b166c9b2ba}</Project>
       <Name>SkiRentController</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SkiRentInformes\SkiRentInformes.csproj">
+      <Project>{e5eddfa9-bcd2-4326-9bab-c70db22b41cc}</Project>
+      <Name>SkiRentInformes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SkiRentModel\SkiRentModel.csproj">
       <Project>{c4329e7d-fffb-4fcb-893a-e59094e35c73}</Project>
       <Name>SkiRentModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="MainWindowBanner.png" />
+    <Resource Include="Windows\SkiRent %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Banner2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="wp8125061-sports-winter-wallpapers.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="wp9098595-4k-skiing-wallpapers.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="SkiRent.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="SkiRent %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="LogoSkiRent.png" />
+    <Resource Include="Windows\LogoSkiRent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

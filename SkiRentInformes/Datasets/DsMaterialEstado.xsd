@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsMaterialEstado" targetNamespace="http://tempuri.org/DsMaterialEstado.xsd" xmlns:mstns="http://tempuri.org/DsMaterialEstado.xsd" xmlns="http://tempuri.org/DsMaterialEstado.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsMaterialEstado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DsMaterialEstado" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsMaterialEstado">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTMaterialEstado" msprop:Generator_RowClassName="DTMaterialEstadoRow" msprop:Generator_RowEvHandlerName="DTMaterialEstadoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTMaterialEstadoRowDeleted" msprop:Generator_RowDeletingName="DTMaterialEstadoRowDeleting" msprop:Generator_RowEvArgName="DTMaterialEstadoRowChangeEvent" msprop:Generator_TablePropName="DTMaterialEstado" msprop:Generator_RowChangedName="DTMaterialEstadoRowChanged" msprop:Generator_UserTableName="DTMaterialEstado" msprop:Generator_RowChangingName="DTMaterialEstadoRowChanging" msprop:Generator_TableClassName="DTMaterialEstadoDataTable" msprop:Generator_TableVarName="tableDTMaterialEstado">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" type="xs:string" minOccurs="0" />
+              <xs:element name="Codigo" msprop:Generator_UserColumnName="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" type="xs:string" minOccurs="0" />
+              <xs:element name="Marca" msprop:Generator_UserColumnName="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" type="xs:string" minOccurs="0" />
+              <xs:element name="Modelo" msprop:Generator_UserColumnName="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnVarNameInTable="columnModelo" type="xs:string" minOccurs="0" />
+              <xs:element name="TallaLongitud" msprop:Generator_UserColumnName="TallaLongitud" msprop:Generator_ColumnPropNameInTable="TallaLongitudColumn" msprop:Generator_ColumnPropNameInRow="TallaLongitud" msprop:Generator_ColumnVarNameInTable="columnTallaLongitud" type="xs:string" minOccurs="0" />
+              <xs:element name="Categoria" msprop:Generator_UserColumnName="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" type="xs:string" minOccurs="0" />
+              <xs:element name="Stock" msprop:Generator_UserColumnName="Stock" msprop:Generator_ColumnPropNameInTable="StockColumn" msprop:Generator_ColumnPropNameInRow="Stock" msprop:Generator_ColumnVarNameInTable="columnStock" type="xs:int" minOccurs="0" />
+              <xs:element name="PrecioDia" msprop:Generator_UserColumnName="PrecioDia" msprop:Generator_ColumnPropNameInTable="PrecioDiaColumn" msprop:Generator_ColumnPropNameInRow="PrecioDia" msprop:Generator_ColumnVarNameInTable="columnPrecioDia" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
