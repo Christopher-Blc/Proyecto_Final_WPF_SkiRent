@@ -1,10 +1,10 @@
-# 🎿 SkiRent — Sistema de Gestión de Alquiler de Esquí
+# 🎿 SkiRent — Gestión de Alquiler de Esquí
 
 Aplicación de escritorio desarrollada en C# con WPF para la gestión integral de un negocio de alquiler de material de esquí y snowboard.
 
 ---
 
-## 📌 Descripción
+## Descripción
 
 SkiRent es una aplicación creada para la asignatura Desarrollo de Interfaces (2º DAM).
 
@@ -12,23 +12,23 @@ Permite gestionar clientes, material, alquileres y generar informes profesionale
 
 ---
 
-## 🏗️ Arquitectura
+## Arquitectura
 
 La solución está separada en distintos proyectos:
 
 SkiRent  
 │  
-├── SkiRentModel        → Entidades y acceso a datos (Entity Framework)  
-├── SkiRentController   → Lógica de negocio  
-├── Proyecto_WPF_SkiRent → Interfaz gráfica WPF  
-├── SkiRentInformes     → Crystal Reports  
+├── SkiRentModel        → Entidades y acceso a datos (Entity Framework)  (model)
+├── SkiRentController   → Lógica de negocio   (Controller)
+├── Proyecto_WPF_SkiRent → Interfaz gráfica WPF (view) 
+├── SkiRentInformes     → Informes Crystal Reports  
 └── SkiRentTest         → Pruebas unitarias e integración  
 
-Patrón utilizado: MVC / MVVM
+Patrón utilizado: MVC 
 
 ---
 
-## 🔹 Tecnologías
+## Tecnologías
 
 - C#
 - .NET Framework
@@ -41,7 +41,7 @@ Patrón utilizado: MVC / MVVM
 
 ---
 
-## 🗄️ Base de Datos
+## Base de Datos
 
 Tablas principales:
 
@@ -62,7 +62,7 @@ El script SQL está incluido en el repositorio.
 
 ---
 
-## 🖥️ Funcionalidades
+## Funcionalidades
 
 - CRUD completo de Clientes
 - CRUD completo de Material
@@ -75,7 +75,7 @@ El script SQL está incluido en el repositorio.
 
 ---
 
-## 📊 Informes
+## Informes
 
 Incluye mínimo 3 informes:
 
@@ -85,7 +85,7 @@ Incluye mínimo 3 informes:
 
 ---
 
-## 🧪 Testing
+## Testing
 
 Incluye:
 
@@ -94,7 +94,7 @@ Incluye:
 
 ---
 
-## 📦 Instalación
+## Instalación
 
 1. Clonar repositorio
 2. Restaurar paquetes NuGet
@@ -110,4 +110,4 @@ Incluye carpeta con instalador.
 
 Christopher Bolocan  
 CFGS DAM — Desarrollo de Aplicaciones Multiplataforma  
-Proyecto Desarrollo de Interfaces
+Proyecto final de la asignatura Desarrollo de Interfaces
