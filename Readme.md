@@ -18,13 +18,13 @@ La solución está separada en distintos proyectos:
 
 SkiRent  
 │  
-├── SkiRentModel        → Entidades y acceso a datos (Entity Framework)  
-├── SkiRentController   → Lógica de negocio  
-├── Proyecto_WPF_SkiRent → Interfaz gráfica WPF  
-├── SkiRentInformes     → Crystal Reports  
+├── SkiRentModel        → Entidades y acceso a datos (Entity Framework)  (model)
+├── SkiRentController   → Lógica de negocio   (Controller)
+├── Proyecto_WPF_SkiRent → Interfaz gráfica WPF (view) 
+├── SkiRentInformes     → Informes Crystal Reports  
 └── SkiRentTest         → Pruebas unitarias e integración  
 
-Patrón utilizado: MVC / MVVM
+Patrón utilizado: MVC 
 
 ---
 
