@@ -1,0 +1,146 @@
+var hierarchy =
+[
+    [ "SkiRentModel.Alquiler", "class_ski_rent_model_1_1_alquiler.html", null ],
+    [ "Proyecto_WPF_SkiRent.Controllers.AlquilerAPI", "class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_alquiler_a_p_i.html", null ],
+    [ "SkiRentModel.Repos.AlquilerRepo", "class_ski_rent_model_1_1_repos_1_1_alquiler_repo.html", null ],
+    [ "Application", null, [
+      [ "Proyecto_WPF_SkiRent.App", "class_proyecto___w_p_f___ski_rent_1_1_app.html", null ]
+    ] ],
+    [ "System.Windows.Application", null, [
+      [ "Proyecto_WPF_SkiRent.App", "class_proyecto___w_p_f___ski_rent_1_1_app.html", null ],
+      [ "Proyecto_WPF_SkiRent.App", "class_proyecto___w_p_f___ski_rent_1_1_app.html", null ],
+      [ "SkiRentInformes.App", "class_ski_rent_informes_1_1_app.html", null ],
+      [ "SkiRentInformes.App", "class_ski_rent_informes_1_1_app.html", null ],
+      [ "SkiRentInformes.App", "class_ski_rent_informes_1_1_app.html", null ],
+      [ "SkiRentInformes.App", "class_ski_rent_informes_1_1_app.html", null ],
+      [ "SkiRentInformes.App", "class_ski_rent_informes_1_1_app.html", null ]
+    ] ],
+    [ "Proyecto_WPF_SkiRent.Controllers.CategoriaAPI", "class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_categoria_a_p_i.html", null ],
+    [ "SkiRentModel.CategoriaMaterial", "class_ski_rent_model_1_1_categoria_material.html", null ],
+    [ "SkiRentModel.Repos.CategoriaRepo", "class_ski_rent_model_1_1_repos_1_1_categoria_repo.html", null ],
+    [ "SkiRentModel.Cliente", "class_ski_rent_model_1_1_cliente.html", null ],
+    [ "Proyecto_WPF_SkiRent.Controllers.ClienteAPI", "class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_cliente_a_p_i.html", null ],
+    [ "SkiRentModel.Repos.ClienteRepo", "class_ski_rent_model_1_1_repos_1_1_cliente_repo.html", null ],
+    [ "Component", null, [
+      [ "SkiRentInformes.CachedCrMaterial", "class_ski_rent_informes_1_1_cached_cr_material.html", null ],
+      [ "SkiRentInformes.CachedCrMaterialEstado", "class_ski_rent_informes_1_1_cached_cr_material_estado.html", null ],
+      [ "SkiRentInformes.CachedCrReservaCliente", "class_ski_rent_informes_1_1_cached_cr_reserva_cliente.html", null ]
+    ] ],
+    [ "global.SystemData.DataRow", null, [
+      [ "SkiRentInformes.Datasets.DsMaterial.DTMaterialRow", "class_ski_rent_informes_1_1_datasets_1_1_ds_material_1_1_d_t_material_row.html", null ],
+      [ "SkiRentInformes.Datasets.DsMaterialEstado.DTMaterialEstadoRow", "class_ski_rent_informes_1_1_datasets_1_1_ds_material_estado_1_1_d_t_material_estado_row.html", null ],
+      [ "SkiRentInformes.Datasets.DsReservasCliente.DTReservasClienteRow", "class_ski_rent_informes_1_1_datasets_1_1_ds_reservas_cliente_1_1_d_t_reservas_cliente_row.html", null ]
+    ] ],
+    [ "global.SystemData.DataSet", null, [
+      [ "SkiRentInformes.Datasets.DsMaterial", "class_ski_rent_informes_1_1_datasets_1_1_ds_material.html", null ],
+      [ "SkiRentInformes.Datasets.DsMaterialEstado", "class_ski_rent_informes_1_1_datasets_1_1_ds_material_estado.html", null ],
+      [ "SkiRentInformes.Datasets.DsReservasCliente", "class_ski_rent_informes_1_1_datasets_1_1_ds_reservas_cliente.html", null ]
+    ] ],
+    [ "DbContext", null, [
+      [ "SkiRentModel.SkiRentEntities", "class_ski_rent_model_1_1_ski_rent_entities.html", null ]
+    ] ],
+    [ "ICachedReport", null, [
+      [ "SkiRentInformes.CachedCrMaterial", "class_ski_rent_informes_1_1_cached_cr_material.html", null ],
+      [ "SkiRentInformes.CachedCrMaterialEstado", "class_ski_rent_informes_1_1_cached_cr_material_estado.html", null ],
+      [ "SkiRentInformes.CachedCrReservaCliente", "class_ski_rent_informes_1_1_cached_cr_reserva_cliente.html", null ]
+    ] ],
+    [ "System.Windows.Markup.IComponentConnector", null, [
+      [ "Proyecto_WPF_SkiRent.CategoriaMaterialWindow", "class_proyecto___w_p_f___ski_rent_1_1_categoria_material_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.MainWindow", "class_proyecto___w_p_f___ski_rent_1_1_main_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.MainWindow", "class_proyecto___w_p_f___ski_rent_1_1_main_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.MainWindow", "class_proyecto___w_p_f___ski_rent_1_1_main_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.MainWindow", "class_proyecto___w_p_f___ski_rent_1_1_main_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Window1", "class_proyecto___w_p_f___ski_rent_1_1_window1.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowAlquiler", "class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowAlquiler", "class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowAlquiler", "class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowAlquiler", "class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowCategorias", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowCategorias", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowCategorias", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowCategorias", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowClientes", "class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowClientes", "class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowClientes", "class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowClientes", "class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowMaterial", "class_proyecto___w_p_f___ski_rent_1_1_window_material.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowMaterial", "class_proyecto___w_p_f___ski_rent_1_1_window_material.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowMaterial", "class_proyecto___w_p_f___ski_rent_1_1_window_material.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowMaterial", "class_proyecto___w_p_f___ski_rent_1_1_window_material.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeMaterialEstado", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_estado.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeMaterialEstado", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_estado.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeMaterialWindow", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeMaterialWindow", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeReservaClienteWindow", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_reserva_cliente_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeReservaClienteWindow", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_reserva_cliente_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.WindowInformeAgrupado", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_window_informe_agrupado.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.WindowInformeAgrupadoParametro", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_window_informe_agrupado_parametro.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.WindowInformeSimple", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_window_informe_simple.html", null ],
+      [ "SkiRentInformes.Window1", "class_ski_rent_informes_1_1_window1.html", null ]
+    ] ],
+    [ "SkiRentModel.LineaAlquiler", "class_ski_rent_model_1_1_linea_alquiler.html", null ],
+    [ "Proyecto_WPF_SkiRent.Controllers.LineaAlquilerAPI", "class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_linea_alquiler_a_p_i.html", null ],
+    [ "SkiRentModel.Repos.LineaAlquilerRepo", "class_ski_rent_model_1_1_repos_1_1_linea_alquiler_repo.html", null ],
+    [ "SkiRentModel.Material", "class_ski_rent_model_1_1_material.html", null ],
+    [ "Proyecto_WPF_SkiRent.Controllers.MaterialAPI", "class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_material_a_p_i.html", null ],
+    [ "SkiRentModel.Repos.MaterialRepo", "class_ski_rent_model_1_1_repos_1_1_material_repo.html", null ],
+    [ "ReportClass", null, [
+      [ "SkiRentInformes.CrMaterial", "class_ski_rent_informes_1_1_cr_material.html", null ],
+      [ "SkiRentInformes.CrMaterialEstado", "class_ski_rent_informes_1_1_cr_material_estado.html", null ],
+      [ "SkiRentInformes.CrReservaCliente", "class_ski_rent_informes_1_1_cr_reserva_cliente.html", null ]
+    ] ],
+    [ "SkiRentModel.sysdiagrams", "class_ski_rent_model_1_1sysdiagrams.html", null ],
+    [ "global.SystemEventArgs", null, [
+      [ "SkiRentInformes.Datasets.DsMaterial.DTMaterialRowChangeEvent", "class_ski_rent_informes_1_1_datasets_1_1_ds_material_1_1_d_t_material_row_change_event.html", null ],
+      [ "SkiRentInformes.Datasets.DsMaterialEstado.DTMaterialEstadoRowChangeEvent", "class_ski_rent_informes_1_1_datasets_1_1_ds_material_estado_1_1_d_t_material_estado_row_change_event.html", null ],
+      [ "SkiRentInformes.Datasets.DsReservasCliente.DTReservasClienteRowChangeEvent", "class_ski_rent_informes_1_1_datasets_1_1_ds_reservas_cliente_1_1_d_t_reservas_cliente_row_change_event.html", null ]
+    ] ],
+    [ "SkiRentTest.Test1", "class_ski_rent_test_1_1_test1.html", null ],
+    [ "global.SystemData.TypedTableBase", null, [
+      [ "SkiRentInformes.Datasets.DsMaterial.DTMaterialDataTable", "class_ski_rent_informes_1_1_datasets_1_1_ds_material_1_1_d_t_material_data_table.html", null ],
+      [ "SkiRentInformes.Datasets.DsMaterialEstado.DTMaterialEstadoDataTable", "class_ski_rent_informes_1_1_datasets_1_1_ds_material_estado_1_1_d_t_material_estado_data_table.html", null ],
+      [ "SkiRentInformes.Datasets.DsReservasCliente.DTReservasClienteDataTable", "class_ski_rent_informes_1_1_datasets_1_1_ds_reservas_cliente_1_1_d_t_reservas_cliente_data_table.html", null ]
+    ] ],
+    [ "System.Windows.Window", null, [
+      [ "Proyecto_WPF_SkiRent.CategoriaMaterialWindow", "class_proyecto___w_p_f___ski_rent_1_1_categoria_material_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.MainWindow", "class_proyecto___w_p_f___ski_rent_1_1_main_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.MainWindow", "class_proyecto___w_p_f___ski_rent_1_1_main_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.MainWindow", "class_proyecto___w_p_f___ski_rent_1_1_main_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.MainWindow", "class_proyecto___w_p_f___ski_rent_1_1_main_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.MainWindow", "class_proyecto___w_p_f___ski_rent_1_1_main_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Window1", "class_proyecto___w_p_f___ski_rent_1_1_window1.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowAlquiler", "class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowAlquiler", "class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowAlquiler", "class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowAlquiler", "class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowAlquiler", "class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowCategorias", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowCategorias", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowCategorias", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowCategorias", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowCategorias", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowClientes", "class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowClientes", "class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowClientes", "class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowClientes", "class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowClientes", "class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowMaterial", "class_proyecto___w_p_f___ski_rent_1_1_window_material.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowMaterial", "class_proyecto___w_p_f___ski_rent_1_1_window_material.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowMaterial", "class_proyecto___w_p_f___ski_rent_1_1_window_material.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowMaterial", "class_proyecto___w_p_f___ski_rent_1_1_window_material.html", null ],
+      [ "Proyecto_WPF_SkiRent.WindowMaterial", "class_proyecto___w_p_f___ski_rent_1_1_window_material.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeMaterialEstado", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_estado.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeMaterialEstado", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_estado.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeMaterialEstado", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_estado.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeMaterialWindow", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeMaterialWindow", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeMaterialWindow", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeReservaClienteWindow", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_reserva_cliente_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeReservaClienteWindow", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_reserva_cliente_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.InformeReservaClienteWindow", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_reserva_cliente_window.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.WindowInformeAgrupado", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_window_informe_agrupado.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.WindowInformeAgrupadoParametro", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_window_informe_agrupado_parametro.html", null ],
+      [ "Proyecto_WPF_SkiRent.Windows.WindowInformeSimple", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_window_informe_simple.html", null ],
+      [ "SkiRentInformes.Window1", "class_ski_rent_informes_1_1_window1.html", null ]
+    ] ]
+];
