@@ -16,13 +16,12 @@ Permite gestionar clientes, material, alquileres y generar informes profesionale
 
 La solución está separada en distintos proyectos:
 
-SkiRent  
-│  
-├── SkiRentModel        → Entidades y acceso a datos (Entity Framework)  (model)
-├── SkiRentController   → Lógica de negocio   (Controller)
-├── Proyecto_WPF_SkiRent → Interfaz gráfica WPF (view) 
-├── SkiRentInformes     → Informes Crystal Reports  
-└── SkiRentTest         → Pruebas unitarias e integración  
+
+SkiRentModel        → Entidades y acceso a datos (Entity Framework)
+SkiRentController   → Lógica de negocio (Controller)
+Proyecto_WPF_SkiRent → Interfaz gráfica WPF (view) 
+SkiRentInformes     → Informes Crystal Reports  
+SkiRentTest         → Pruebas unitarias e integración  
 
 Patrón utilizado: MVC 
 
@@ -81,7 +80,7 @@ Incluye mínimo 3 informes:
 
 1. Informe simple
 2. Informe agrupado
-3. Informe con totalización
+3. Informe con totalización (suma y recuento)
 
 ---
 
@@ -97,7 +96,7 @@ Incluye:
 ## Instalación
 
 1. Clonar repositorio
-2. Restaurar paquetes NuGet
+2. Restaurar paquetes NuGet(Entity framework)
 3. Ejecutar script de base de datos
 4. Configurar cadena de conexión en App.config
 5. Compilar y ejecutar
