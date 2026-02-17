@@ -1,16 +1,20 @@
 ﻿using Proyecto_WPF_SkiRent.Utils;
 using SkiRentModel;
 using SkiRentModel.Repos;
+using System;
 using System.Collections.Generic;
 
 namespace Proyecto_WPF_SkiRent.Controllers
 {
     /// <summary>
-    /// API para gestionar materiales.
-    /// Valida datos y usa el repositorio para operaciones.
+    /// Api para gestionar materiales desde la interfaz.
+    /// Valida los datos y llama al repositorio para guardar cambios.
     /// </summary>
     public class MaterialAPI
     {
+        /// <summary>
+        /// Repositorio usado para leer y guardar materiales.
+        /// </summary>
         private MaterialRepo repo = new MaterialRepo();
 
         /// <summary>
@@ -25,15 +29,16 @@ namespace Proyecto_WPF_SkiRent.Controllers
         /// <summary>
         /// Busca un material por su id.
         /// </summary>
-        /// <param name="id">Id del material a buscar.</param>
-        /// <returns>El material si existe, o null si no se encuentra.</returns>
+        /// <param name="id">Id del material.</param>
+        /// <returns>Material si existe, o null si no existe.</returns>
         public Material BuscarPorId(int id)
         {
             return repo.BuscarPorId(id);
         }
 
         /// <summary>
-        /// Busca materiales por codigo, puede devolver muchos o ninguno.
+        /// Busca materiales por codigo.
+        /// Puede devolver varios o ninguno.
         /// </summary>
         /// <param name="codigo">Texto a buscar dentro del codigo.</param>
         /// <returns>Lista de materiales que coinciden.</returns>
@@ -43,8 +48,8 @@ namespace Proyecto_WPF_SkiRent.Controllers
         }
 
         /// <summary>
-        /// Crea un nuevo material despues de validar los datos.
-        /// Devuelve null si todo va bien o un mensaje de error si falla.
+        /// Crea un material nuevo despues de validar los datos.
+        /// Devuelve null si se creo bien, o un mensaje si hubo error.
         /// </summary>
         /// <param name="codigo">Codigo del material.</param>
         /// <param name="marca">Marca del material.</param>
@@ -52,30 +57,25 @@ namespace Proyecto_WPF_SkiRent.Controllers
         /// <param name="talla">Talla o longitud.</param>
         /// <param name="estado">Estado del material.</param>
         /// <param name="precioDia">Precio por dia.</param>
-        /// <param name="stock">Cantidad en stock.</param>
+        /// <param name="stock">Stock inicial.</param>
         /// <param name="idCategoria">Id de la categoria.</param>
-        /// <returns>Null si se crea bien, o texto con el error.</returns>
-        public string Crear(string codigo, string marca, string modelo, string talla, string estado,decimal precioDia, int stock, int idCategoria)
+        /// <returns>Null si se creo bien, o un mensaje si hubo error.</returns>
+        public string Crear(string codigo, string marca, string modelo, string talla, string estado, decimal precioDia, int stock, int idCategoria)
         {
-            //validamos
             string error = Validaciones.ValidarMaterial(codigo, marca, modelo, talla, estado, precioDia, stock, idCategoria);
-
             if (error != null)
             {
                 return error;
             }
 
-            //comprobar que no se este utilizando ya el codigo del producto
             foreach (var m in repo.Listar())
             {
-                //trim y tu upper solo es para que si hay un espacio o una mayscula en vez de minuscula , evitar que nos locepte
                 if (m.Codigo != null && m.Codigo.Trim().ToUpper() == codigo.Trim().ToUpper())
                 {
                     return "Ya existe un material con ese codigo.";
                 }
             }
 
-            //creamos el material
             Material material = new Material
             {
                 Codigo = codigo.Trim(),
@@ -88,16 +88,15 @@ namespace Proyecto_WPF_SkiRent.Controllers
                 IdCategoria = idCategoria
             };
 
-            //si no falla nada , lo añadimos
             repo.Anyadir(material);
             return null;
         }
 
         /// <summary>
-        /// Edita un material ya existente.
-        /// Devuelve null si todo va bien o un mensaje de error.
+        /// Edita un material existente despues de validar los datos.
+        /// Devuelve null si se edito bien, o un mensaje si hubo error.
         /// </summary>
-        /// <param name="id">Id del material a editar.</param>
+        /// <param name="id">Id del material.</param>
         /// <param name="codigo">Nuevo codigo.</param>
         /// <param name="marca">Nueva marca.</param>
         /// <param name="modelo">Nuevo modelo.</param>
@@ -106,24 +105,20 @@ namespace Proyecto_WPF_SkiRent.Controllers
         /// <param name="precioDia">Nuevo precio por dia.</param>
         /// <param name="stock">Nuevo stock.</param>
         /// <param name="idCategoria">Nuevo id de categoria.</param>
-        /// <returns>Null si se edita bien, o texto con el error.</returns>
-        public string Editar(int id, string codigo, string marca, string modelo, string talla, string estado,decimal precioDia, int stock, int idCategoria)
+        /// <returns>Null si se edito bien, o un mensaje si hubo error.</returns>
+        public string Editar(int id, string codigo, string marca, string modelo, string talla, string estado, decimal precioDia, int stock, int idCategoria)
         {
-            //mirar que el id sea valido
             if (id <= 0)
             {
                 return "Material no valido.";
             }
 
-            //coger el error y pasarlo a la view por si falla algo al validar
-            string error = Validaciones.ValidarMaterial( codigo, marca, modelo, talla, estado, precioDia, stock, idCategoria);
-
+            string error = Validaciones.ValidarMaterial(codigo, marca, modelo, talla, estado, precioDia, stock, idCategoria);
             if (error != null)
             {
                 return error;
             }
 
-            //comprobamos duplicados tambien aqui pero teniendo en cuenta su propio id por si no se cambia y se edita solo otra cosa
             foreach (var m in repo.Listar())
             {
                 if (m.IdMaterial != id && m.Codigo != null && m.Codigo.Trim().ToUpper() == codigo.Trim().ToUpper())
@@ -131,7 +126,6 @@ namespace Proyecto_WPF_SkiRent.Controllers
                     return "Ya existe un material con ese codigo.";
                 }
             }
-
 
             Material material = new Material
             {
@@ -151,11 +145,11 @@ namespace Proyecto_WPF_SkiRent.Controllers
         }
 
         /// <summary>
-        /// Elimina un material si no esta en uso.
-        /// Devuelve null si se borra, o un mensaje de error.
+        /// Elimina un material si se puede.
+        /// Si esta en alguna linea de alquiler, no se elimina.
         /// </summary>
-        /// <param name="id">Id del material a eliminar.</param>
-        /// <returns>Null si se elimina, o texto con el error.</returns>
+        /// <param name="id">Id del material.</param>
+        /// <returns>Null si se elimino bien, o un mensaje si no se pudo.</returns>
         public string Eliminar(int id)
         {
             if (id <= 0)
@@ -169,7 +163,6 @@ namespace Proyecto_WPF_SkiRent.Controllers
             }
 
             bool eliminado = repo.Eliminar(id);
-
             if (!eliminado)
             {
                 return "Error al eliminar material.";
@@ -187,7 +180,4 @@ namespace Proyecto_WPF_SkiRent.Controllers
             return repo.Cantidad();
         }
     }
-
-
-   }
-
+}

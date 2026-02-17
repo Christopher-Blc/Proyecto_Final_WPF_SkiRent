@@ -5,15 +5,15 @@ using System.Collections.Generic;
 
 namespace Proyecto_WPF_SkiRent.Controllers
 {
-
-
     /// <summary>
     /// Api para gestionar las categorias de material.
-    /// Contiene metodos que llaman al repositorio para listar, buscar,
-    /// crear, editar y eliminar categorias.
+    /// Contiene metodos para listar, buscar, crear, editar y eliminar categorias.
     /// </summary>
     public class CategoriaAPI
     {
+        /// <summary>
+        /// Repositorio que se usa para leer y guardar categorias en la base de datos.
+        /// </summary>
         private CategoriaRepo repo = new CategoriaRepo();
 
         /// <summary>
@@ -22,13 +22,14 @@ namespace Proyecto_WPF_SkiRent.Controllers
         /// <returns>Lista con todas las categorias de material.</returns>
         public List<CategoriaMaterial> Listar()
         {
-            return repo.Listar();                           
+            return repo.Listar();
         }
 
         /// <summary>
-        /// Busca categorias por texto en nombre o nivel.
+        /// Busca categorias por un texto.
+        /// Si el texto esta vacio, devuelve todas las categorias.
         /// </summary>
-        /// <param name="texto">Texto para buscar. Si esta vacio devuelve todas las categorias.</param>
+        /// <param name="texto">Texto para buscar por nombre o nivel.</param>
         /// <returns>Lista de categorias que coinciden con la busqueda.</returns>
         public List<CategoriaMaterial> Buscar(string texto)
         {
@@ -46,11 +47,12 @@ namespace Proyecto_WPF_SkiRent.Controllers
         }
 
         /// <summary>
-        /// Crea una nueva categoria de material.
+        /// Crea una categoria nueva con los datos indicados.
+        /// Si hay un error, devuelve un mensaje.
         /// </summary>
-        /// <param name="nombreCategoria">Nombre de la categoria. No debe estar vacio.</param>
-        /// <param name="nivel">Nivel de la categoria. No debe estar vacio.</param>
-        /// <returns>Null si se creo correctamente, o un mensaje de error.</returns>
+        /// <param name="nombreCategoria">Nombre de la categoria.</param>
+        /// <param name="nivel">Nivel de la categoria.</param>
+        /// <returns>Null si se creo bien, o un mensaje si hubo error.</returns>
         public string Crear(string nombreCategoria, string nivel)
         {
             string error = Validaciones.ValidarCategoria(nombreCategoria, nivel);
@@ -71,12 +73,13 @@ namespace Proyecto_WPF_SkiRent.Controllers
         }
 
         /// <summary>
-        /// Edita una categoria existente.
+        /// Edita una categoria existente con los datos indicados.
+        /// Si hay un error, devuelve un mensaje.
         /// </summary>
-        /// <param name="idCategoria">Id de la categoria a editar. Debe ser mayor que 0.</param>
+        /// <param name="idCategoria">Id de la categoria a editar.</param>
         /// <param name="nombreCategoria">Nuevo nombre de la categoria.</param>
         /// <param name="nivel">Nuevo nivel de la categoria.</param>
-        /// <returns>Null si se edito correctamente, o un mensaje de error.</returns>
+        /// <returns>Null si se edito bien, o un mensaje si hubo error.</returns>
         public string Editar(int idCategoria, string nombreCategoria, string nivel)
         {
             if (idCategoria <= 0)
@@ -103,13 +106,11 @@ namespace Proyecto_WPF_SkiRent.Controllers
         }
 
         /// <summary>
-        /// Elimina una categoria si no tiene materiales relacionados.
+        /// Elimina una categoria si se puede borrar.
+        /// Si tiene materiales relacionados, no se elimina.
         /// </summary>
         /// <param name="idCategoria">Id de la categoria a eliminar.</param>
-        /// <returns>
-        /// Null si se elimino correctamente,
-        /// o un mensaje de error si no se puede eliminar.
-        /// </returns>
+        /// <returns>Null si se elimino bien, o un mensaje si no se pudo.</returns>
         public string Eliminar(int idCategoria)
         {
             if (idCategoria <= 0)

@@ -7,39 +7,40 @@ using System.Linq;
 namespace Proyecto_WPF_SkiRent.Controllers
 {
     /// <summary>
-    /// Clase que gestiona las operaciones sobre las lineas de un alquiler.
+    /// Api para gestionar las lineas de un alquiler desde la interfaz.
+    /// Aqui se validan datos y se aplican reglas como stock y estado.
     /// </summary>
     public class LineaAlquilerAPI
     {
         /// <summary>
-        /// Repositorio para manejar las lineas de alquiler en la base de datos.
+        /// Repositorio para trabajar con lineas de alquiler.
         /// </summary>
         private LineaAlquilerRepo repo = new LineaAlquilerRepo();
 
         /// <summary>
-        /// Repositorio para manejar los materiales.
+        /// Repositorio para trabajar con materiales.
         /// </summary>
         private MaterialRepo materialRepo = new MaterialRepo();
 
         /// <summary>
-        /// Repositorio para manejar los alquileres.
+        /// Repositorio para trabajar con alquileres.
         /// </summary>
         private AlquilerRepo alquilerRepo = new AlquilerRepo();
 
         /// <summary>
-        /// Devuelve la lista de lineas que pertenecen a un alquiler dado.
+        /// Devuelve las lineas de un alquiler.
         /// </summary>
-        /// <param name="idAlquiler">Id del alquiler cuyas lineas se quieren listar.</param>
-        /// <returns>Lista de LineaAlquiler; puede estar vacia si no hay lineas.</returns>
+        /// <param name="idAlquiler">Id del alquiler.</param>
+        /// <returns>Lista de lineas del alquiler.</returns>
         public List<LineaAlquiler> ListarPorAlquiler(int idAlquiler)
         {
             return repo.ListarPorAlquiler(idAlquiler);
-        }                                       
+        }
 
         /// <summary>
-        /// Lista los materiales que estan disponibles y tienen stock.
+        /// Devuelve los materiales disponibles con stock.
         /// </summary>
-        /// <returns>Lista de Material que se pueden anadir al alquiler.</returns>
+        /// <returns>Lista de materiales que se pueden anadir.</returns>
         public List<Material> ListarMaterialesDisponibles()
         {
             return materialRepo.Listar()
@@ -48,15 +49,14 @@ namespace Proyecto_WPF_SkiRent.Controllers
         }
 
         /// <summary>
-        /// Valida los datos y anade una linea al alquiler si todo es correcto.
+        /// Valida los datos y anade una linea al alquiler si se puede.
+        /// Descuenta el stock y actualiza el total del alquiler.
         /// </summary>
-        /// <param name="idAlquiler">Id del alquiler donde se quiere anadir la linea.</param>
-        /// <param name="idMaterial">Id del material a anadir.</param>
-        /// <param name="cantidad">Cantidad de unidades a anadir.</param>
-        /// <param name="dias">Numero de dias para calcular el subtotal.</param>
-        /// <returns>
-        /// Null si la operacion fue correcta; texto con el error si fallo alguna validacion.
-        /// </returns>
+        /// <param name="idAlquiler">Id del alquiler.</param>
+        /// <param name="idMaterial">Id del material.</param>
+        /// <param name="cantidad">Cantidad a anadir.</param>
+        /// <param name="dias">Dias del alquiler para esa linea.</param>
+        /// <returns>Null si fue bien, o un mensaje si hubo error.</returns>
         public string AnyadirLinea(int idAlquiler, int idMaterial, int cantidad, int dias)
         {
             string error = Validaciones.ValidarLineaAlquiler(idAlquiler, idMaterial, cantidad, dias);
@@ -73,7 +73,7 @@ namespace Proyecto_WPF_SkiRent.Controllers
 
             if (alquiler.Estado != "Abierto")
             {
-                return "Solo se pueden añadir productos si el alquiler esta Abierto.";
+                return "Solo se pueden anadir productos si el alquiler esta Abierto.";
             }
 
             var material = materialRepo.BuscarPorId(idMaterial);
@@ -92,32 +92,31 @@ namespace Proyecto_WPF_SkiRent.Controllers
                 return "No hay stock suficiente.";
             }
 
-            // Creamos la linea , PrecioDiaAplicado y Subtotal los calcula el repo
             LineaAlquiler linea = new LineaAlquiler
             {
                 IdAlquiler = idAlquiler,
                 IdMaterial = idMaterial,
                 Cantidad = cantidad,
                 Dias = dias,
-                PrecioDiaAplicado = material.PrecioDia
+                PrecioDiaAplicado = material.PrecioDia,
+                Subtotal = material.PrecioDia * dias * cantidad
             };
 
-            bool anyadirCorrecto = repo.Anyadir(linea);
-            if (!anyadirCorrecto)
-            {
-                return "No se ha podido añadir la línea. Revisa que el alquiler esté Abierto y quede stock.";
-            }
+            material.Stock -= cantidad;
+            materialRepo.Editar(material);
+
+            repo.Anyadir(linea);
+            repo.ActualizarTotal(idAlquiler);
 
             return null;
         }
 
         /// <summary>
-        /// Elimina una linea de alquiler si el id es valido y la operacion se puede realizar.
+        /// Elimina una linea si se puede.
+        /// Devuelve el stock y actualiza el total del alquiler.
         /// </summary>
-        /// <param name="idLinea">Id de la linea que se quiere eliminar.</param>
-        /// <returns>
-        /// Null si se elimino correctamente; texto con el error si no se pudo eliminar.
-        /// </returns>
+        /// <param name="idLinea">Id de la linea.</param>
+        /// <returns>Null si fue bien, o un mensaje si hubo error.</returns>
         public string EliminarLinea(int idLinea)
         {
             if (idLinea <= 0)
@@ -125,11 +124,34 @@ namespace Proyecto_WPF_SkiRent.Controllers
                 return "Linea no valida.";
             }
 
-            bool eliminarCorrecto = repo.Eliminar(idLinea);
-            if (!eliminarCorrecto)
+            var linea = repo.BuscarPorId(idLinea);
+            if (linea == null)
             {
-                return "No se ha podido eliminar la linea. Solo se puede eliminar si el alquiler esta Abierto";
+                return "La linea no existe.";
             }
+
+            var alquiler = alquilerRepo.BuscarPorId(linea.IdAlquiler);
+            if (alquiler == null)
+            {
+                return "El alquiler no existe.";
+            }
+
+            if (alquiler.Estado != "Abierto")
+            {
+                return "No se puede eliminar la linea si el alquiler no esta Abierto.";
+            }
+
+            var material = materialRepo.BuscarPorId(linea.IdMaterial);
+            if (material != null)
+            {
+                material.Stock += linea.Cantidad;
+                materialRepo.Editar(material);
+            }
+
+            int idAlquiler = linea.IdAlquiler;
+
+            repo.Eliminar(linea);
+            repo.ActualizarTotal(idAlquiler);
 
             return null;
         }

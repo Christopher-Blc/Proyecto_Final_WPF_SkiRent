@@ -1,28 +1,22 @@
-﻿/* 
-Pseudocodigo detallado:
-- Añadir comentarios XML simples en espanol sin acentos ni tecnicismos.
-- Comentar la clase y cada metodo publico con <summary>.
-- Para metodos con parametros usar <param name="..."> y explicar en palabras simples.
-- Para metodos que devuelven valor usar <returns> con descripcion simple.
-- Colocar los comentarios sobre las firmas actuales sin cambiar la logica del codigo.
-*/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace SkiRentModel.Repos
 {
     /// <summary>
-    /// Repositorio para manejar las operaciones sobre alquileres.
-    /// Aqui se guardan, buscan, editan y borran alquileres.
+    /// Repositorio para trabajar con alquileres en la base de datos.
+    /// Permite listar, buscar, anadir, editar y eliminar alquileres.
     /// </summary>
     public class AlquilerRepo
     {
+        /// <summary>
+        /// Contexto de base de datos que se usa para leer y guardar datos.
+        /// </summary>
         private readonly SkiRentEntities _context = new SkiRentEntities();
 
         /// <summary>
-        /// Devuelve todos los alquileres almacenados.
+        /// Devuelve todos los alquileres guardados.
         /// </summary>
         /// <returns>Lista con todos los alquileres.</returns>
         public List<Alquiler> Listar()
@@ -33,23 +27,25 @@ namespace SkiRentModel.Repos
         /// <summary>
         /// Busca un alquiler por su id.
         /// </summary>
-        /// <param name="idAlquiler">Id del alquiler a buscar.</param>
-        /// <returns>El alquiler encontrado o null si no existe.</returns>
+        /// <param name="idAlquiler">Id del alquiler que se quiere buscar.</param>
+        /// <returns>El alquiler encontrado, o null si no existe.</returns>
         public Alquiler BuscarPorId(int idAlquiler)
         {
             return _context.Alquiler.Find(idAlquiler);
         }
 
         /// <summary>
-        /// Busca alquileres que coincidan con el texto.
-        /// Si el texto esta vacio devuelve todos.
+        /// Busca alquileres por un texto.
+        /// Si el texto esta vacio, devuelve todos los alquileres.
         /// </summary>
-        /// <param name="texto">Texto para buscar por estado o id cliente.</param>
+        /// <param name="texto">Texto para buscar por estado o por id de cliente.</param>
         /// <returns>Lista de alquileres que coinciden con la busqueda.</returns>
         public List<Alquiler> Buscar(string texto)
         {
             if (string.IsNullOrWhiteSpace(texto))
+            {
                 return Listar();
+            }
 
             texto = texto.Trim();
 
@@ -65,9 +61,9 @@ namespace SkiRentModel.Repos
         }
 
         /// <summary>
-        /// Anyade un nuevo alquiler al sistema.
+        /// Anade un alquiler nuevo a la base de datos.
         /// </summary>
-        /// <param name="alquiler">Objeto alquiler a guardar.</param>
+        /// <param name="alquiler">Alquiler que se quiere guardar.</param>
         public void Anyadir(Alquiler alquiler)
         {
             _context.Alquiler.Add(alquiler);
@@ -75,14 +71,17 @@ namespace SkiRentModel.Repos
         }
 
         /// <summary>
-        /// Edita un alquiler existente con los datos dados.
-        /// Si no existe no hace nada.
+        /// Edita un alquiler que ya existe.
+        /// Si no existe, no hace nada.
         /// </summary>
-        /// <param name="alquilerActualizado">Alquiler con los datos actualizados. Debe tener el Id correcto.</param>
+        /// <param name="alquilerActualizado">Alquiler con los datos nuevos y el id correcto.</param>
         public void Editar(Alquiler alquilerActualizado)
         {
             var alquilerBD = _context.Alquiler.Find(alquilerActualizado.IdAlquiler);
-            if (alquilerBD == null) return;
+            if (alquilerBD == null)
+            {
+                return;
+            }
 
             alquilerBD.IdCliente = alquilerActualizado.IdCliente;
             alquilerBD.FechaInicio = alquilerActualizado.FechaInicio;
@@ -93,9 +92,10 @@ namespace SkiRentModel.Repos
         }
 
         /// <summary>
-        /// Elimina un alquiler y sus lineas relacionadas.
+        /// Elimina un alquiler por su id.
+        /// Antes borra las lineas del alquiler para evitar errores.
         /// </summary>
-        /// <param name="idAlquiler">Id del alquiler a eliminar.</param>
+        /// <param name="idAlquiler">Id del alquiler que se quiere eliminar.</param>
         /// <returns>True si se elimino, false si no se encontro.</returns>
         public bool Eliminar(int idAlquiler)
         {
@@ -105,8 +105,11 @@ namespace SkiRentModel.Repos
                 return false;
             }
 
-            //borrar dependientes primero
-            var lineas = _context.LineaAlquiler.Where(l => l.IdAlquiler == idAlquiler).ToList();
+            // Borra primero las lineas relacionadas con este alquiler
+            var lineas = _context.LineaAlquiler
+                                 .Where(l => l.IdAlquiler == idAlquiler)
+                                 .ToList();
+
             if (lineas.Count > 0)
             {
                 _context.LineaAlquiler.RemoveRange(lineas);
@@ -114,23 +117,24 @@ namespace SkiRentModel.Repos
 
             _context.Alquiler.Remove(alquilerBD);
             _context.SaveChanges();
+
             return true;
         }
 
         /// <summary>
-        /// Cuenta cuantos alquileres tienen estado abierto.
+        /// Cuenta cuantos alquileres estan en estado Abierto.
         /// </summary>
-        /// <returns>Numero de alquileres con estado "Abierto".</returns>
+        /// <returns>Numero de alquileres con estado Abierto.</returns>
         public int CantidadActivos()
         {
             return _context.Alquiler.Count(a => a.Estado == "Abierto");
         }
 
         /// <summary>
-        /// Indica si un alquiler tiene lineas asociadas.
+        /// Dice si un alquiler tiene lineas asociadas.
         /// </summary>
         /// <param name="idAlquiler">Id del alquiler a comprobar.</param>
-        /// <returns>True si tiene lineas, false si no.</returns>
+        /// <returns>True si tiene lineas, false si no tiene.</returns>
         public bool TieneLineas(int idAlquiler)
         {
             return _context.LineaAlquiler.Any(l => l.IdAlquiler == idAlquiler);

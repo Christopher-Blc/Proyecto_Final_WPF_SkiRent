@@ -1,48 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace SkiRentModel.Repos
 {
     /// <summary>
-    /// Repositorio para manejar las operaciones con las categorias de material.
+    /// Repositorio para manejar las categorias de material en la base de datos.
+    /// Permite listar, buscar, anadir, editar y eliminar categorias.
     /// </summary>
     public class CategoriaRepo
     {
         /// <summary>
-        /// Contexto de la base de datos para acceder a las tablas.
+        /// Contexto de base de datos usado para trabajar con las categorias.
         /// </summary>
         private readonly SkiRentEntities _context = new SkiRentEntities();
 
         /// <summary>
-        /// Devuelve todas las categorias.
+        /// Devuelve todas las categorias guardadas.
         /// </summary>
-        /// <returns>Lista con todas las categorias de material.</returns>
+        /// <returns>Lista con todas las categorias.</returns>
         public List<CategoriaMaterial> Listar()
         {
             return _context.CategoriaMaterial.ToList();
         }
 
         /// <summary>
-        /// Busca una categoria por su id.
+        /// Busca categorias por texto en nombre o nivel.
+        /// Si el texto esta vacio devuelve todas.
         /// </summary>
-        /// <param name="idCategoria">Id de la categoria a buscar.</param>
-        /// <returns>La categoria encontrada o null si no existe.</returns>
-        public CategoriaMaterial BuscarPorId(int idCategoria)
-        {
-            return _context.CategoriaMaterial.Find(idCategoria);
-        }
-
-        /// <summary>
-        /// Busca categorias por nombre o por nivel.
-        /// Si el texto esta vacio devuelve todas las categorias.
-        /// </summary>
-        /// <param name="texto">Texto para buscar en nombre o nivel.</param>
-        /// <returns>Lista de categorias que coinciden con la busqueda.</returns>
+        /// <param name="texto">Texto para buscar.</param>
+        /// <returns>Lista de categorias que coinciden.</returns>
         public List<CategoriaMaterial> Buscar(string texto)
         {
-            if (string.IsNullOrWhiteSpace(texto))                                                                       
+            if (string.IsNullOrWhiteSpace(texto))
+            {
                 return Listar();
+            }
 
             texto = texto.Trim();
 
@@ -55,9 +47,19 @@ namespace SkiRentModel.Repos
         }
 
         /// <summary>
-        /// Anyade una nueva categoria a la base de datos.
+        /// Busca una categoria por su id.
         /// </summary>
-        /// <param name="categoria">Objeto categoria a anyadir.</param>
+        /// <param name="id">Id de la categoria.</param>
+        /// <returns>Categoria encontrada o null.</returns>
+        public CategoriaMaterial BuscarPorId(int id)
+        {
+            return _context.CategoriaMaterial.Find(id);
+        }
+
+        /// <summary>
+        /// Guarda una categoria nueva en la base de datos.
+        /// </summary>
+        /// <param name="categoria">Categoria a guardar.</param>
         public void Anyadir(CategoriaMaterial categoria)
         {
             _context.CategoriaMaterial.Add(categoria);
@@ -65,15 +67,17 @@ namespace SkiRentModel.Repos
         }
 
         /// <summary>
-        /// Actualiza los datos de una categoria existente.
+        /// Edita una categoria existente.
+        /// Si no existe, no hace nada.
         /// </summary>
-        /// <param name="categoriaActualizada">Categoria con los datos actualizados (debe incluir Id).</param>
+        /// <param name="categoriaActualizada">Categoria con los datos nuevos.</param>
         public void Editar(CategoriaMaterial categoriaActualizada)
         {
-            var categoriaBD = _context.CategoriaMaterial
-                                      .Find(categoriaActualizada.IdCategoria);
-
-            if (categoriaBD == null) return;
+            var categoriaBD = _context.CategoriaMaterial.Find(categoriaActualizada.IdCategoria);
+            if (categoriaBD == null)
+            {
+                return;
+            }
 
             categoriaBD.NombreCategoria = categoriaActualizada.NombreCategoria;
             categoriaBD.Nivel = categoriaActualizada.Nivel;
@@ -85,28 +89,29 @@ namespace SkiRentModel.Repos
         /// Elimina una categoria por su id.
         /// </summary>
         /// <param name="idCategoria">Id de la categoria a eliminar.</param>
-        /// <returns>True si se elimino, false si no se encontro.</returns>
+        /// <returns>True si se elimino, false si no existe.</returns>
         public bool Eliminar(int idCategoria)
         {
             var categoriaBD = _context.CategoriaMaterial.Find(idCategoria);
-            if (categoriaBD == null) return false;
+            if (categoriaBD == null)
+            {
+                return false;
+            }
 
             _context.CategoriaMaterial.Remove(categoriaBD);
             _context.SaveChanges();
+
             return true;
         }
 
         /// <summary>
-        /// Comprueba si hay materiales relacionados con la categoria.
-        /// Esto se usa para evitar borrar una categoria que tiene materiales.
+        /// Comprueba si una categoria tiene materiales asociados.
         /// </summary>
-        /// <param name="idCategoria">Id de la categoria a comprobar.</param>
-        /// <returns>True si existe al menos un material con esa categoria, false si no.</returns>
+        /// <param name="idCategoria">Id de la categoria.</param>
+        /// <returns>True si tiene materiales, false si no.</returns>
         public bool TieneMateriales(int idCategoria)
         {
             return _context.Material.Any(m => m.IdCategoria == idCategoria);
         }
-
-
     }
 }

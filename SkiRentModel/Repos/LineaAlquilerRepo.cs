@@ -1,104 +1,80 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace SkiRentModel.Repos
 {
     /// <summary>
-    /// Repo para manejar las lineas de alquiler en la base de datos.
+    /// Repositorio para trabajar con lineas de alquiler en la base de datos.
+    /// Contiene operaciones de lectura y guardado.
     /// </summary>
     public class LineaAlquilerRepo
     {
+        /// <summary>
+        /// Contexto de base de datos usado para leer y guardar lineas.
+        /// </summary>
         private readonly SkiRentEntities _context = new SkiRentEntities();
 
         /// <summary>
-        /// Lista las lineas que pertenecen a un alquiler dado.
+        /// Devuelve las lineas que pertenecen a un alquiler.
         /// </summary>
-        /// <param name="idAlquiler">Id del alquiler para filtrar las lineas.</param>
-        /// <returns>Lista de lineas del alquiler. Puede estar vacia si no hay lineas.</returns>
+        /// <param name="idAlquiler">Id del alquiler.</param>
+        /// <returns>Lista de lineas del alquiler.</returns>
         public List<LineaAlquiler> ListarPorAlquiler(int idAlquiler)
-        {                                                                                               
+        {
             return _context.LineaAlquiler
-                           .Where(l => l.IdAlquiler == idAlquiler)
-                           .ToList();
+                .Where(l => l.IdAlquiler == idAlquiler)
+                .ToList();
         }
 
         /// <summary>
-        /// Anade una linea al alquiler si el alquiler esta abierto.
+        /// Busca una linea por su id.
         /// </summary>
-        /// <param name="linea">Objeto linea con los datos a anadir (IdAlquiler, IdMaterial, Cantidad, Dias, PrecioDiaAplicado opcional).</param>
-        /// <returns>true si se anadio la linea y se actualizo el stock y total; false si fallo alguna condicion.</returns>
-        public bool Anyadir(LineaAlquiler linea)
+        /// <param name="idLinea">Id de la linea.</param>
+        /// <returns>Linea encontrada o null.</returns>
+        public LineaAlquiler BuscarPorId(int idLinea)
         {
-            var alquiler = _context.Alquiler.Find(linea.IdAlquiler);
-            if (alquiler == null) return false;
-            if (alquiler.Estado != "Abierto") return false;
+            return _context.LineaAlquiler.Find(idLinea);
+        }
 
-            var material = _context.Material.Find(linea.IdMaterial);
-            if (material == null) return false;
-
-            if (material.Stock < linea.Cantidad) return false;
-
-            if (linea.PrecioDiaAplicado <= 0)
-                linea.PrecioDiaAplicado = material.PrecioDia;
-
-            linea.Subtotal = linea.PrecioDiaAplicado * linea.Dias * linea.Cantidad;
-
-            material.Stock -= linea.Cantidad;
-
+        /// <summary>
+        /// Guarda una linea nueva en la base de datos.
+        /// </summary>
+        /// <param name="linea">Linea a guardar.</param>
+        public void Anyadir(LineaAlquiler linea)
+        {
             _context.LineaAlquiler.Add(linea);
             _context.SaveChanges();
-
-            ActualizarTotal(linea.IdAlquiler);
-
-            return true;
         }
 
         /// <summary>
-        /// Elimina una linea de un alquiler si el alquiler esta abierto.
+        /// Elimina una linea existente.
         /// </summary>
-        /// <param name="idLinea">Id de la linea a eliminar.</param>
-        /// <returns>true si se elimino y se devolvio el stock y se actualizo el total; false si no se pudo eliminar.</returns>
-        public bool Eliminar(int idLinea)
+        /// <param name="linea">Linea a eliminar.</param>
+        public void Eliminar(LineaAlquiler linea)
         {
-            var linea = _context.LineaAlquiler.Find(idLinea);
-            if (linea == null) return false;
-
-            var alquiler = _context.Alquiler.Find(linea.IdAlquiler);
-            if (alquiler == null) return false;
-            if (alquiler.Estado != "Abierto") return false;
-
-            var material = _context.Material.Find(linea.IdMaterial);
-            if (material != null)
-                material.Stock += linea.Cantidad;
-
-            int idAlquiler = linea.IdAlquiler;
-
             _context.LineaAlquiler.Remove(linea);
             _context.SaveChanges();
-
-            ActualizarTotal(idAlquiler);
-
-            return true;
         }
 
         /// <summary>
-        /// Recalcula y actualiza el total del alquiler sumando los subtotales de sus lineas.
+        /// Recalcula el total del alquiler sumando los subtotales de sus lineas.
         /// </summary>
-        /// <param name="idAlquiler">Id del alquiler cuyo total se debe recalcular.</param>
-        private void ActualizarTotal(int idAlquiler)
+        /// <param name="idAlquiler">Id del alquiler.</param>
+        public void ActualizarTotal(int idAlquiler)
         {
             var alquiler = _context.Alquiler.Find(idAlquiler);
-            if (alquiler == null) return;
+            if (alquiler == null)
+            {
+                return;
+            }
 
-            var lineas = _context.LineaAlquiler
-                                 .Where(l => l.IdAlquiler == idAlquiler)
-                                 .ToList();
+            var total = _context.LineaAlquiler
+                .Where(l => l.IdAlquiler == idAlquiler)
+                .Select(l => (decimal?)l.Subtotal)
+                .Sum() ?? 0m;
 
-            alquiler.Total = lineas.Sum(l => l.Subtotal);
-
+            alquiler.Total = total;
             _context.SaveChanges();
         }
-
     }
 }
