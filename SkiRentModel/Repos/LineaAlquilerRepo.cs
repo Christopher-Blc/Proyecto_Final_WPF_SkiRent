@@ -76,5 +76,7 @@ namespace SkiRentModel.Repos
             alquiler.Total = total;
             _context.SaveChanges();
         }
+
+        
     }
 }

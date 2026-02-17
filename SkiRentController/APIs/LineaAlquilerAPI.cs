@@ -37,16 +37,11 @@ namespace Proyecto_WPF_SkiRent.Controllers
             return repo.ListarPorAlquiler(idAlquiler);
         }
 
-        /// <summary>
-        /// Devuelve materiales disponibles con stock.
-        /// </summary>
-        /// <returns>Lista de materiales disponibles.</returns>
         public List<Material> ListarMaterialesDisponibles()
         {
-            return materialRepo.Listar()
-                .Where(m => m.Estado == "Disponible" && m.Stock > 0)
-                .ToList();
+            return materialRepo.ListarDisponible();
         }
+
 
         /// <summary>
         /// Anade una linea a un alquiler si se puede.

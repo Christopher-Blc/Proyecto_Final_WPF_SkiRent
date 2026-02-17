@@ -123,6 +123,17 @@ namespace SkiRentModel.Repos
         }
 
         /// <summary>
+        /// Devuelve materiales disponiblesy que tengan stock.
+        /// </summary>
+        /// <returns>Lista de materiales disponibles.</returns>
+        public List<Material> ListarDisponible()
+        {
+            return this.Listar()
+                .Where(m => m.Estado == "Disponible" && m.Stock > 0)
+                .ToList();
+        }
+
+        /// <summary>
         /// Devuelve la cantidad total de materiales.
         /// </summary>
         /// <returns>Numero total de materiales.</returns>
