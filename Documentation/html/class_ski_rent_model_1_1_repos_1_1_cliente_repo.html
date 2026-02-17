@@ -92,7 +92,7 @@ $(function(){initNavTree('class_ski_rent_model_1_1_repos_1_1_cliente_repo.html',
 </div><!--header-->
 <div class="contents">
 
-<p>Repositorio para gestionar clientes en la base de datos. Contiene operaciones basicas como listar, buscar, anadir, editar y eliminar.  
+<p>Repositorio para trabajar con clientes en la base de datos. Permite listar, buscar, anadir, editar y eliminar.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -102,20 +102,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a20fdaea44d2300eb36eb637cf3e59d6c" id="r_a20fdaea44d2300eb36eb637cf3e59d6c"><td class="memItemLeft"><a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a>&#160;</td><td class="memItemRight"><a class="el" href="#a20fdaea44d2300eb36eb637cf3e59d6c">BuscarPorId</a> (int idCliente)</td></tr>
 <tr class="memdesc:a20fdaea44d2300eb36eb637cf3e59d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un cliente por su id.  <br /></td></tr>
 <tr class="memitem:a870b669dd1fcd69a9c2c9fcc7a99f1f5" id="r_a870b669dd1fcd69a9c2c9fcc7a99f1f5"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a870b669dd1fcd69a9c2c9fcc7a99f1f5">BuscarPorDni</a> (string texto)</td></tr>
-<tr class="memdesc:a870b669dd1fcd69a9c2c9fcc7a99f1f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca clientes cuyo DNI contiene el texto dado. Si el texto esta vacio o solo espacios devuelve todos.  <br /></td></tr>
+<tr class="memdesc:a870b669dd1fcd69a9c2c9fcc7a99f1f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca clientes cuyo DNI contiene el texto dado. Si el texto esta vacio devuelve todos.  <br /></td></tr>
 <tr class="memitem:ac6f85619381c4905c9ea5b1a1060c68f" id="r_ac6f85619381c4905c9ea5b1a1060c68f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac6f85619381c4905c9ea5b1a1060c68f">Anyadir</a> (<a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> cliente)</td></tr>
-<tr class="memdesc:ac6f85619381c4905c9ea5b1a1060c68f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anade un nuevo cliente a la base de datos.  <br /></td></tr>
+<tr class="memdesc:ac6f85619381c4905c9ea5b1a1060c68f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anade un cliente nuevo a la base de datos.  <br /></td></tr>
 <tr class="memitem:a492719fa87bb2d57c7b02db226e89b85" id="r_a492719fa87bb2d57c7b02db226e89b85"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a492719fa87bb2d57c7b02db226e89b85">Editar</a> (<a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> clienteActualizado)</td></tr>
-<tr class="memdesc:a492719fa87bb2d57c7b02db226e89b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita los datos de un cliente existente.  <br /></td></tr>
+<tr class="memdesc:a492719fa87bb2d57c7b02db226e89b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita los datos de un cliente existente. Si no existe, no hace nada.  <br /></td></tr>
 <tr class="memitem:aa63684e22a6b63be04c46b1c98578f67" id="r_aa63684e22a6b63be04c46b1c98578f67"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa63684e22a6b63be04c46b1c98578f67">Eliminar</a> (int idCliente)</td></tr>
 <tr class="memdesc:aa63684e22a6b63be04c46b1c98578f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un cliente si existe y no tiene alquileres.  <br /></td></tr>
 <tr class="memitem:a04ba9caa9132467c94f2624e8215c844" id="r_a04ba9caa9132467c94f2624e8215c844"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a04ba9caa9132467c94f2624e8215c844">TieneAlquileres</a> (int idCliente)</td></tr>
-<tr class="memdesc:a04ba9caa9132467c94f2624e8215c844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si un cliente tiene alquileres registrados.  <br /></td></tr>
+<tr class="memdesc:a04ba9caa9132467c94f2624e8215c844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dice si un cliente tiene alquileres guardados.  <br /></td></tr>
 <tr class="memitem:a55d734b292fb1797db5d141176028c20" id="r_a55d734b292fb1797db5d141176028c20"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a55d734b292fb1797db5d141176028c20">Cantidad</a> ()</td></tr>
 <tr class="memdesc:a55d734b292fb1797db5d141176028c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la cantidad total de clientes.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Repositorio para gestionar clientes en la base de datos. Contiene operaciones basicas como listar, buscar, anadir, editar y eliminar. </p>
+<div class="textblock"><p>Repositorio para trabajar con clientes en la base de datos. Permite listar, buscar, anadir, editar y eliminar. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ac6f85619381c4905c9ea5b1a1060c68f" name="ac6f85619381c4905c9ea5b1a1060c68f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6f85619381c4905c9ea5b1a1060c68f">&#9670;&#160;</a></span>Anyadir()</h2>
@@ -132,10 +132,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Anade un nuevo cliente a la base de datos. </p>
+<p>Anade un cliente nuevo a la base de datos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cliente</td><td>Objeto cliente a anadir</td></tr>
+    <tr><td class="paramname">cliente</td><td><a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> que se quiere guardar.</td></tr>
   </table>
   </dd>
 </dl>
@@ -157,14 +157,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Busca clientes cuyo DNI contiene el texto dado. Si el texto esta vacio o solo espacios devuelve todos. </p>
+<p>Busca clientes cuyo DNI contiene el texto dado. Si el texto esta vacio devuelve todos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texto</td><td>Texto a buscar dentro del DNI</td></tr>
+    <tr><td class="paramname">texto</td><td>Texto a buscar dentro del DNI.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Lista de clientes que coinciden con la busqueda</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Lista de clientes que coinciden con la busqueda.</dd></dl>
 
 </div>
 </div>
@@ -186,11 +186,11 @@ Public Member Functions</h2></td></tr>
 <p>Busca un cliente por su id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idCliente</td><td>Id del cliente a buscar</td></tr>
+    <tr><td class="paramname">idCliente</td><td>Id del cliente a buscar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> si existe, sino null</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> si existe, o null si no existe.</dd></dl>
 
 </div>
 </div>
@@ -210,7 +210,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Devuelve la cantidad total de clientes. </p>
-<dl class="section return"><dt>Returns</dt><dd>Numero total de clientes</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Numero total de clientes.</dd></dl>
 
 </div>
 </div>
@@ -229,10 +229,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Edita los datos de un cliente existente. </p>
+<p>Edita los datos de un cliente existente. Si no existe, no hace nada. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">clienteActualizado</td><td>Objeto con los datos actualizados. Debe tener IdCliente.</td></tr>
+    <tr><td class="paramname">clienteActualizado</td><td><a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> con los datos nuevos y el id correcto.</td></tr>
   </table>
   </dd>
 </dl>
@@ -257,11 +257,11 @@ Public Member Functions</h2></td></tr>
 <p>Elimina un cliente si existe y no tiene alquileres. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idCliente</td><td>Id del cliente a eliminar</td></tr>
+    <tr><td class="paramname">idCliente</td><td>Id del cliente a eliminar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True si se elimino, false si no existe o tiene alquileres</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True si se elimino, false si no se pudo.</dd></dl>
 
 </div>
 </div>
@@ -281,7 +281,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Devuelve todos los clientes. </p>
-<dl class="section return"><dt>Returns</dt><dd>Lista con todos los clientes</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Lista con todos los clientes.</dd></dl>
 
 </div>
 </div>
@@ -300,14 +300,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Indica si un cliente tiene alquileres registrados. </p>
+<p>Dice si un cliente tiene alquileres guardados. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idCliente</td><td>Id del cliente</td></tr>
+    <tr><td class="paramname">idCliente</td><td>Id del cliente a comprobar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True si tiene alquileres, false si no</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True si tiene alquileres, false si no.</dd></dl>
 
 </div>
 </div>

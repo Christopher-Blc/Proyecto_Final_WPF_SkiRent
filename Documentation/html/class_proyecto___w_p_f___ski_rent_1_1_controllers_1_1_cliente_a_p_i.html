@@ -92,7 +92,7 @@ $(function(){initNavTree('class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_
 </div><!--header-->
 <div class="contents">
 
-<p>API para manejar operaciones de cliente desde la capa de presentacion. Contiene metodos para listar, buscar, crear, editar y eliminar clientes.  
+<p>Api para gestionar clientes desde la interfaz. Permite listar, buscar, crear, editar y eliminar clientes.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -100,20 +100,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a986df4ff6a291c0b3061346b371edc70" id="r_a986df4ff6a291c0b3061346b371edc70"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a986df4ff6a291c0b3061346b371edc70">Listar</a> ()</td></tr>
 <tr class="memdesc:a986df4ff6a291c0b3061346b371edc70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todos los clientes.  <br /></td></tr>
 <tr class="memitem:adc4fcaccfa1f86ec007cd1a1d3052c14" id="r_adc4fcaccfa1f86ec007cd1a1d3052c14"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#adc4fcaccfa1f86ec007cd1a1d3052c14">Buscar</a> (string texto)</td></tr>
-<tr class="memdesc:adc4fcaccfa1f86ec007cd1a1d3052c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca clientes cuyo DNI contiene el texto dado.  <br /></td></tr>
+<tr class="memdesc:adc4fcaccfa1f86ec007cd1a1d3052c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca clientes cuyo DNI contiene el texto dado. Si el texto esta vacio devuelve todos.  <br /></td></tr>
 <tr class="memitem:a4ee91fa959d534e59758b895f34ee27f" id="r_a4ee91fa959d534e59758b895f34ee27f"><td class="memItemLeft"><a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4ee91fa959d534e59758b895f34ee27f">BuscarPorId</a> (int id)</td></tr>
 <tr class="memdesc:a4ee91fa959d534e59758b895f34ee27f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un cliente por su id.  <br /></td></tr>
 <tr class="memitem:ae9dd7e15ad7dde3659cf4fb24109534b" id="r_ae9dd7e15ad7dde3659cf4fb24109534b"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#ae9dd7e15ad7dde3659cf4fb24109534b">Crear</a> (string nombre, string apellidos, string telefono, string email, string dni)</td></tr>
-<tr class="memdesc:ae9dd7e15ad7dde3659cf4fb24109534b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un nuevo cliente despues de validar sus datos. Devuelve null si todo va bien, o un texto con el error.  <br /></td></tr>
+<tr class="memdesc:ae9dd7e15ad7dde3659cf4fb24109534b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un cliente nuevo despues de validar los datos. Devuelve null si se creo bien, o un mensaje si hubo error.  <br /></td></tr>
 <tr class="memitem:a6497aadb673abc12cde28cb29ee419a6" id="r_a6497aadb673abc12cde28cb29ee419a6"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a6497aadb673abc12cde28cb29ee419a6">Editar</a> (int id, string nombre, string apellidos, string telefono, string email, string dni)</td></tr>
-<tr class="memdesc:a6497aadb673abc12cde28cb29ee419a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita un cliente existente tras validar los datos. Devuelve null si todo va bien, o un texto con el error.  <br /></td></tr>
+<tr class="memdesc:a6497aadb673abc12cde28cb29ee419a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita un cliente existente despues de validar los datos. Devuelve null si se edito bien, o un mensaje si hubo error.  <br /></td></tr>
 <tr class="memitem:a986d085b9a8c9e8630de1b816037c903" id="r_a986d085b9a8c9e8630de1b816037c903"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a986d085b9a8c9e8630de1b816037c903">Eliminar</a> (int id)</td></tr>
-<tr class="memdesc:a986d085b9a8c9e8630de1b816037c903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un cliente por id si es valido y no tiene alquileres. Devuelve null si se elimino bien, o un texto con el error.  <br /></td></tr>
+<tr class="memdesc:a986d085b9a8c9e8630de1b816037c903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un cliente por id. Devuelve null si se elimino bien, o un mensaje si hubo error.  <br /></td></tr>
 <tr class="memitem:a823b7d74c67e83ee3a6d1ebd81c11bf8" id="r_a823b7d74c67e83ee3a6d1ebd81c11bf8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a823b7d74c67e83ee3a6d1ebd81c11bf8">Cantidad</a> ()</td></tr>
-<tr class="memdesc:a823b7d74c67e83ee3a6d1ebd81c11bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el numero total de clientes para mostrar en el dashboard.  <br /></td></tr>
+<tr class="memdesc:a823b7d74c67e83ee3a6d1ebd81c11bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la cantidad total de clientes.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>API para manejar operaciones de cliente desde la capa de presentacion. Contiene metodos para listar, buscar, crear, editar y eliminar clientes. </p>
+<div class="textblock"><p>Api para gestionar clientes desde la interfaz. Permite listar, buscar, crear, editar y eliminar clientes. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="adc4fcaccfa1f86ec007cd1a1d3052c14" name="adc4fcaccfa1f86ec007cd1a1d3052c14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc4fcaccfa1f86ec007cd1a1d3052c14">&#9670;&#160;</a></span>Buscar()</h2>
@@ -130,14 +130,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Busca clientes cuyo DNI contiene el texto dado. </p>
+<p>Busca clientes cuyo DNI contiene el texto dado. Si el texto esta vacio devuelve todos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texto</td><td>Texto a buscar dentro del DNI</td></tr>
+    <tr><td class="paramname">texto</td><td>Texto a buscar dentro del DNI.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Lista de clientes que coinciden con la busqueda</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Lista de clientes que coinciden con la busqueda.</dd></dl>
 
 </div>
 </div>
@@ -159,11 +159,11 @@ Public Member Functions</h2></td></tr>
 <p>Busca un cliente por su id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Id del cliente a buscar</td></tr>
+    <tr><td class="paramname">id</td><td>Id del cliente a buscar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> si existe, sino null</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ski_rent_model_1_1_cliente.html">Cliente</a> si existe, o null si no existe.</dd></dl>
 
 </div>
 </div>
@@ -182,8 +182,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Devuelve el numero total de clientes para mostrar en el dashboard. </p>
-<dl class="section return"><dt>Returns</dt><dd>Cantidad total de clientes</dd></dl>
+<p>Devuelve la cantidad total de clientes. </p>
+<dl class="section return"><dt>Returns</dt><dd>Numero total de clientes.</dd></dl>
 
 </div>
 </div>
@@ -221,18 +221,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Crea un nuevo cliente despues de validar sus datos. Devuelve null si todo va bien, o un texto con el error. </p>
+<p>Crea un cliente nuevo despues de validar los datos. Devuelve null si se creo bien, o un mensaje si hubo error. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nombre</td><td>Nombre del cliente</td></tr>
-    <tr><td class="paramname">apellidos</td><td>Apellidos del cliente</td></tr>
-    <tr><td class="paramname">telefono</td><td>Telefono del cliente</td></tr>
-    <tr><td class="paramname">email</td><td>Email del cliente</td></tr>
-    <tr><td class="paramname">dni</td><td>DNI del cliente</td></tr>
+    <tr><td class="paramname">nombre</td><td>Nombre del cliente.</td></tr>
+    <tr><td class="paramname">apellidos</td><td>Apellidos del cliente.</td></tr>
+    <tr><td class="paramname">telefono</td><td>Telefono del cliente.</td></tr>
+    <tr><td class="paramname">email</td><td>Email del cliente.</td></tr>
+    <tr><td class="paramname">dni</td><td>DNI del cliente.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si se creo bien, o mensaje de error</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si se creo bien, o un mensaje si hubo error.</dd></dl>
 
 </div>
 </div>
@@ -275,19 +275,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Edita un cliente existente tras validar los datos. Devuelve null si todo va bien, o un texto con el error. </p>
+<p>Edita un cliente existente despues de validar los datos. Devuelve null si se edito bien, o un mensaje si hubo error. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Id del cliente a editar</td></tr>
-    <tr><td class="paramname">nombre</td><td>Nombre nuevo</td></tr>
-    <tr><td class="paramname">apellidos</td><td>Apellidos nuevos</td></tr>
-    <tr><td class="paramname">telefono</td><td>Telefono nuevo</td></tr>
-    <tr><td class="paramname">email</td><td>Email nuevo</td></tr>
-    <tr><td class="paramname">dni</td><td>DNI nuevo</td></tr>
+    <tr><td class="paramname">id</td><td>Id del cliente a editar.</td></tr>
+    <tr><td class="paramname">nombre</td><td>Nombre nuevo del cliente.</td></tr>
+    <tr><td class="paramname">apellidos</td><td>Apellidos nuevos del cliente.</td></tr>
+    <tr><td class="paramname">telefono</td><td>Telefono nuevo del cliente.</td></tr>
+    <tr><td class="paramname">email</td><td>Email nuevo del cliente.</td></tr>
+    <tr><td class="paramname">dni</td><td>DNI nuevo del cliente.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si se edito bien, o mensaje de error</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si se edito bien, o un mensaje si hubo error.</dd></dl>
 
 </div>
 </div>
@@ -306,14 +306,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Elimina un cliente por id si es valido y no tiene alquileres. Devuelve null si se elimino bien, o un texto con el error. </p>
+<p>Elimina un cliente por id. Devuelve null si se elimino bien, o un mensaje si hubo error. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Id del cliente a eliminar</td></tr>
+    <tr><td class="paramname">id</td><td>Id del cliente a eliminar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si se elimino bien, o mensaje de error</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si se elimino bien, o un mensaje si hubo error.</dd></dl>
 
 </div>
 </div>
@@ -333,7 +333,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Devuelve todos los clientes. </p>
-<dl class="section return"><dt>Returns</dt><dd>Lista con todos los clientes</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Lista con todos los clientes.</dd></dl>
 
 </div>
 </div>

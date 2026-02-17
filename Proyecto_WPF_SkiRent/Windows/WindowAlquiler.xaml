@@ -249,7 +249,8 @@
                             <DataGridTextColumn Header="Modelo" Binding="{Binding Material.Modelo}" Width="1.5*" />
                             <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" Width="80" />
                             <DataGridTextColumn Header="Días" Binding="{Binding Dias}" Width="80" />
-                            <DataGridTextColumn Header="Total" Binding="{Binding Total}" Width="100" />
+                            <DataGridTextColumn Header="Subtotal" Binding="{Binding Subtotal, StringFormat=0.00}" Width="100" />
+
                         </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>

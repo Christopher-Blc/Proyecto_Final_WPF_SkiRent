@@ -92,30 +92,30 @@ $(function(){initNavTree('class_ski_rent_model_1_1_repos_1_1_alquiler_repo.html'
 </div><!--header-->
 <div class="contents">
 
-<p>Repositorio para manejar las operaciones sobre alquileres. Aqui se guardan, buscan, editan y borran alquileres.  
+<p>Repositorio para trabajar con alquileres en la base de datos. Permite listar, buscar, anadir, editar y eliminar alquileres.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2719f8ed660e4308f57bec41ca91328e" id="r_a2719f8ed660e4308f57bec41ca91328e"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_alquiler.html">Alquiler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a2719f8ed660e4308f57bec41ca91328e">Listar</a> ()</td></tr>
-<tr class="memdesc:a2719f8ed660e4308f57bec41ca91328e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todos los alquileres almacenados.  <br /></td></tr>
+<tr class="memdesc:a2719f8ed660e4308f57bec41ca91328e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todos los alquileres guardados.  <br /></td></tr>
 <tr class="memitem:ae2189fd6bdde754ab63d6f1ed64ee630" id="r_ae2189fd6bdde754ab63d6f1ed64ee630"><td class="memItemLeft"><a class="el" href="class_ski_rent_model_1_1_alquiler.html">Alquiler</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae2189fd6bdde754ab63d6f1ed64ee630">BuscarPorId</a> (int idAlquiler)</td></tr>
 <tr class="memdesc:ae2189fd6bdde754ab63d6f1ed64ee630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un alquiler por su id.  <br /></td></tr>
 <tr class="memitem:a04986e30ac536ae59f8cdbcbc5f5f138" id="r_a04986e30ac536ae59f8cdbcbc5f5f138"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_alquiler.html">Alquiler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a04986e30ac536ae59f8cdbcbc5f5f138">Buscar</a> (string texto)</td></tr>
-<tr class="memdesc:a04986e30ac536ae59f8cdbcbc5f5f138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca alquileres que coincidan con el texto. Si el texto esta vacio devuelve todos.  <br /></td></tr>
+<tr class="memdesc:a04986e30ac536ae59f8cdbcbc5f5f138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca alquileres por un texto. Si el texto esta vacio, devuelve todos los alquileres.  <br /></td></tr>
 <tr class="memitem:a462fd7f7e05f2e3631f88b5fa269f9c7" id="r_a462fd7f7e05f2e3631f88b5fa269f9c7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a462fd7f7e05f2e3631f88b5fa269f9c7">Anyadir</a> (<a class="el" href="class_ski_rent_model_1_1_alquiler.html">Alquiler</a> alquiler)</td></tr>
-<tr class="memdesc:a462fd7f7e05f2e3631f88b5fa269f9c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anyade un nuevo alquiler al sistema.  <br /></td></tr>
+<tr class="memdesc:a462fd7f7e05f2e3631f88b5fa269f9c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anade un alquiler nuevo a la base de datos.  <br /></td></tr>
 <tr class="memitem:a59df7de01b92328971ec01089b33cf44" id="r_a59df7de01b92328971ec01089b33cf44"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a59df7de01b92328971ec01089b33cf44">Editar</a> (<a class="el" href="class_ski_rent_model_1_1_alquiler.html">Alquiler</a> alquilerActualizado)</td></tr>
-<tr class="memdesc:a59df7de01b92328971ec01089b33cf44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita un alquiler existente con los datos dados. Si no existe no hace nada.  <br /></td></tr>
+<tr class="memdesc:a59df7de01b92328971ec01089b33cf44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita un alquiler que ya existe. Si no existe, no hace nada.  <br /></td></tr>
 <tr class="memitem:aacbdf4e24c4792f4c7b2aa1e9b0de0ee" id="r_aacbdf4e24c4792f4c7b2aa1e9b0de0ee"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aacbdf4e24c4792f4c7b2aa1e9b0de0ee">Eliminar</a> (int idAlquiler)</td></tr>
-<tr class="memdesc:aacbdf4e24c4792f4c7b2aa1e9b0de0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un alquiler y sus lineas relacionadas.  <br /></td></tr>
+<tr class="memdesc:aacbdf4e24c4792f4c7b2aa1e9b0de0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un alquiler por su id. Antes borra las lineas del alquiler para evitar errores.  <br /></td></tr>
 <tr class="memitem:abdf5210006b163c611d1420610d312b7" id="r_abdf5210006b163c611d1420610d312b7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#abdf5210006b163c611d1420610d312b7">CantidadActivos</a> ()</td></tr>
-<tr class="memdesc:abdf5210006b163c611d1420610d312b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cuenta cuantos alquileres tienen estado abierto.  <br /></td></tr>
+<tr class="memdesc:abdf5210006b163c611d1420610d312b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cuenta cuantos alquileres estan en estado Abierto.  <br /></td></tr>
 <tr class="memitem:a36df2f27ef191e04f1e7e1d3dfd6aac4" id="r_a36df2f27ef191e04f1e7e1d3dfd6aac4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a36df2f27ef191e04f1e7e1d3dfd6aac4">TieneLineas</a> (int idAlquiler)</td></tr>
-<tr class="memdesc:a36df2f27ef191e04f1e7e1d3dfd6aac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si un alquiler tiene lineas asociadas.  <br /></td></tr>
+<tr class="memdesc:a36df2f27ef191e04f1e7e1d3dfd6aac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dice si un alquiler tiene lineas asociadas.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Repositorio para manejar las operaciones sobre alquileres. Aqui se guardan, buscan, editan y borran alquileres. </p>
+<div class="textblock"><p>Repositorio para trabajar con alquileres en la base de datos. Permite listar, buscar, anadir, editar y eliminar alquileres. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a462fd7f7e05f2e3631f88b5fa269f9c7" name="a462fd7f7e05f2e3631f88b5fa269f9c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a462fd7f7e05f2e3631f88b5fa269f9c7">&#9670;&#160;</a></span>Anyadir()</h2>
@@ -132,10 +132,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Anyade un nuevo alquiler al sistema. </p>
+<p>Anade un alquiler nuevo a la base de datos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">alquiler</td><td>Objeto alquiler a guardar.</td></tr>
+    <tr><td class="paramname">alquiler</td><td><a class="el" href="class_ski_rent_model_1_1_alquiler.html">Alquiler</a> que se quiere guardar.</td></tr>
   </table>
   </dd>
 </dl>
@@ -157,10 +157,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Busca alquileres que coincidan con el texto. Si el texto esta vacio devuelve todos. </p>
+<p>Busca alquileres por un texto. Si el texto esta vacio, devuelve todos los alquileres. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texto</td><td>Texto para buscar por estado o id cliente.</td></tr>
+    <tr><td class="paramname">texto</td><td>Texto para buscar por estado o por id de cliente.</td></tr>
   </table>
   </dd>
 </dl>
@@ -186,11 +186,11 @@ Public Member Functions</h2></td></tr>
 <p>Busca un alquiler por su id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler a buscar.</td></tr>
+    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler que se quiere buscar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>El alquiler encontrado o null si no existe.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>El alquiler encontrado, o null si no existe.</dd></dl>
 
 </div>
 </div>
@@ -209,8 +209,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cuenta cuantos alquileres tienen estado abierto. </p>
-<dl class="section return"><dt>Returns</dt><dd>Numero de alquileres con estado "Abierto".</dd></dl>
+<p>Cuenta cuantos alquileres estan en estado Abierto. </p>
+<dl class="section return"><dt>Returns</dt><dd>Numero de alquileres con estado Abierto.</dd></dl>
 
 </div>
 </div>
@@ -229,10 +229,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Edita un alquiler existente con los datos dados. Si no existe no hace nada. </p>
+<p>Edita un alquiler que ya existe. Si no existe, no hace nada. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">alquilerActualizado</td><td><a class="el" href="class_ski_rent_model_1_1_alquiler.html">Alquiler</a> con los datos actualizados. Debe tener el Id correcto.</td></tr>
+    <tr><td class="paramname">alquilerActualizado</td><td><a class="el" href="class_ski_rent_model_1_1_alquiler.html">Alquiler</a> con los datos nuevos y el id correcto.</td></tr>
   </table>
   </dd>
 </dl>
@@ -254,10 +254,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Elimina un alquiler y sus lineas relacionadas. </p>
+<p>Elimina un alquiler por su id. Antes borra las lineas del alquiler para evitar errores. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler a eliminar.</td></tr>
+    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler que se quiere eliminar.</td></tr>
   </table>
   </dd>
 </dl>
@@ -280,7 +280,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Devuelve todos los alquileres almacenados. </p>
+<p>Devuelve todos los alquileres guardados. </p>
 <dl class="section return"><dt>Returns</dt><dd>Lista con todos los alquileres.</dd></dl>
 
 </div>
@@ -300,14 +300,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Indica si un alquiler tiene lineas asociadas. </p>
+<p>Dice si un alquiler tiene lineas asociadas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">idAlquiler</td><td>Id del alquiler a comprobar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True si tiene lineas, false si no.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True si tiene lineas, false si no tiene.</dd></dl>
 
 </div>
 </div>

@@ -92,30 +92,32 @@ $(function(){initNavTree('class_ski_rent_model_1_1_repos_1_1_material_repo.html'
 </div><!--header-->
 <div class="contents">
 
-<p>Repositorio para gestionar los materiales en la base de datos. Contiene operaciones basicas como listar, buscar, añadir, editar y borrar.  
+<p>Repositorio para gestionar materiales en la base de datos. Permite listar, buscar, anadir, editar y eliminar.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a073fe867c6af466949d1e93392469d1a" id="r_a073fe867c6af466949d1e93392469d1a"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a073fe867c6af466949d1e93392469d1a">Listar</a> ()</td></tr>
-<tr class="memdesc:a073fe867c6af466949d1e93392469d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todos los materiales guardados.  <br /></td></tr>
+<tr class="memdesc:a073fe867c6af466949d1e93392469d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todos los materiales.  <br /></td></tr>
 <tr class="memitem:a607a1a24bf55389af8cfb625f6dad1f5" id="r_a607a1a24bf55389af8cfb625f6dad1f5"><td class="memItemLeft"><a class="el" href="class_ski_rent_model_1_1_material.html">Material</a>&#160;</td><td class="memItemRight"><a class="el" href="#a607a1a24bf55389af8cfb625f6dad1f5">BuscarPorId</a> (int idMaterial)</td></tr>
 <tr class="memdesc:a607a1a24bf55389af8cfb625f6dad1f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un material por su id.  <br /></td></tr>
 <tr class="memitem:a3499c89426ed7954b93aed806ee42993" id="r_a3499c89426ed7954b93aed806ee42993"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3499c89426ed7954b93aed806ee42993">BuscarPorCodigo</a> (string texto)</td></tr>
-<tr class="memdesc:a3499c89426ed7954b93aed806ee42993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca materiales cuyo codigo contenga el texto dado. Si el texto esta vacio o solo espacios devuelve todos los materiales.  <br /></td></tr>
+<tr class="memdesc:a3499c89426ed7954b93aed806ee42993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca materiales cuyo codigo contiene el texto dado. Si el texto esta vacio devuelve todos.  <br /></td></tr>
 <tr class="memitem:acd001648a16ef84d48c0de99d94da3c4" id="r_acd001648a16ef84d48c0de99d94da3c4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acd001648a16ef84d48c0de99d94da3c4">Anyadir</a> (<a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> material)</td></tr>
-<tr class="memdesc:acd001648a16ef84d48c0de99d94da3c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anyade un nuevo material a la base de datos.  <br /></td></tr>
+<tr class="memdesc:acd001648a16ef84d48c0de99d94da3c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda un material nuevo en la base de datos.  <br /></td></tr>
 <tr class="memitem:a3042a20f3821772d10839d5407d35706" id="r_a3042a20f3821772d10839d5407d35706"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3042a20f3821772d10839d5407d35706">Editar</a> (<a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> materialActualizado)</td></tr>
-<tr class="memdesc:a3042a20f3821772d10839d5407d35706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza los datos de un material existente. Si no se encuentra el material no hace nada.  <br /></td></tr>
+<tr class="memdesc:a3042a20f3821772d10839d5407d35706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita un material existente. Si no existe, no hace nada.  <br /></td></tr>
 <tr class="memitem:a34987d4b29cee05b48e67bf57ff59b7a" id="r_a34987d4b29cee05b48e67bf57ff59b7a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a34987d4b29cee05b48e67bf57ff59b7a">Eliminar</a> (int idMaterial)</td></tr>
-<tr class="memdesc:a34987d4b29cee05b48e67bf57ff59b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un material por su id si no esta siendo usado en lineas de alquiler.  <br /></td></tr>
+<tr class="memdesc:a34987d4b29cee05b48e67bf57ff59b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un material por su id si se puede. Si esta en lineas de alquiler, no se elimina.  <br /></td></tr>
 <tr class="memitem:a77c7c76ba3137dfdeb11cb5190d0a8a6" id="r_a77c7c76ba3137dfdeb11cb5190d0a8a6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a77c7c76ba3137dfdeb11cb5190d0a8a6">TieneLineasAlquiler</a> (int idMaterial)</td></tr>
-<tr class="memdesc:a77c7c76ba3137dfdeb11cb5190d0a8a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si un material tiene lineas de alquiler asociadas.  <br /></td></tr>
+<tr class="memdesc:a77c7c76ba3137dfdeb11cb5190d0a8a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dice si un material esta en alguna linea de alquiler.  <br /></td></tr>
+<tr class="memitem:abbbc562a681da3572051dc3842e1a8f5" id="r_abbbc562a681da3572051dc3842e1a8f5"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#abbbc562a681da3572051dc3842e1a8f5">ListarDisponible</a> ()</td></tr>
+<tr class="memdesc:abbbc562a681da3572051dc3842e1a8f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve materiales disponiblesy que tengan stock.  <br /></td></tr>
 <tr class="memitem:a14266af1fb7f69f37789cc9baed0e054" id="r_a14266af1fb7f69f37789cc9baed0e054"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a14266af1fb7f69f37789cc9baed0e054">Cantidad</a> ()</td></tr>
-<tr class="memdesc:a14266af1fb7f69f37789cc9baed0e054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cuenta cuantos materiales hay en la base de datos.  <br /></td></tr>
+<tr class="memdesc:a14266af1fb7f69f37789cc9baed0e054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la cantidad total de materiales.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Repositorio para gestionar los materiales en la base de datos. Contiene operaciones basicas como listar, buscar, añadir, editar y borrar. </p>
+<div class="textblock"><p>Repositorio para gestionar materiales en la base de datos. Permite listar, buscar, anadir, editar y eliminar. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="acd001648a16ef84d48c0de99d94da3c4" name="acd001648a16ef84d48c0de99d94da3c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd001648a16ef84d48c0de99d94da3c4">&#9670;&#160;</a></span>Anyadir()</h2>
@@ -132,10 +134,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Anyade un nuevo material a la base de datos. </p>
+<p>Guarda un material nuevo en la base de datos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">material</td><td>Objeto material a guardar.</td></tr>
+    <tr><td class="paramname">material</td><td><a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> a guardar.</td></tr>
   </table>
   </dd>
 </dl>
@@ -157,14 +159,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Busca materiales cuyo codigo contenga el texto dado. Si el texto esta vacio o solo espacios devuelve todos los materiales. </p>
+<p>Busca materiales cuyo codigo contiene el texto dado. Si el texto esta vacio devuelve todos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texto</td><td>Texto que debe contener el codigo.</td></tr>
+    <tr><td class="paramname">texto</td><td>Texto a buscar dentro del codigo.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Lista de materiales que cumplen la condicion.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Lista de materiales que coinciden.</dd></dl>
 
 </div>
 </div>
@@ -186,11 +188,11 @@ Public Member Functions</h2></td></tr>
 <p>Busca un material por su id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idMaterial</td><td>Identificador del material a buscar.</td></tr>
+    <tr><td class="paramname">idMaterial</td><td>Id del material.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>El material si existe, o null si no se encuentra.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> si existe, o null si no existe.</dd></dl>
 
 </div>
 </div>
@@ -209,7 +211,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cuenta cuantos materiales hay en la base de datos. </p>
+<p>Devuelve la cantidad total de materiales. </p>
 <dl class="section return"><dt>Returns</dt><dd>Numero total de materiales.</dd></dl>
 
 </div>
@@ -229,10 +231,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Actualiza los datos de un material existente. Si no se encuentra el material no hace nada. </p>
+<p>Edita un material existente. Si no existe, no hace nada. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">materialActualizado</td><td>Objeto con los datos actualizados. Debe incluir el IdMaterial.</td></tr>
+    <tr><td class="paramname">materialActualizado</td><td><a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> con los datos nuevos y el id correcto.</td></tr>
   </table>
   </dd>
 </dl>
@@ -254,14 +256,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Elimina un material por su id si no esta siendo usado en lineas de alquiler. </p>
+<p>Elimina un material por su id si se puede. Si esta en lineas de alquiler, no se elimina. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idMaterial</td><td>Identificador del material a eliminar.</td></tr>
+    <tr><td class="paramname">idMaterial</td><td>Id del material.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True si se elimino, false si no se encontro o si esta en uso.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True si se elimino, false si no se pudo.</dd></dl>
 
 </div>
 </div>
@@ -280,8 +282,28 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Devuelve todos los materiales guardados. </p>
+<p>Devuelve todos los materiales. </p>
 <dl class="section return"><dt>Returns</dt><dd>Lista con todos los materiales.</dd></dl>
+
+</div>
+</div>
+<a id="abbbc562a681da3572051dc3842e1a8f5" name="abbbc562a681da3572051dc3842e1a8f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbbc562a681da3572051dc3842e1a8f5">&#9670;&#160;</a></span>ListarDisponible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> &gt; SkiRentModel.Repos.MaterialRepo.ListarDisponible </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve materiales disponiblesy que tengan stock. </p>
+<dl class="section return"><dt>Returns</dt><dd>Lista de materiales disponibles.</dd></dl>
 
 </div>
 </div>
@@ -300,14 +322,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Comprueba si un material tiene lineas de alquiler asociadas. </p>
+<p>Dice si un material esta en alguna linea de alquiler. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idMaterial</td><td>Identificador del material a comprobar.</td></tr>
+    <tr><td class="paramname">idMaterial</td><td>Id del material.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True si existe alguna linea de alquiler con el material, false si no.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True si existe una linea con ese material, false si no.</dd></dl>
 
 </div>
 </div>

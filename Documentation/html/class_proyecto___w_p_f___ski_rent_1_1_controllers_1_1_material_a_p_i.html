@@ -92,7 +92,7 @@ $(function(){initNavTree('class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_
 </div><!--header-->
 <div class="contents">
 
-<p>API para gestionar materiales. Valida datos y usa el repositorio para operaciones.  
+<p>Api para gestionar materiales desde la interfaz. Valida los datos y llama al repositorio para guardar cambios.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -102,18 +102,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7f575e7d05e3ecdc919a985c427c5774" id="r_a7f575e7d05e3ecdc919a985c427c5774"><td class="memItemLeft"><a class="el" href="class_ski_rent_model_1_1_material.html">Material</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7f575e7d05e3ecdc919a985c427c5774">BuscarPorId</a> (int id)</td></tr>
 <tr class="memdesc:a7f575e7d05e3ecdc919a985c427c5774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un material por su id.  <br /></td></tr>
 <tr class="memitem:a1f4e5a6ae4db6271f6df4de94a03b68e" id="r_a1f4e5a6ae4db6271f6df4de94a03b68e"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1f4e5a6ae4db6271f6df4de94a03b68e">BuscarPorCodigo</a> (string codigo)</td></tr>
-<tr class="memdesc:a1f4e5a6ae4db6271f6df4de94a03b68e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca materiales por codigo, puede devolver muchos o ninguno.  <br /></td></tr>
+<tr class="memdesc:a1f4e5a6ae4db6271f6df4de94a03b68e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca materiales por codigo. Puede devolver varios o ninguno.  <br /></td></tr>
 <tr class="memitem:aca8b3ffa820047d361095b518a71d2cd" id="r_aca8b3ffa820047d361095b518a71d2cd"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#aca8b3ffa820047d361095b518a71d2cd">Crear</a> (string codigo, string marca, string modelo, string talla, string estado, decimal precioDia, int stock, int idCategoria)</td></tr>
-<tr class="memdesc:aca8b3ffa820047d361095b518a71d2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un nuevo material despues de validar los datos. Devuelve null si todo va bien o un mensaje de error si falla.  <br /></td></tr>
+<tr class="memdesc:aca8b3ffa820047d361095b518a71d2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un material nuevo despues de validar los datos. Devuelve null si se creo bien, o un mensaje si hubo error.  <br /></td></tr>
 <tr class="memitem:a3b22fe4c538a5af9fd66e0c170825765" id="r_a3b22fe4c538a5af9fd66e0c170825765"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a3b22fe4c538a5af9fd66e0c170825765">Editar</a> (int id, string codigo, string marca, string modelo, string talla, string estado, decimal precioDia, int stock, int idCategoria)</td></tr>
-<tr class="memdesc:a3b22fe4c538a5af9fd66e0c170825765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita un material ya existente. Devuelve null si todo va bien o un mensaje de error.  <br /></td></tr>
+<tr class="memdesc:a3b22fe4c538a5af9fd66e0c170825765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita un material existente despues de validar los datos. Devuelve null si se edito bien, o un mensaje si hubo error.  <br /></td></tr>
 <tr class="memitem:ae0337aeefea43ce00853a2cf350f5b40" id="r_ae0337aeefea43ce00853a2cf350f5b40"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#ae0337aeefea43ce00853a2cf350f5b40">Eliminar</a> (int id)</td></tr>
-<tr class="memdesc:ae0337aeefea43ce00853a2cf350f5b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un material si no esta en uso. Devuelve null si se borra, o un mensaje de error.  <br /></td></tr>
+<tr class="memdesc:ae0337aeefea43ce00853a2cf350f5b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un material si se puede. Si esta en alguna linea de alquiler, no se elimina.  <br /></td></tr>
 <tr class="memitem:a760a192d61977d9f4b2f69ca369d3a6b" id="r_a760a192d61977d9f4b2f69ca369d3a6b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a760a192d61977d9f4b2f69ca369d3a6b">Cantidad</a> ()</td></tr>
 <tr class="memdesc:a760a192d61977d9f4b2f69ca369d3a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la cantidad total de materiales.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>API para gestionar materiales. Valida datos y usa el repositorio para operaciones. </p>
+<div class="textblock"><p>Api para gestionar materiales desde la interfaz. Valida los datos y llama al repositorio para guardar cambios. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a1f4e5a6ae4db6271f6df4de94a03b68e" name="a1f4e5a6ae4db6271f6df4de94a03b68e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f4e5a6ae4db6271f6df4de94a03b68e">&#9670;&#160;</a></span>BuscarPorCodigo()</h2>
@@ -130,7 +130,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Busca materiales por codigo, puede devolver muchos o ninguno. </p>
+<p>Busca materiales por codigo. Puede devolver varios o ninguno. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">codigo</td><td>Texto a buscar dentro del codigo.</td></tr>
@@ -159,11 +159,11 @@ Public Member Functions</h2></td></tr>
 <p>Busca un material por su id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Id del material a buscar.</td></tr>
+    <tr><td class="paramname">id</td><td>Id del material.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>El material si existe, o null si no se encuentra.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> si existe, o null si no existe.</dd></dl>
 
 </div>
 </div>
@@ -236,7 +236,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Crea un nuevo material despues de validar los datos. Devuelve null si todo va bien o un mensaje de error si falla. </p>
+<p>Crea un material nuevo despues de validar los datos. Devuelve null si se creo bien, o un mensaje si hubo error. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">codigo</td><td>Codigo del material.</td></tr>
@@ -245,12 +245,12 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">talla</td><td>Talla o longitud.</td></tr>
     <tr><td class="paramname">estado</td><td>Estado del material.</td></tr>
     <tr><td class="paramname">precioDia</td><td>Precio por dia.</td></tr>
-    <tr><td class="paramname">stock</td><td>Cantidad en stock.</td></tr>
+    <tr><td class="paramname">stock</td><td>Stock inicial.</td></tr>
     <tr><td class="paramname">idCategoria</td><td>Id de la categoria.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si se crea bien, o texto con el error.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si se creo bien, o un mensaje si hubo error.</dd></dl>
 
 </div>
 </div>
@@ -308,10 +308,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Edita un material ya existente. Devuelve null si todo va bien o un mensaje de error. </p>
+<p>Edita un material existente despues de validar los datos. Devuelve null si se edito bien, o un mensaje si hubo error. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Id del material a editar.</td></tr>
+    <tr><td class="paramname">id</td><td>Id del material.</td></tr>
     <tr><td class="paramname">codigo</td><td>Nuevo codigo.</td></tr>
     <tr><td class="paramname">marca</td><td>Nueva marca.</td></tr>
     <tr><td class="paramname">modelo</td><td>Nuevo modelo.</td></tr>
@@ -323,7 +323,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si se edita bien, o texto con el error.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si se edito bien, o un mensaje si hubo error.</dd></dl>
 
 </div>
 </div>
@@ -342,14 +342,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Elimina un material si no esta en uso. Devuelve null si se borra, o un mensaje de error. </p>
+<p>Elimina un material si se puede. Si esta en alguna linea de alquiler, no se elimina. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Id del material a eliminar.</td></tr>
+    <tr><td class="paramname">id</td><td>Id del material.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si se elimina, o texto con el error.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si se elimino bien, o un mensaje si no se pudo.</dd></dl>
 
 </div>
 </div>

@@ -92,29 +92,58 @@ $(function(){initNavTree('class_ski_rent_model_1_1_repos_1_1_linea_alquiler_repo
 </div><!--header-->
 <div class="contents">
 
-<p>Repo para manejar las lineas de alquiler en la base de datos.  
+<p>Repositorio para trabajar con lineas de alquiler en la base de datos. Contiene operaciones de lectura y guardado.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a36d4ef868d07412e29ccbcbe627de20f" id="r_a36d4ef868d07412e29ccbcbe627de20f"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_linea_alquiler.html">LineaAlquiler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a36d4ef868d07412e29ccbcbe627de20f">ListarPorAlquiler</a> (int idAlquiler)</td></tr>
-<tr class="memdesc:a36d4ef868d07412e29ccbcbe627de20f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista las lineas que pertenecen a un alquiler dado.  <br /></td></tr>
-<tr class="memitem:a38c5363c930c32dc87c4ac013634a7bd" id="r_a38c5363c930c32dc87c4ac013634a7bd"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a38c5363c930c32dc87c4ac013634a7bd">Anyadir</a> (<a class="el" href="class_ski_rent_model_1_1_linea_alquiler.html">LineaAlquiler</a> linea)</td></tr>
-<tr class="memdesc:a38c5363c930c32dc87c4ac013634a7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anade una linea al alquiler si el alquiler esta abierto.  <br /></td></tr>
-<tr class="memitem:a71221dedc3ba573d0330ca8a33169d57" id="r_a71221dedc3ba573d0330ca8a33169d57"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a71221dedc3ba573d0330ca8a33169d57">Eliminar</a> (int idLinea)</td></tr>
-<tr class="memdesc:a71221dedc3ba573d0330ca8a33169d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una linea de un alquiler si el alquiler esta abierto.  <br /></td></tr>
+<tr class="memdesc:a36d4ef868d07412e29ccbcbe627de20f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve las lineas que pertenecen a un alquiler.  <br /></td></tr>
+<tr class="memitem:a18d99879f7d98934d3f2000688c7a6bf" id="r_a18d99879f7d98934d3f2000688c7a6bf"><td class="memItemLeft"><a class="el" href="class_ski_rent_model_1_1_linea_alquiler.html">LineaAlquiler</a>&#160;</td><td class="memItemRight"><a class="el" href="#a18d99879f7d98934d3f2000688c7a6bf">BuscarPorId</a> (int idLinea)</td></tr>
+<tr class="memdesc:a18d99879f7d98934d3f2000688c7a6bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca una linea por su id.  <br /></td></tr>
+<tr class="memitem:a56ee4637f269e56a66812a48fd64c8d5" id="r_a56ee4637f269e56a66812a48fd64c8d5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a56ee4637f269e56a66812a48fd64c8d5">Anyadir</a> (<a class="el" href="class_ski_rent_model_1_1_linea_alquiler.html">LineaAlquiler</a> linea)</td></tr>
+<tr class="memdesc:a56ee4637f269e56a66812a48fd64c8d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda una linea nueva en la base de datos.  <br /></td></tr>
+<tr class="memitem:a2185a9ca3121f40ad07476a6300a9e39" id="r_a2185a9ca3121f40ad07476a6300a9e39"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2185a9ca3121f40ad07476a6300a9e39">Eliminar</a> (<a class="el" href="class_ski_rent_model_1_1_linea_alquiler.html">LineaAlquiler</a> linea)</td></tr>
+<tr class="memdesc:a2185a9ca3121f40ad07476a6300a9e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una linea existente.  <br /></td></tr>
+<tr class="memitem:ab8361c43caccc4d6c7142b13f294228c" id="r_ab8361c43caccc4d6c7142b13f294228c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab8361c43caccc4d6c7142b13f294228c">ActualizarTotal</a> (int idAlquiler)</td></tr>
+<tr class="memdesc:ab8361c43caccc4d6c7142b13f294228c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recalcula el total del alquiler sumando los subtotales de sus lineas.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Repo para manejar las lineas de alquiler en la base de datos. </p>
+<div class="textblock"><p>Repositorio para trabajar con lineas de alquiler en la base de datos. Contiene operaciones de lectura y guardado. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a38c5363c930c32dc87c4ac013634a7bd" name="a38c5363c930c32dc87c4ac013634a7bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38c5363c930c32dc87c4ac013634a7bd">&#9670;&#160;</a></span>Anyadir()</h2>
+<a id="ab8361c43caccc4d6c7142b13f294228c" name="ab8361c43caccc4d6c7142b13f294228c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8361c43caccc4d6c7142b13f294228c">&#9670;&#160;</a></span>ActualizarTotal()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool SkiRentModel.Repos.LineaAlquilerRepo.Anyadir </td>
+          <td class="memname">void SkiRentModel.Repos.LineaAlquilerRepo.ActualizarTotal </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idAlquiler</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recalcula el total del alquiler sumando los subtotales de sus lineas. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a56ee4637f269e56a66812a48fd64c8d5" name="a56ee4637f269e56a66812a48fd64c8d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56ee4637f269e56a66812a48fd64c8d5">&#9670;&#160;</a></span>Anyadir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkiRentModel.Repos.LineaAlquilerRepo.Anyadir </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_ski_rent_model_1_1_linea_alquiler.html">LineaAlquiler</a></td>          <td class="paramname"><span class="paramname"><em>linea</em></span></td><td>)</td>
           <td></td>
@@ -122,25 +151,24 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Anade una linea al alquiler si el alquiler esta abierto. </p>
+<p>Guarda una linea nueva en la base de datos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">linea</td><td>Objeto linea con los datos a anadir (IdAlquiler, IdMaterial, Cantidad, Dias, PrecioDiaAplicado opcional).</td></tr>
+    <tr><td class="paramname">linea</td><td>Linea a guardar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true si se anadio la linea y se actualizo el stock y total; false si fallo alguna condicion.</dd></dl>
 
 </div>
 </div>
-<a id="a71221dedc3ba573d0330ca8a33169d57" name="a71221dedc3ba573d0330ca8a33169d57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71221dedc3ba573d0330ca8a33169d57">&#9670;&#160;</a></span>Eliminar()</h2>
+<a id="a18d99879f7d98934d3f2000688c7a6bf" name="a18d99879f7d98934d3f2000688c7a6bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18d99879f7d98934d3f2000688c7a6bf">&#9670;&#160;</a></span>BuscarPorId()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool SkiRentModel.Repos.LineaAlquilerRepo.Eliminar </td>
+          <td class="memname"><a class="el" href="class_ski_rent_model_1_1_linea_alquiler.html">LineaAlquiler</a> SkiRentModel.Repos.LineaAlquilerRepo.BuscarPorId </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idLinea</em></span></td><td>)</td>
           <td></td>
@@ -148,14 +176,39 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Elimina una linea de un alquiler si el alquiler esta abierto. </p>
+<p>Busca una linea por su id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idLinea</td><td>Id de la linea a eliminar.</td></tr>
+    <tr><td class="paramname">idLinea</td><td>Id de la linea.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true si se elimino y se devolvio el stock y se actualizo el total; false si no se pudo eliminar.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Linea encontrada o null.</dd></dl>
+
+</div>
+</div>
+<a id="a2185a9ca3121f40ad07476a6300a9e39" name="a2185a9ca3121f40ad07476a6300a9e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2185a9ca3121f40ad07476a6300a9e39">&#9670;&#160;</a></span>Eliminar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkiRentModel.Repos.LineaAlquilerRepo.Eliminar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_ski_rent_model_1_1_linea_alquiler.html">LineaAlquiler</a></td>          <td class="paramname"><span class="paramname"><em>linea</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina una linea existente. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">linea</td><td>Linea a eliminar.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -174,14 +227,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lista las lineas que pertenecen a un alquiler dado. </p>
+<p>Devuelve las lineas que pertenecen a un alquiler. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler para filtrar las lineas.</td></tr>
+    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Lista de lineas del alquiler. Puede estar vacia si no hay lineas.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Lista de lineas del alquiler.</dd></dl>
 
 </div>
 </div>

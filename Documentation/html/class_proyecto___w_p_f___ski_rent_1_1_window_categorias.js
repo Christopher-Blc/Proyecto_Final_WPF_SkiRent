@@ -4,5 +4,7 @@ var class_proyecto___w_p_f___ski_rent_1_1_window_categorias =
     [ "InitializeComponent", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html#ab7b012bb7df926972dc20678583c29e2", null ],
     [ "InitializeComponent", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html#ab7b012bb7df926972dc20678583c29e2", null ],
     [ "InitializeComponent", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html#ab7b012bb7df926972dc20678583c29e2", null ],
+    [ "InitializeComponent", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html#ab7b012bb7df926972dc20678583c29e2", null ],
+    [ "InitializeComponent", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html#ab7b012bb7df926972dc20678583c29e2", null ],
     [ "InitializeComponent", "class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html#ab7b012bb7df926972dc20678583c29e2", null ]
 ];

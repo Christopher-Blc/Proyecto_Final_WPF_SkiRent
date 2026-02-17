@@ -65,6 +65,7 @@ namespace Proyecto_WPF_SkiRent
         /// </summary>
         private void CargarAlquileres()
         {
+            dgAlquileres.ItemsSource = null;
             dgAlquileres.ItemsSource = controller.Listar();
         }
 
@@ -106,16 +107,9 @@ namespace Proyecto_WPF_SkiRent
             dtpInicio.SelectedDate = null;
             dtpFin.SelectedDate = null;
             cmbEstado.SelectedIndex = -1;
-
             txtPrecioTotal.Text = "0";
-
             alquilerSeleccionado = null;
-
-            if (dgAlquileres != null)
-            {
-                dgAlquileres.SelectedItem = null;
-            }
-
+            dgAlquileres.SelectedItem = null;
             dgProductosAlquiler.ItemsSource = null;
             lineaSeleccionada = null;
         }
@@ -379,7 +373,6 @@ namespace Proyecto_WPF_SkiRent
             }
 
             int diasAlquiler = ObtenerDiasAlquiler();
-
             int idMaterial = (int)cmbMaterialAlquiler.SelectedValue;
             int cantidad = (int)cmbCantidad.SelectedItem;
             int dias = diasAlquiler;
@@ -391,9 +384,10 @@ namespace Proyecto_WPF_SkiRent
                 return;
             }
 
-            CargarLineasDelAlquiler();// refresca panel derecho
-            CargarAlquileres();// refresca totales
+            CargarLineasDelAlquiler();
+            CargarAlquileres();
             CargarMaterialesDisponibles();
+
 
             //limpiar
             cmbMaterialAlquiler.SelectedIndex = -1;
@@ -427,7 +421,11 @@ namespace Proyecto_WPF_SkiRent
                 return;
             }
 
-            dgProductosAlquiler.ItemsSource = lineaController.ListarPorAlquiler(alquilerSeleccionado.IdAlquiler);
+            var lista = lineaController.ListarPorAlquiler(alquilerSeleccionado.IdAlquiler);
+
+            dgProductosAlquiler.ItemsSource = null;   
+            dgProductosAlquiler.ItemsSource = lista;
+            dgProductosAlquiler.Items.Refresh();
         }
 
 
@@ -445,7 +443,7 @@ namespace Proyecto_WPF_SkiRent
         }
 
         /// <summary>
-        /// Carga la lista de cantidades que se pueden seleccionar
+        /// Carga la lista de cantidades que se pueden seleccionar(10)
         /// </summary>
         private void CargarCantidad()
         {
@@ -487,9 +485,12 @@ namespace Proyecto_WPF_SkiRent
             lineaSeleccionada = null;
 
             CargarLineasDelAlquiler();
-            CargarAlquileres();            
-            CargarMaterialesDisponibles(); 
+            CargarAlquileres();
+            CargarMaterialesDisponibles();
+
         }
+
+
 
         /// <summary>
         /// Calcula los dias del alquiler entre fecha inicio y fecha fin
@@ -499,22 +500,17 @@ namespace Proyecto_WPF_SkiRent
         {
             if (dtpInicio.SelectedDate == null || dtpFin.SelectedDate == null)
             {
+                MessageBox.Show("Selecciona la fecha de inicio y fin.");
                 return 0;
             }
 
             DateTime inicio = dtpInicio.SelectedDate.Value.Date;
             DateTime fin = dtpFin.SelectedDate.Value.Date;
 
-            int dias = (fin - inicio).Days;
-
-            // si quieres que mismo dia cuente como 1 dia
-            if (dias <= 0)
-            {
-                dias = 1;
-            }
-
-            return dias;
+            return (fin - inicio).Days + 1;// mas 1 pq tiene que contar el dia de inicio
         }
 
+        
+    
     }
 }

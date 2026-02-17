@@ -22,8 +22,10 @@ namespace SkiRentModel.Repos
         public List<LineaAlquiler> ListarPorAlquiler(int idAlquiler)
         {
             return _context.LineaAlquiler
+                .Include("Material")
                 .Where(l => l.IdAlquiler == idAlquiler)
                 .ToList();
+
         }
 
         /// <summary>

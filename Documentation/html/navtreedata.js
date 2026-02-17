@@ -25,6 +25,18 @@
 var NAVTREE =
 [
   [ "SkiRent", "index.html", [
+    [ "LICENSE", "md__a_p_i_s___test_2packages_2_newtonsoft_8_json_813_80_84_2_l_i_c_e_n_s_e.html", null ],
+    [ "🎿 SkiRent — Gestión de Alquiler de Esquí", "md__readme.html", [
+      [ "Descripción", "md__readme.html#autotoc_md13", null ],
+      [ "Arquitectura", "md__readme.html#autotoc_md15", null ],
+      [ "Tecnologías", "md__readme.html#autotoc_md17", null ],
+      [ "Base de Datos", "md__readme.html#autotoc_md19", null ],
+      [ "Funcionalidades", "md__readme.html#autotoc_md21", null ],
+      [ "Informes", "md__readme.html#autotoc_md23", null ],
+      [ "Testing", "md__readme.html#autotoc_md25", null ],
+      [ "Instalación", "md__readme.html#autotoc_md27", null ],
+      [ "👨‍💻 Autor", "md__readme.html#autotoc_md29", null ]
+    ] ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -43,7 +55,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_ski_rent_model_1_1_repos_1_1_alquiler_repo.html#a462fd7f7e05f2e3631f88b5fa269f9c7"
+"class_ski_rent_informes_1_1_app.html#ae8b934548d4b11804ecd340b0c80f6e5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

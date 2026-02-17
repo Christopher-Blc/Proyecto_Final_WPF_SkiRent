@@ -92,28 +92,28 @@ $(function(){initNavTree('class_ski_rent_model_1_1_repos_1_1_categoria_repo.html
 </div><!--header-->
 <div class="contents">
 
-<p>Repositorio para manejar las operaciones con las categorias de material.  
+<p>Repositorio para manejar las categorias de material en la base de datos. Permite listar, buscar, anadir, editar y eliminar categorias.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7219c1e355c431c713bfccb683bcb8ea" id="r_a7219c1e355c431c713bfccb683bcb8ea"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_categoria_material.html">CategoriaMaterial</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a7219c1e355c431c713bfccb683bcb8ea">Listar</a> ()</td></tr>
-<tr class="memdesc:a7219c1e355c431c713bfccb683bcb8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todas las categorias.  <br /></td></tr>
-<tr class="memitem:ae3553fb35b841c3f006697ef4ffc950b" id="r_ae3553fb35b841c3f006697ef4ffc950b"><td class="memItemLeft"><a class="el" href="class_ski_rent_model_1_1_categoria_material.html">CategoriaMaterial</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae3553fb35b841c3f006697ef4ffc950b">BuscarPorId</a> (int idCategoria)</td></tr>
-<tr class="memdesc:ae3553fb35b841c3f006697ef4ffc950b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca una categoria por su id.  <br /></td></tr>
+<tr class="memdesc:a7219c1e355c431c713bfccb683bcb8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todas las categorias guardadas.  <br /></td></tr>
 <tr class="memitem:ab1fc86b3bc58e4865586698540ca3d40" id="r_ab1fc86b3bc58e4865586698540ca3d40"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_categoria_material.html">CategoriaMaterial</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab1fc86b3bc58e4865586698540ca3d40">Buscar</a> (string texto)</td></tr>
-<tr class="memdesc:ab1fc86b3bc58e4865586698540ca3d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca categorias por nombre o por nivel. Si el texto esta vacio devuelve todas las categorias.  <br /></td></tr>
+<tr class="memdesc:ab1fc86b3bc58e4865586698540ca3d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca categorias por texto en nombre o nivel. Si el texto esta vacio devuelve todas.  <br /></td></tr>
+<tr class="memitem:aa161d1b1585227065d12665b08055b3d" id="r_aa161d1b1585227065d12665b08055b3d"><td class="memItemLeft"><a class="el" href="class_ski_rent_model_1_1_categoria_material.html">CategoriaMaterial</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa161d1b1585227065d12665b08055b3d">BuscarPorId</a> (int id)</td></tr>
+<tr class="memdesc:aa161d1b1585227065d12665b08055b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca una categoria por su id.  <br /></td></tr>
 <tr class="memitem:a3a6004aa436658f3454be56b4a180c22" id="r_a3a6004aa436658f3454be56b4a180c22"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3a6004aa436658f3454be56b4a180c22">Anyadir</a> (<a class="el" href="class_ski_rent_model_1_1_categoria_material.html">CategoriaMaterial</a> categoria)</td></tr>
-<tr class="memdesc:a3a6004aa436658f3454be56b4a180c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anyade una nueva categoria a la base de datos.  <br /></td></tr>
+<tr class="memdesc:a3a6004aa436658f3454be56b4a180c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda una categoria nueva en la base de datos.  <br /></td></tr>
 <tr class="memitem:aa6ccb4e7cc13e098df13beb08df04db8" id="r_aa6ccb4e7cc13e098df13beb08df04db8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa6ccb4e7cc13e098df13beb08df04db8">Editar</a> (<a class="el" href="class_ski_rent_model_1_1_categoria_material.html">CategoriaMaterial</a> categoriaActualizada)</td></tr>
-<tr class="memdesc:aa6ccb4e7cc13e098df13beb08df04db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza los datos de una categoria existente.  <br /></td></tr>
+<tr class="memdesc:aa6ccb4e7cc13e098df13beb08df04db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita una categoria existente. Si no existe, no hace nada.  <br /></td></tr>
 <tr class="memitem:a6260a30c87a0b72f53f72f41b2cc00a6" id="r_a6260a30c87a0b72f53f72f41b2cc00a6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6260a30c87a0b72f53f72f41b2cc00a6">Eliminar</a> (int idCategoria)</td></tr>
 <tr class="memdesc:a6260a30c87a0b72f53f72f41b2cc00a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una categoria por su id.  <br /></td></tr>
 <tr class="memitem:a6fb3756121fefd173d5a150ae3d23c67" id="r_a6fb3756121fefd173d5a150ae3d23c67"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6fb3756121fefd173d5a150ae3d23c67">TieneMateriales</a> (int idCategoria)</td></tr>
-<tr class="memdesc:a6fb3756121fefd173d5a150ae3d23c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si hay materiales relacionados con la categoria. Esto se usa para evitar borrar una categoria que tiene materiales.  <br /></td></tr>
+<tr class="memdesc:a6fb3756121fefd173d5a150ae3d23c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si una categoria tiene materiales asociados.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Repositorio para manejar las operaciones con las categorias de material. </p>
+<div class="textblock"><p>Repositorio para manejar las categorias de material en la base de datos. Permite listar, buscar, anadir, editar y eliminar categorias. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a3a6004aa436658f3454be56b4a180c22" name="a3a6004aa436658f3454be56b4a180c22"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a6004aa436658f3454be56b4a180c22">&#9670;&#160;</a></span>Anyadir()</h2>
@@ -130,10 +130,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Anyade una nueva categoria a la base de datos. </p>
+<p>Guarda una categoria nueva en la base de datos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">categoria</td><td>Objeto categoria a anyadir.</td></tr>
+    <tr><td class="paramname">categoria</td><td>Categoria a guardar.</td></tr>
   </table>
   </dd>
 </dl>
@@ -155,19 +155,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Busca categorias por nombre o por nivel. Si el texto esta vacio devuelve todas las categorias. </p>
+<p>Busca categorias por texto en nombre o nivel. Si el texto esta vacio devuelve todas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texto</td><td>Texto para buscar en nombre o nivel.</td></tr>
+    <tr><td class="paramname">texto</td><td>Texto para buscar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Lista de categorias que coinciden con la busqueda.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Lista de categorias que coinciden.</dd></dl>
 
 </div>
 </div>
-<a id="ae3553fb35b841c3f006697ef4ffc950b" name="ae3553fb35b841c3f006697ef4ffc950b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3553fb35b841c3f006697ef4ffc950b">&#9670;&#160;</a></span>BuscarPorId()</h2>
+<a id="aa161d1b1585227065d12665b08055b3d" name="aa161d1b1585227065d12665b08055b3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa161d1b1585227065d12665b08055b3d">&#9670;&#160;</a></span>BuscarPorId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,7 +175,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_ski_rent_model_1_1_categoria_material.html">CategoriaMaterial</a> SkiRentModel.Repos.CategoriaRepo.BuscarPorId </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idCategoria</em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -184,11 +184,11 @@ Public Member Functions</h2></td></tr>
 <p>Busca una categoria por su id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idCategoria</td><td>Id de la categoria a buscar.</td></tr>
+    <tr><td class="paramname">id</td><td>Id de la categoria.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>La categoria encontrada o null si no existe.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Categoria encontrada o null.</dd></dl>
 
 </div>
 </div>
@@ -207,10 +207,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Actualiza los datos de una categoria existente. </p>
+<p>Edita una categoria existente. Si no existe, no hace nada. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">categoriaActualizada</td><td>Categoria con los datos actualizados (debe incluir Id).</td></tr>
+    <tr><td class="paramname">categoriaActualizada</td><td>Categoria con los datos nuevos.</td></tr>
   </table>
   </dd>
 </dl>
@@ -239,7 +239,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True si se elimino, false si no se encontro.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True si se elimino, false si no existe.</dd></dl>
 
 </div>
 </div>
@@ -258,8 +258,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Devuelve todas las categorias. </p>
-<dl class="section return"><dt>Returns</dt><dd>Lista con todas las categorias de material.</dd></dl>
+<p>Devuelve todas las categorias guardadas. </p>
+<dl class="section return"><dt>Returns</dt><dd>Lista con todas las categorias.</dd></dl>
 
 </div>
 </div>
@@ -278,14 +278,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Comprueba si hay materiales relacionados con la categoria. Esto se usa para evitar borrar una categoria que tiene materiales. </p>
+<p>Comprueba si una categoria tiene materiales asociados. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idCategoria</td><td>Id de la categoria a comprobar.</td></tr>
+    <tr><td class="paramname">idCategoria</td><td>Id de la categoria.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True si existe al menos un material con esa categoria, false si no.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True si tiene materiales, false si no.</dd></dl>
 
 </div>
 </div>

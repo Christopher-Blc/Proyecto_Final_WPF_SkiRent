@@ -92,7 +92,7 @@ $(function(){initNavTree('class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_
 </div><!--header-->
 <div class="contents">
 
-<p>Api para gestionar las categorias de material. Contiene metodos que llaman al repositorio para listar, buscar, crear, editar y eliminar categorias.  
+<p>Api para gestionar las categorias de material. Contiene metodos para listar, buscar, crear, editar y eliminar categorias.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -100,18 +100,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a923116c2510f223513483a7dc83613c4" id="r_a923116c2510f223513483a7dc83613c4"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_categoria_material.html">CategoriaMaterial</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a923116c2510f223513483a7dc83613c4">Listar</a> ()</td></tr>
 <tr class="memdesc:a923116c2510f223513483a7dc83613c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la lista de todas las categorias.  <br /></td></tr>
 <tr class="memitem:aa5270cd48c6b3364b0b70276ffde8bd0" id="r_aa5270cd48c6b3364b0b70276ffde8bd0"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_categoria_material.html">CategoriaMaterial</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa5270cd48c6b3364b0b70276ffde8bd0">Buscar</a> (string texto)</td></tr>
-<tr class="memdesc:aa5270cd48c6b3364b0b70276ffde8bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca categorias por texto en nombre o nivel.  <br /></td></tr>
+<tr class="memdesc:aa5270cd48c6b3364b0b70276ffde8bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca categorias por un texto. Si el texto esta vacio, devuelve todas.  <br /></td></tr>
 <tr class="memitem:addc474fa059bf7ab1f64f569c0d625a8" id="r_addc474fa059bf7ab1f64f569c0d625a8"><td class="memItemLeft"><a class="el" href="class_ski_rent_model_1_1_categoria_material.html">CategoriaMaterial</a>&#160;</td><td class="memItemRight"><a class="el" href="#addc474fa059bf7ab1f64f569c0d625a8">BuscarPorId</a> (int id)</td></tr>
 <tr class="memdesc:addc474fa059bf7ab1f64f569c0d625a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca una categoria por su id.  <br /></td></tr>
 <tr class="memitem:ae61aa23821ec9c4b6c21a08f9d6da225" id="r_ae61aa23821ec9c4b6c21a08f9d6da225"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#ae61aa23821ec9c4b6c21a08f9d6da225">Crear</a> (string nombreCategoria, string nivel)</td></tr>
-<tr class="memdesc:ae61aa23821ec9c4b6c21a08f9d6da225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una nueva categoria de material.  <br /></td></tr>
+<tr class="memdesc:ae61aa23821ec9c4b6c21a08f9d6da225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una categoria nueva. Devuelve null si fue bien, o un mensaje si hubo error.  <br /></td></tr>
 <tr class="memitem:adf258c11fbf524e1ba6d8bc216872ebb" id="r_adf258c11fbf524e1ba6d8bc216872ebb"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#adf258c11fbf524e1ba6d8bc216872ebb">Editar</a> (int idCategoria, string nombreCategoria, string nivel)</td></tr>
-<tr class="memdesc:adf258c11fbf524e1ba6d8bc216872ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita una categoria existente.  <br /></td></tr>
+<tr class="memdesc:adf258c11fbf524e1ba6d8bc216872ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita una categoria existente. Devuelve null si fue bien, o un mensaje si hubo error.  <br /></td></tr>
 <tr class="memitem:add5390d723ae4488d2a2969105a45ab4" id="r_add5390d723ae4488d2a2969105a45ab4"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#add5390d723ae4488d2a2969105a45ab4">Eliminar</a> (int idCategoria)</td></tr>
-<tr class="memdesc:add5390d723ae4488d2a2969105a45ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una categoria si no tiene materiales relacionados.  <br /></td></tr>
+<tr class="memdesc:add5390d723ae4488d2a2969105a45ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una categoria si se puede borrar. Si tiene materiales relacionados, no se elimina.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Api para gestionar las categorias de material. Contiene metodos que llaman al repositorio para listar, buscar, crear, editar y eliminar categorias. </p>
+<div class="textblock"><p>Api para gestionar las categorias de material. Contiene metodos para listar, buscar, crear, editar y eliminar categorias. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aa5270cd48c6b3364b0b70276ffde8bd0" name="aa5270cd48c6b3364b0b70276ffde8bd0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa5270cd48c6b3364b0b70276ffde8bd0">&#9670;&#160;</a></span>Buscar()</h2>
@@ -128,14 +128,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Busca categorias por texto en nombre o nivel. </p>
+<p>Busca categorias por un texto. Si el texto esta vacio, devuelve todas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texto</td><td>Texto para buscar. Si esta vacio devuelve todas las categorias.</td></tr>
+    <tr><td class="paramname">texto</td><td>Texto para buscar por nombre o nivel.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Lista de categorias que coinciden con la busqueda.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Lista de categorias que coinciden.</dd></dl>
 
 </div>
 </div>
@@ -157,11 +157,11 @@ Public Member Functions</h2></td></tr>
 <p>Busca una categoria por su id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Id de la categoria a buscar.</td></tr>
+    <tr><td class="paramname">id</td><td>Id de la categoria.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>La categoria encontrada o null si no existe.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Categoria si existe, o null si no existe.</dd></dl>
 
 </div>
 </div>
@@ -184,15 +184,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Crea una nueva categoria de material. </p>
+<p>Crea una categoria nueva. Devuelve null si fue bien, o un mensaje si hubo error. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nombreCategoria</td><td>Nombre de la categoria. No debe estar vacio.</td></tr>
-    <tr><td class="paramname">nivel</td><td>Nivel de la categoria. No debe estar vacio.</td></tr>
+    <tr><td class="paramname">nombreCategoria</td><td>Nombre de la categoria.</td></tr>
+    <tr><td class="paramname">nivel</td><td>Nivel de la categoria.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si se creo correctamente, o un mensaje de error.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si se creo bien, o un mensaje si hubo error.</dd></dl>
 
 </div>
 </div>
@@ -220,16 +220,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Edita una categoria existente. </p>
+<p>Edita una categoria existente. Devuelve null si fue bien, o un mensaje si hubo error. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idCategoria</td><td>Id de la categoria a editar. Debe ser mayor que 0.</td></tr>
-    <tr><td class="paramname">nombreCategoria</td><td>Nuevo nombre de la categoria.</td></tr>
-    <tr><td class="paramname">nivel</td><td>Nuevo nivel de la categoria.</td></tr>
+    <tr><td class="paramname">idCategoria</td><td>Id de la categoria.</td></tr>
+    <tr><td class="paramname">nombreCategoria</td><td>Nuevo nombre.</td></tr>
+    <tr><td class="paramname">nivel</td><td>Nuevo nivel.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si se edito correctamente, o un mensaje de error.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si se edito bien, o un mensaje si hubo error.</dd></dl>
 
 </div>
 </div>
@@ -248,14 +248,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Elimina una categoria si no tiene materiales relacionados. </p>
+<p>Elimina una categoria si se puede borrar. Si tiene materiales relacionados, no se elimina. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idCategoria</td><td>Id de la categoria a eliminar.</td></tr>
+    <tr><td class="paramname">idCategoria</td><td>Id de la categoria.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si se elimino correctamente, o un mensaje de error si no se puede eliminar. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si se elimino bien, o un mensaje si no se pudo.</dd></dl>
 
 </div>
 </div>
@@ -275,7 +275,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Devuelve la lista de todas las categorias. </p>
-<dl class="section return"><dt>Returns</dt><dd>Lista con todas las categorias de material.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Lista con todas las categorias.</dd></dl>
 
 </div>
 </div>

@@ -92,22 +92,22 @@ $(function(){initNavTree('class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_
 </div><!--header-->
 <div class="contents">
 
-<p>Clase que gestiona las operaciones sobre las lineas de un alquiler.  
+<p>Api para gestionar lineas de alquiler desde la interfaz. Valida datos y aplica reglas como stock y estado.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8528d4daf17f7ec191616f86b107ecbd" id="r_a8528d4daf17f7ec191616f86b107ecbd"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_linea_alquiler.html">LineaAlquiler</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8528d4daf17f7ec191616f86b107ecbd">ListarPorAlquiler</a> (int idAlquiler)</td></tr>
-<tr class="memdesc:a8528d4daf17f7ec191616f86b107ecbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la lista de lineas que pertenecen a un alquiler dado.  <br /></td></tr>
-<tr class="memitem:aa11781c9c96cd2cf948f42c94030da6f" id="r_aa11781c9c96cd2cf948f42c94030da6f"><td class="memItemLeft">List&lt; <a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa11781c9c96cd2cf948f42c94030da6f">ListarMaterialesDisponibles</a> ()</td></tr>
-<tr class="memdesc:aa11781c9c96cd2cf948f42c94030da6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista los materiales que estan disponibles y tienen stock.  <br /></td></tr>
+<tr class="memdesc:a8528d4daf17f7ec191616f86b107ecbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve las lineas de un alquiler.  <br /></td></tr>
+<tr class="memitem:aa11781c9c96cd2cf948f42c94030da6f" id="r_aa11781c9c96cd2cf948f42c94030da6f"><td class="memItemLeft"><a id="aa11781c9c96cd2cf948f42c94030da6f" name="aa11781c9c96cd2cf948f42c94030da6f"></a>
+List&lt; <a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> &gt;&#160;</td><td class="memItemRight"><b>ListarMaterialesDisponibles</b> ()</td></tr>
 <tr class="memitem:aa8b5bd9d06b59159215084ef33e3972b" id="r_aa8b5bd9d06b59159215084ef33e3972b"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#aa8b5bd9d06b59159215084ef33e3972b">AnyadirLinea</a> (int idAlquiler, int idMaterial, int cantidad, int dias)</td></tr>
-<tr class="memdesc:aa8b5bd9d06b59159215084ef33e3972b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida los datos y anade una linea al alquiler si todo es correcto.  <br /></td></tr>
+<tr class="memdesc:aa8b5bd9d06b59159215084ef33e3972b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anade una linea a un alquiler si se puede. Descuenta stock y actualiza el total.  <br /></td></tr>
 <tr class="memitem:ad057f4d677e428ac1153c6c2cc0e515d" id="r_ad057f4d677e428ac1153c6c2cc0e515d"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#ad057f4d677e428ac1153c6c2cc0e515d">EliminarLinea</a> (int idLinea)</td></tr>
-<tr class="memdesc:ad057f4d677e428ac1153c6c2cc0e515d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una linea de alquiler si el id es valido y la operacion se puede realizar.  <br /></td></tr>
+<tr class="memdesc:ad057f4d677e428ac1153c6c2cc0e515d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una linea si se puede. Devuelve stock y actualiza el total.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Clase que gestiona las operaciones sobre las lineas de un alquiler. </p>
+<div class="textblock"><p>Api para gestionar lineas de alquiler desde la interfaz. Valida datos y aplica reglas como stock y estado. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aa8b5bd9d06b59159215084ef33e3972b" name="aa8b5bd9d06b59159215084ef33e3972b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8b5bd9d06b59159215084ef33e3972b">&#9670;&#160;</a></span>AnyadirLinea()</h2>
@@ -138,17 +138,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Valida los datos y anade una linea al alquiler si todo es correcto. </p>
+<p>Anade una linea a un alquiler si se puede. Descuenta stock y actualiza el total. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler donde se quiere anadir la linea.</td></tr>
-    <tr><td class="paramname">idMaterial</td><td>Id del material a anadir.</td></tr>
-    <tr><td class="paramname">cantidad</td><td>Cantidad de unidades a anadir.</td></tr>
-    <tr><td class="paramname">dias</td><td>Numero de dias para calcular el subtotal.</td></tr>
+    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler.</td></tr>
+    <tr><td class="paramname">idMaterial</td><td>Id del material.</td></tr>
+    <tr><td class="paramname">cantidad</td><td>Cantidad.</td></tr>
+    <tr><td class="paramname">dias</td><td>Dias.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si la operacion fue correcta; texto con el error si fallo alguna validacion. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si fue bien, o un mensaje si hubo error.</dd></dl>
 
 </div>
 </div>
@@ -167,34 +167,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Elimina una linea de alquiler si el id es valido y la operacion se puede realizar. </p>
+<p>Elimina una linea si se puede. Devuelve stock y actualiza el total. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idLinea</td><td>Id de la linea que se quiere eliminar.</td></tr>
+    <tr><td class="paramname">idLinea</td><td>Id de la linea.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Null si se elimino correctamente; texto con el error si no se pudo eliminar. </dd></dl>
-
-</div>
-</div>
-<a id="aa11781c9c96cd2cf948f42c94030da6f" name="aa11781c9c96cd2cf948f42c94030da6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa11781c9c96cd2cf948f42c94030da6f">&#9670;&#160;</a></span>ListarMaterialesDisponibles()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt; <a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> &gt; Proyecto_WPF_SkiRent.Controllers.LineaAlquilerAPI.ListarMaterialesDisponibles </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Lista los materiales que estan disponibles y tienen stock. </p>
-<dl class="section return"><dt>Returns</dt><dd>Lista de <a class="el" href="class_ski_rent_model_1_1_material.html">Material</a> que se pueden anadir al alquiler.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Null si fue bien, o un mensaje si hubo error.</dd></dl>
 
 </div>
 </div>
@@ -213,14 +193,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Devuelve la lista de lineas que pertenecen a un alquiler dado. </p>
+<p>Devuelve las lineas de un alquiler. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler cuyas lineas se quieren listar.</td></tr>
+    <tr><td class="paramname">idAlquiler</td><td>Id del alquiler.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Lista de <a class="el" href="class_ski_rent_model_1_1_linea_alquiler.html">LineaAlquiler</a>; puede estar vacia si no hay lineas.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Lista de lineas del alquiler.</dd></dl>
 
 </div>
 </div>

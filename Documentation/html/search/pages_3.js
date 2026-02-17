@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['ef6_20powertools_0',['EF6 PowerTools',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md5',1,'']]],
-  ['ef6_20tools_20for_20visual_20studio_1',['EF6 Tools for Visual Studio',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md4',1,'']]],
-  ['entity_20framework_206_2',['Entity Framework 6',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md0',1,'']]],
-  ['entity_20framework_20core_3',['Entity Framework Core',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md2',1,'']]]
+  ['com_20jamesnk_20newtonsoft_20json_20master_20doc_20icons_20logo_20jpg_20json_20net_0',['![Logo](&lt;a href=&quot;https://raw.githubusercontent.com/JamesNK/Newtonsoft.Json/master/Doc/icons/logo.jpg&quot;&gt;https://raw.githubusercontent.com/JamesNK/Newtonsoft.Json/master/Doc/icons/logo.jpg&lt;/a&gt;) Json.NET',['../dir_f6e76525f7e6a12e3a7ebf57177ec624.html#autotoc_md0',1,'']]],
+  ['core_1',['Entity Framework Core',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md7',1,'']]]
 ];

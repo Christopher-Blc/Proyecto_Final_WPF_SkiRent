@@ -1,5 +1,25 @@
 var annotated_dup =
 [
+    [ "APIS_Test", "namespace_a_p_i_s___test.html", [
+      [ "Models", "namespace_a_p_i_s___test_1_1_models.html", [
+        [ "Circuito", "class_a_p_i_s___test_1_1_models_1_1_circuito.html", null ],
+        [ "Equipo", "class_a_p_i_s___test_1_1_models_1_1_equipo.html", null ],
+        [ "Piloto", "class_a_p_i_s___test_1_1_models_1_1_piloto.html", null ]
+      ] ],
+      [ "Dtos", "namespace_a_p_i_s___test_1_1_dtos.html", [
+        [ "CircuitDto", "class_a_p_i_s___test_1_1_dtos_1_1_circuit_dto.html", null ],
+        [ "CompetitorProfileDto", "class_a_p_i_s___test_1_1_dtos_1_1_competitor_profile_dto.html", null ],
+        [ "CompetitorDto", "class_a_p_i_s___test_1_1_dtos_1_1_competitor_dto.html", null ],
+        [ "TeamProfileDto", "class_a_p_i_s___test_1_1_dtos_1_1_team_profile_dto.html", null ],
+        [ "TeamDto", "class_a_p_i_s___test_1_1_dtos_1_1_team_dto.html", null ]
+      ] ],
+      [ "App", "class_a_p_i_s___test_1_1_app.html", "class_a_p_i_s___test_1_1_app" ],
+      [ "MainWindow", "class_a_p_i_s___test_1_1_main_window.html", "class_a_p_i_s___test_1_1_main_window" ],
+      [ "WindowPilotos", "class_a_p_i_s___test_1_1_window_pilotos.html", "class_a_p_i_s___test_1_1_window_pilotos" ]
+    ] ],
+    [ "Model", "namespace_model.html", [
+      [ "Class1", "class_model_1_1_class1.html", null ]
+    ] ],
     [ "Proyecto_WPF_SkiRent", "namespace_proyecto___w_p_f___ski_rent.html", [
       [ "Windows", "namespace_proyecto___w_p_f___ski_rent_1_1_windows.html", [
         [ "InformeMaterialEstado", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_estado.html", "class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_informe_material_estado" ],
@@ -31,13 +51,13 @@ var annotated_dup =
         [ "DsMaterialEstado", "class_ski_rent_informes_1_1_datasets_1_1_ds_material_estado.html", "class_ski_rent_informes_1_1_datasets_1_1_ds_material_estado" ],
         [ "DsReservasCliente", "class_ski_rent_informes_1_1_datasets_1_1_ds_reservas_cliente.html", "class_ski_rent_informes_1_1_datasets_1_1_ds_reservas_cliente" ]
       ] ],
-      [ "App", "class_ski_rent_informes_1_1_app.html", "class_ski_rent_informes_1_1_app" ],
       [ "CrMaterial", "class_ski_rent_informes_1_1_cr_material.html", null ],
       [ "CachedCrMaterial", "class_ski_rent_informes_1_1_cached_cr_material.html", null ],
       [ "CrMaterialEstado", "class_ski_rent_informes_1_1_cr_material_estado.html", null ],
       [ "CachedCrMaterialEstado", "class_ski_rent_informes_1_1_cached_cr_material_estado.html", null ],
       [ "CrReservaCliente", "class_ski_rent_informes_1_1_cr_reserva_cliente.html", null ],
       [ "CachedCrReservaCliente", "class_ski_rent_informes_1_1_cached_cr_reserva_cliente.html", null ],
+      [ "App", "class_ski_rent_informes_1_1_app.html", "class_ski_rent_informes_1_1_app" ],
       [ "Window1", "class_ski_rent_informes_1_1_window1.html", "class_ski_rent_informes_1_1_window1" ]
     ] ],
     [ "SkiRentModel", "namespace_ski_rent_model.html", [
@@ -58,5 +78,11 @@ var annotated_dup =
     ] ],
     [ "SkiRentTest", "namespace_ski_rent_test.html", [
       [ "Test1", "class_ski_rent_test_1_1_test1.html", null ]
+    ] ],
+    [ "testAPIS", "namespacetest_a_p_i_s.html", [
+      [ "App", "classtest_a_p_i_s_1_1_app.html", "classtest_a_p_i_s_1_1_app" ],
+      [ "CrystalReport1", "classtest_a_p_i_s_1_1_crystal_report1.html", null ],
+      [ "CachedCrystalReport1", "classtest_a_p_i_s_1_1_cached_crystal_report1.html", null ],
+      [ "Window1", "classtest_a_p_i_s_1_1_window1.html", "classtest_a_p_i_s_1_1_window1" ]
     ] ]
 ];
