@@ -170,7 +170,7 @@
 
                         <TextBox x:Name="txtCodigoBuscar"
                                  Width="200"
-                                 Margin="6,0" FontSize="18" FontFamily="Arial" VerticalContentAlignment="Center"/>
+                                 Margin="6,0" FontSize="14" FontFamily="Arial" VerticalContentAlignment="Center"/>
 
                         <Button x:Name="btnBuscar"
                                 Content="Buscar"
@@ -210,7 +210,7 @@
 
                         <StackPanel Width="180" Margin="0,0,14,12">
                             <TextBlock Text="Estado"/>
-                            <ComboBox x:Name="cmbEstado" Height="34"/>
+                            <ComboBox x:Name="cmbEstado" Height="34" VerticalContentAlignment="Center"/>
                         </StackPanel>
 
                         <StackPanel Width="180" Margin="0,0,14,12">
@@ -220,7 +220,7 @@
 
                         <StackPanel Width="220" Margin="0,0,14,12">
                             <TextBlock Text="Categoría"/>
-                            <ComboBox x:Name="cmbCategoria" Height="34"/>
+                            <ComboBox x:Name="cmbCategoria" Height="34" VerticalContentAlignment="Center"/>
                         </StackPanel>
                     </WrapPanel>
 

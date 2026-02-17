@@ -173,7 +173,7 @@
                                  Width="200"
                                  Margin="6,0"
                                  FontFamily="Arial"
-                                 FontSize="18"/>
+                                 FontSize="14" VerticalContentAlignment="Center"/>
 
                         <Button x:Name="btnBuscar"
                                 Content="Buscar"

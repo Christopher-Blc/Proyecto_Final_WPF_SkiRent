@@ -187,69 +187,7 @@ namespace Proyecto_WPF_SkiRent.Controllers
             return repo.Cantidad();
         }
     }
-}
 
-/* Plantilla de comentarios XML para los repositorios (copiar en los archivos de repo correspondientes)
-   Nota: texto simple en español sin acentos ni tecnicismos.
-   
-   public class MaterialRepo {
-       /// <summary>
-       /// Contexto de la base de datos usado para las operaciones.
-       /// </summary>
-       private readonly SkiRentEntities _context = new SkiRentEntities();
 
-       /// <summary>
-       /// Devuelve todos los materiales guardados.
-       /// </summary>
-       /// <returns>Lista con todos los materiales.</returns>
-       public List<Material> Listar();
-
-       /// <summary>
-       /// Busca un material por su id.
-       /// </summary>
-       /// <param name="idMaterial">Id del material a buscar.</param>
-       /// <returns>El material si existe, o null si no se encuentra.</returns>
-       public Material BuscarPorId(int idMaterial);
-
-       /// <summary>
-       /// Busca materiales cuyo codigo contenga el texto dado.
-       /// Si el texto esta vacio o solo espacios devuelve todos los materiales.
-       /// </summary>
-       /// <param name="texto">Texto que debe contener el codigo.</param>
-       /// <returns>Lista de materiales que cumplen la condicion.</returns>
-       public List<Material> BuscarPorCodigo(string texto);
-
-       /// <summary>
-       /// Anyade un nuevo material a la base de datos.
-       /// </summary>
-       /// <param name="material">Objeto material a guardar.</param>
-       public void Anyadir(Material material);
-
-       /// <summary>
-       /// Actualiza los datos de un material existente.
-       /// Si no se encuentra el material no hace nada.
-       /// </summary>
-       /// <param name="materialActualizado">Objeto con los datos actualizados. Debe incluir el IdMaterial.</param>
-       public void Editar(Material materialActualizado);
-
-       /// <summary>
-       /// Elimina un material por su id si no esta siendo usado en lineas de alquiler.
-       /// </summary>
-       /// <param name="idMaterial">Id del material a eliminar.</param>
-       /// <returns>True si se elimino, false si no se encontro o si esta en uso.</returns>
-       public bool Eliminar(int idMaterial);
-
-       /// <summary>
-       /// Comprueba si un material tiene lineas de alquiler asociadas.
-       /// </summary>
-       /// <param name="idMaterial">Id del material a comprobar.</param>
-       /// <returns>True si existe alguna linea de alquiler con el material, false si no.</returns>
-       public bool TieneLineasAlquiler(int idMaterial);
-
-       /// <summary>
-       /// Cuenta cuantos materiales hay en la base de datos.
-       /// </summary>
-       /// <returns>Numero total de materiales.</returns>
-       public int Cantidad();
    }
-*/
+

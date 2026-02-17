@@ -123,14 +123,14 @@
                                 Height="36" Padding="14,0"
                                 Background="#FFA5C2FF" Foreground="White"
                                 BorderBrush="#FFBAD0FF"
-                                Margin="0,0,10,0" Click="btnLimpiar_Click"/>
+                                Margin="0,0,10,0" Click="btnLimpiar_Click" VerticalAlignment="Center"/>
 
                         <TextBox x:Name="txtBuscarId"
                                  Width="240"
                                  Height="36"
                                  Margin="6,0"
                                  FontFamily="Arial"
-                                 FontSize="14"
+                                 FontSize="12"
                                  VerticalContentAlignment="Center"
                                  Text="Buscar por Cliente..." />
                         <Button x:Name="btnBuscar" Content="Buscar"
@@ -143,18 +143,18 @@
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
                             <StackPanel Margin="0,0,40,0">
                                 <TextBlock Text="Cliente" Foreground="#64748B" FontSize="12" Margin="0,0,0,6"/>
-                                <ComboBox x:Name="cmbCodigo" Width="220" Height="34" Padding="10,0"
-                                          FontFamily="Arial" FontSize="18"/>
+                                <ComboBox x:Name="cmbCodigo" Width="220" Height="34" Padding="10,0" VerticalAlignment="Center"
+                                          FontFamily="Arial" FontSize="18" VerticalContentAlignment="Center"/>
                             </StackPanel>
 
                             <StackPanel Margin="0,0,40,0">
                                 <TextBlock Text="Fecha inicio" Foreground="#64748B" FontSize="12" Margin="0,0,0,6"/>
-                                <DatePicker x:Name="dtpInicio" Height="34" Width="153"/>
+                                <DatePicker x:Name="dtpInicio" Height="34" Width="153" VerticalAlignment="Center" VerticalContentAlignment="Center" />
                             </StackPanel>
 
                             <StackPanel>
                                 <TextBlock Text="Fecha fin" Foreground="#64748B" FontSize="12" Margin="0,0,0,6"/>
-                                <DatePicker x:Name="dtpFin" Height="34" Width="155"/>
+                                <DatePicker x:Name="dtpFin" Height="34" Width="155" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                             </StackPanel>
                         </StackPanel>
 
@@ -167,8 +167,8 @@
 
                             <StackPanel>
                                 <TextBlock Text="Estado" Foreground="#64748B" FontSize="12" Margin="0,0,0,6"/>
-                                <ComboBox x:Name="cmbEstado" Width="180" Height="34" Padding="10,0"
-                                          FontFamily="Arial" FontSize="18"/>
+                                <ComboBox x:Name="cmbEstado" Width="180" Height="34" Padding="10,0" VerticalAlignment="Center"
+                                          FontFamily="Arial" FontSize="18" VerticalContentAlignment="Center"/>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
@@ -208,12 +208,12 @@
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
                         <StackPanel Margin="0,0,12,0">
                             <TextBlock Text="Material" Foreground="#64748B" FontSize="12"/>
-                            <ComboBox x:Name="cmbMaterialAlquiler" Width="200" Height="34" FontFamily="Arial" FontSize="18"/>
+                            <ComboBox x:Name="cmbMaterialAlquiler" Width="200" Height="34" FontFamily="Arial" FontSize="18" VerticalContentAlignment="Center"/>
                         </StackPanel>
 
                         <StackPanel Margin="0,0,12,0">
                             <TextBlock Text="Cantidad" Foreground="#64748B" FontSize="12"/>
-                            <ComboBox x:Name="cmbCantidad" Width="100" Height="34" FontFamily="Arial" FontSize="18"/>
+                            <ComboBox x:Name="cmbCantidad" Width="100" Height="34" FontFamily="Arial" FontSize="18" VerticalContentAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
 
