@@ -1,7 +1,6 @@
 ﻿using Proyecto_WPF_SkiRent.Utils;
 using SkiRentModel;
 using SkiRentModel.Repos;
-using System;
 using System.Collections.Generic;
 
 namespace Proyecto_WPF_SkiRent.Controllers
@@ -13,7 +12,7 @@ namespace Proyecto_WPF_SkiRent.Controllers
     public class ClienteAPI
     {
         /// <summary>
-        /// Repositorio que se usa para leer y guardar clientes en la base de datos.
+        /// Repositorio usado para leer y guardar clientes.
         /// </summary>
         private ClienteRepo repo = new ClienteRepo();
 
@@ -59,20 +58,17 @@ namespace Proyecto_WPF_SkiRent.Controllers
         /// <returns>Null si se creo bien, o un mensaje si hubo error.</returns>
         public string Crear(string nombre, string apellidos, string telefono, string email, string dni)
         {
-            // Valida los datos y devuelve el mensaje si hay error
             string error = Validaciones.ValidarCliente(nombre, apellidos, dni, telefono, email);
             if (error != null)
             {
                 return error;
             }
 
-            // Comprueba que no exista otro cliente con el mismo DNI
-            foreach (var c in repo.Listar())
+            // comprobar duplicado usando una busqueda en BD
+            var repetidos = repo.BuscarPorDni(dni.Trim().ToUpper());
+            if (repetidos.Count > 0)
             {
-                if (c.DNI != null && c.DNI.Trim().ToUpper() == dni.Trim().ToUpper())
-                {
-                    return "Ya existe un cliente con ese DNI.";
-                }
+                return "Ya existe un cliente con ese DNI.";
             }
 
             Cliente cliente = new Cliente
@@ -87,6 +83,7 @@ namespace Proyecto_WPF_SkiRent.Controllers
             repo.Anyadir(cliente);
             return null;
         }
+
 
         /// <summary>
         /// Edita un cliente existente despues de validar los datos.
@@ -106,17 +103,16 @@ namespace Proyecto_WPF_SkiRent.Controllers
                 return "Cliente no valido.";
             }
 
-            // Valida los datos y devuelve el mensaje si hay error
             string error = Validaciones.ValidarCliente(nombre, apellidos, dni, telefono, email);
             if (error != null)
             {
                 return error;
             }
 
-            // Comprueba que no exista otro cliente con el mismo DNI
-            foreach (var c in repo.Listar())
+            var repetidos = repo.BuscarPorDni(dni.Trim().ToUpper());
+            foreach (var c in repetidos)
             {
-                if (c.IdCliente != id && c.DNI != null && c.DNI.Trim().ToUpper() == dni.Trim().ToUpper())
+                if (c.IdCliente != id)
                 {
                     return "Ya existe un cliente con ese DNI.";
                 }
@@ -135,6 +131,7 @@ namespace Proyecto_WPF_SkiRent.Controllers
             repo.Editar(cliente);
             return null;
         }
+
 
         /// <summary>
         /// Elimina un cliente por id.
@@ -160,7 +157,6 @@ namespace Proyecto_WPF_SkiRent.Controllers
 
         /// <summary>
         /// Devuelve la cantidad total de clientes.
-        /// Se usa para mostrar el dato en el dashboard.
         /// </summary>
         /// <returns>Numero total de clientes.</returns>
         public int Cantidad()

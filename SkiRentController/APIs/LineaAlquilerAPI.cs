@@ -7,23 +7,23 @@ using System.Linq;
 namespace Proyecto_WPF_SkiRent.Controllers
 {
     /// <summary>
-    /// Api para gestionar las lineas de un alquiler desde la interfaz.
-    /// Aqui se validan datos y se aplican reglas como stock y estado.
+    /// Api para gestionar lineas de alquiler desde la interfaz.
+    /// Valida datos y aplica reglas como stock y estado.
     /// </summary>
     public class LineaAlquilerAPI
     {
         /// <summary>
-        /// Repositorio para trabajar con lineas de alquiler.
+        /// Repositorio usado para leer y guardar lineas.
         /// </summary>
         private LineaAlquilerRepo repo = new LineaAlquilerRepo();
 
         /// <summary>
-        /// Repositorio para trabajar con materiales.
+        /// Repositorio usado para leer y guardar materiales.
         /// </summary>
         private MaterialRepo materialRepo = new MaterialRepo();
 
         /// <summary>
-        /// Repositorio para trabajar con alquileres.
+        /// Repositorio usado para leer y guardar alquileres.
         /// </summary>
         private AlquilerRepo alquilerRepo = new AlquilerRepo();
 
@@ -38,9 +38,9 @@ namespace Proyecto_WPF_SkiRent.Controllers
         }
 
         /// <summary>
-        /// Devuelve los materiales disponibles con stock.
+        /// Devuelve materiales disponibles con stock.
         /// </summary>
-        /// <returns>Lista de materiales que se pueden anadir.</returns>
+        /// <returns>Lista de materiales disponibles.</returns>
         public List<Material> ListarMaterialesDisponibles()
         {
             return materialRepo.Listar()
@@ -49,13 +49,13 @@ namespace Proyecto_WPF_SkiRent.Controllers
         }
 
         /// <summary>
-        /// Valida los datos y anade una linea al alquiler si se puede.
-        /// Descuenta el stock y actualiza el total del alquiler.
+        /// Anade una linea a un alquiler si se puede.
+        /// Descuenta stock y actualiza el total.
         /// </summary>
         /// <param name="idAlquiler">Id del alquiler.</param>
         /// <param name="idMaterial">Id del material.</param>
-        /// <param name="cantidad">Cantidad a anadir.</param>
-        /// <param name="dias">Dias del alquiler para esa linea.</param>
+        /// <param name="cantidad">Cantidad.</param>
+        /// <param name="dias">Dias.</param>
         /// <returns>Null si fue bien, o un mensaje si hubo error.</returns>
         public string AnyadirLinea(int idAlquiler, int idMaterial, int cantidad, int dias)
         {
@@ -113,7 +113,7 @@ namespace Proyecto_WPF_SkiRent.Controllers
 
         /// <summary>
         /// Elimina una linea si se puede.
-        /// Devuelve el stock y actualiza el total del alquiler.
+        /// Devuelve stock y actualiza el total.
         /// </summary>
         /// <param name="idLinea">Id de la linea.</param>
         /// <returns>Null si fue bien, o un mensaje si hubo error.</returns>

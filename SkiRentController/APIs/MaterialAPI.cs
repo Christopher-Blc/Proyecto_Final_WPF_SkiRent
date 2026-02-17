@@ -1,7 +1,6 @@
 ﻿using Proyecto_WPF_SkiRent.Utils;
 using SkiRentModel;
 using SkiRentModel.Repos;
-using System;
 using System.Collections.Generic;
 
 namespace Proyecto_WPF_SkiRent.Controllers
@@ -68,13 +67,12 @@ namespace Proyecto_WPF_SkiRent.Controllers
                 return error;
             }
 
-            foreach (var m in repo.Listar())
+            var repetidos = repo.BuscarPorCodigo(codigo.Trim().ToUpper());
+            if (repetidos.Count > 0)
             {
-                if (m.Codigo != null && m.Codigo.Trim().ToUpper() == codigo.Trim().ToUpper())
-                {
-                    return "Ya existe un material con ese codigo.";
-                }
+                return "Ya existe un material con ese codigo.";
             }
+
 
             Material material = new Material
             {
@@ -119,13 +117,15 @@ namespace Proyecto_WPF_SkiRent.Controllers
                 return error;
             }
 
-            foreach (var m in repo.Listar())
+            var repetidos = repo.BuscarPorCodigo(codigo.Trim().ToUpper());
+            foreach (var m in repetidos)
             {
-                if (m.IdMaterial != id && m.Codigo != null && m.Codigo.Trim().ToUpper() == codigo.Trim().ToUpper())
+                if (m.IdMaterial != id)
                 {
                     return "Ya existe un material con ese codigo.";
                 }
             }
+
 
             Material material = new Material
             {

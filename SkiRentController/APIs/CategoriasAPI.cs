@@ -12,14 +12,14 @@ namespace Proyecto_WPF_SkiRent.Controllers
     public class CategoriaAPI
     {
         /// <summary>
-        /// Repositorio que se usa para leer y guardar categorias en la base de datos.
+        /// Repositorio usado para leer y guardar categorias.
         /// </summary>
         private CategoriaRepo repo = new CategoriaRepo();
 
         /// <summary>
         /// Devuelve la lista de todas las categorias.
         /// </summary>
-        /// <returns>Lista con todas las categorias de material.</returns>
+        /// <returns>Lista con todas las categorias.</returns>
         public List<CategoriaMaterial> Listar()
         {
             return repo.Listar();
@@ -27,10 +27,10 @@ namespace Proyecto_WPF_SkiRent.Controllers
 
         /// <summary>
         /// Busca categorias por un texto.
-        /// Si el texto esta vacio, devuelve todas las categorias.
+        /// Si el texto esta vacio, devuelve todas.
         /// </summary>
         /// <param name="texto">Texto para buscar por nombre o nivel.</param>
-        /// <returns>Lista de categorias que coinciden con la busqueda.</returns>
+        /// <returns>Lista de categorias que coinciden.</returns>
         public List<CategoriaMaterial> Buscar(string texto)
         {
             return repo.Buscar(texto);
@@ -39,16 +39,16 @@ namespace Proyecto_WPF_SkiRent.Controllers
         /// <summary>
         /// Busca una categoria por su id.
         /// </summary>
-        /// <param name="id">Id de la categoria a buscar.</param>
-        /// <returns>La categoria encontrada o null si no existe.</returns>
+        /// <param name="id">Id de la categoria.</param>
+        /// <returns>Categoria si existe, o null si no existe.</returns>
         public CategoriaMaterial BuscarPorId(int id)
         {
             return repo.BuscarPorId(id);
         }
 
         /// <summary>
-        /// Crea una categoria nueva con los datos indicados.
-        /// Si hay un error, devuelve un mensaje.
+        /// Crea una categoria nueva.
+        /// Devuelve null si fue bien, o un mensaje si hubo error.
         /// </summary>
         /// <param name="nombreCategoria">Nombre de la categoria.</param>
         /// <param name="nivel">Nivel de la categoria.</param>
@@ -56,16 +56,31 @@ namespace Proyecto_WPF_SkiRent.Controllers
         public string Crear(string nombreCategoria, string nivel)
         {
             string error = Validaciones.ValidarCategoria(nombreCategoria, nivel);
-
             if (error != null)
             {
                 return error;
             }
 
+            string nombre = nombreCategoria.Trim();
+            string niv = nivel.Trim();
+
+            // Comprobar duplicado sencillo (mismo nombre y nivel)
+            foreach (var cat in repo.Listar())
+            {
+                if (cat.NombreCategoria != null && cat.Nivel != null)
+                {
+                    if (cat.NombreCategoria.Trim().ToUpper() == nombre.ToUpper() &&
+                        cat.Nivel.Trim().ToUpper() == niv.ToUpper())
+                    {
+                        return "Ya existe una categoria con ese nombre y nivel.";
+                    }
+                }
+            }
+
             CategoriaMaterial c = new CategoriaMaterial
             {
-                NombreCategoria = nombreCategoria.Trim(),
-                Nivel = nivel.Trim()
+                NombreCategoria = nombre,
+                Nivel = niv
             };
 
             repo.Anyadir(c);
@@ -73,12 +88,12 @@ namespace Proyecto_WPF_SkiRent.Controllers
         }
 
         /// <summary>
-        /// Edita una categoria existente con los datos indicados.
-        /// Si hay un error, devuelve un mensaje.
+        /// Edita una categoria existente.
+        /// Devuelve null si fue bien, o un mensaje si hubo error.
         /// </summary>
-        /// <param name="idCategoria">Id de la categoria a editar.</param>
-        /// <param name="nombreCategoria">Nuevo nombre de la categoria.</param>
-        /// <param name="nivel">Nuevo nivel de la categoria.</param>
+        /// <param name="idCategoria">Id de la categoria.</param>
+        /// <param name="nombreCategoria">Nuevo nombre.</param>
+        /// <param name="nivel">Nuevo nivel.</param>
         /// <returns>Null si se edito bien, o un mensaje si hubo error.</returns>
         public string Editar(int idCategoria, string nombreCategoria, string nivel)
         {
@@ -88,17 +103,32 @@ namespace Proyecto_WPF_SkiRent.Controllers
             }
 
             string error = Validaciones.ValidarCategoria(nombreCategoria, nivel);
-
             if (error != null)
             {
                 return error;
             }
 
+            string nombre = nombreCategoria.Trim();
+            string niv = nivel.Trim();
+
+            // Comprobar duplicado excluyendo su propio id
+            foreach (var cat in repo.Listar())
+            {
+                if (cat.IdCategoria != idCategoria && cat.NombreCategoria != null && cat.Nivel != null)
+                {
+                    if (cat.NombreCategoria.Trim().ToUpper() == nombre.ToUpper() &&
+                        cat.Nivel.Trim().ToUpper() == niv.ToUpper())
+                    {
+                        return "Ya existe una categoria con ese nombre y nivel.";
+                    }
+                }
+            }
+
             CategoriaMaterial c = new CategoriaMaterial
             {
                 IdCategoria = idCategoria,
-                NombreCategoria = nombreCategoria.Trim(),
-                Nivel = nivel.Trim()
+                NombreCategoria = nombre,
+                Nivel = niv
             };
 
             repo.Editar(c);
@@ -109,7 +139,7 @@ namespace Proyecto_WPF_SkiRent.Controllers
         /// Elimina una categoria si se puede borrar.
         /// Si tiene materiales relacionados, no se elimina.
         /// </summary>
-        /// <param name="idCategoria">Id de la categoria a eliminar.</param>
+        /// <param name="idCategoria">Id de la categoria.</param>
         /// <returns>Null si se elimino bien, o un mensaje si no se pudo.</returns>
         public string Eliminar(int idCategoria)
         {
@@ -124,7 +154,6 @@ namespace Proyecto_WPF_SkiRent.Controllers
             }
 
             bool eliminado = repo.Eliminar(idCategoria);
-
             if (!eliminado)
             {
                 return "Error al eliminar categoria.";
