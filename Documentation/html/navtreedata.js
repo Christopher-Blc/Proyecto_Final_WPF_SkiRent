@@ -25,17 +25,16 @@
 var NAVTREE =
 [
   [ "SkiRent", "index.html", [
-    [ "LICENSE", "md__a_p_i_s___test_2packages_2_newtonsoft_8_json_813_80_84_2_l_i_c_e_n_s_e.html", null ],
     [ "🎿 SkiRent — Gestión de Alquiler de Esquí", "md__readme.html", [
-      [ "Descripción", "md__readme.html#autotoc_md13", null ],
-      [ "Arquitectura", "md__readme.html#autotoc_md15", null ],
-      [ "Tecnologías", "md__readme.html#autotoc_md17", null ],
-      [ "Base de Datos", "md__readme.html#autotoc_md19", null ],
-      [ "Funcionalidades", "md__readme.html#autotoc_md21", null ],
-      [ "Informes", "md__readme.html#autotoc_md23", null ],
-      [ "Testing", "md__readme.html#autotoc_md25", null ],
-      [ "Instalación", "md__readme.html#autotoc_md27", null ],
-      [ "👨‍💻 Autor", "md__readme.html#autotoc_md29", null ]
+      [ "Descripción", "md__readme.html#autotoc_md8", null ],
+      [ "Arquitectura", "md__readme.html#autotoc_md10", null ],
+      [ "Tecnologías", "md__readme.html#autotoc_md12", null ],
+      [ "Base de Datos", "md__readme.html#autotoc_md14", null ],
+      [ "Funcionalidades", "md__readme.html#autotoc_md16", null ],
+      [ "Informes", "md__readme.html#autotoc_md18", null ],
+      [ "Testing", "md__readme.html#autotoc_md20", null ],
+      [ "Instalación", "md__readme.html#autotoc_md22", null ],
+      [ "👨‍💻 Autor", "md__readme.html#autotoc_md24", null ]
     ] ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ]
@@ -55,7 +54,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_ski_rent_informes_1_1_app.html#ae8b934548d4b11804ecd340b0c80f6e5"
+"class_ski_rent_informes_1_1_datasets_1_1_ds_material_estado_1_1_d_t_material_estado_row.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

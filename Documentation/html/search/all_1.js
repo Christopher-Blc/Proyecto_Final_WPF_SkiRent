@@ -5,14 +5,10 @@ var searchData=
   ['alquiler_20de_20esquí_2',['🎿 SkiRent — Gestión de Alquiler de Esquí',['../md__readme.html',1,'']]],
   ['alquilerapi_3',['AlquilerAPI',['../class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_alquiler_a_p_i.html',1,'Proyecto_WPF_SkiRent::Controllers']]],
   ['alquilerrepo_4',['AlquilerRepo',['../class_ski_rent_model_1_1_repos_1_1_alquiler_repo.html',1,'SkiRentModel::Repos']]],
-  ['and_20support_5',['Status and Support',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md6',1,'']]],
+  ['and_20support_5',['Status and Support',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md1',1,'']]],
   ['anyadir_6',['Anyadir',['../class_ski_rent_model_1_1_repos_1_1_alquiler_repo.html#a462fd7f7e05f2e3631f88b5fa269f9c7',1,'SkiRentModel.Repos.AlquilerRepo.Anyadir()'],['../class_ski_rent_model_1_1_repos_1_1_categoria_repo.html#a3a6004aa436658f3454be56b4a180c22',1,'SkiRentModel.Repos.CategoriaRepo.Anyadir()'],['../class_ski_rent_model_1_1_repos_1_1_cliente_repo.html#ac6f85619381c4905c9ea5b1a1060c68f',1,'SkiRentModel.Repos.ClienteRepo.Anyadir()'],['../class_ski_rent_model_1_1_repos_1_1_linea_alquiler_repo.html#a56ee4637f269e56a66812a48fd64c8d5',1,'SkiRentModel.Repos.LineaAlquilerRepo.Anyadir()'],['../class_ski_rent_model_1_1_repos_1_1_material_repo.html#acd001648a16ef84d48c0de99d94da3c4',1,'SkiRentModel.Repos.MaterialRepo.Anyadir()']]],
   ['anyadirlinea_7',['AnyadirLinea',['../class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_linea_alquiler_a_p_i.html#aa8b5bd9d06b59159215084ef33e3972b',1,'Proyecto_WPF_SkiRent::Controllers::LineaAlquilerAPI']]],
-  ['apis_5ftest_8',['APIS_Test',['../namespace_a_p_i_s___test.html',1,'']]],
-  ['apis_5ftest_3a_3adtos_9',['Dtos',['../namespace_a_p_i_s___test_1_1_dtos.html',1,'APIS_Test']]],
-  ['apis_5ftest_3a_3amodels_10',['Models',['../namespace_a_p_i_s___test_1_1_models.html',1,'APIS_Test']]],
-  ['apis_5ftest_3a_3aproperties_11',['Properties',['../namespace_a_p_i_s___test_1_1_properties.html',1,'APIS_Test']]],
-  ['app_12',['App',['../class_a_p_i_s___test_1_1_app.html',1,'APIS_Test.App'],['../class_proyecto___w_p_f___ski_rent_1_1_app.html',1,'Proyecto_WPF_SkiRent.App'],['../class_ski_rent_informes_1_1_app.html',1,'SkiRentInformes.App'],['../classtest_a_p_i_s_1_1_app.html',1,'testAPIS.App']]],
-  ['arquitectura_13',['Arquitectura',['../md__readme.html#autotoc_md15',1,'']]],
-  ['autor_14',['👨‍💻 Autor',['../md__readme.html#autotoc_md29',1,'']]]
+  ['app_8',['App',['../class_proyecto___w_p_f___ski_rent_1_1_app.html',1,'Proyecto_WPF_SkiRent.App'],['../class_ski_rent_informes_1_1_app.html',1,'SkiRentInformes.App']]],
+  ['arquitectura_9',['Arquitectura',['../md__readme.html#autotoc_md10',1,'']]],
+  ['autor_10',['👨‍💻 Autor',['../md__readme.html#autotoc_md24',1,'']]]
 ];

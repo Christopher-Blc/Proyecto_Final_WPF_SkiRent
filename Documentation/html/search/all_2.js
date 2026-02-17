@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['base_20de_20datos_0',['Base de Datos',['../md__readme.html#autotoc_md19',1,'']]],
+  ['base_20de_20datos_0',['Base de Datos',['../md__readme.html#autotoc_md14',1,'']]],
   ['buscar_1',['Buscar',['../class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_alquiler_a_p_i.html#ab0404a3526bacd1a8e309e87f37327fd',1,'Proyecto_WPF_SkiRent.Controllers.AlquilerAPI.Buscar()'],['../class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_categoria_a_p_i.html#aa5270cd48c6b3364b0b70276ffde8bd0',1,'Proyecto_WPF_SkiRent.Controllers.CategoriaAPI.Buscar()'],['../class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_cliente_a_p_i.html#adc4fcaccfa1f86ec007cd1a1d3052c14',1,'Proyecto_WPF_SkiRent.Controllers.ClienteAPI.Buscar()'],['../class_ski_rent_model_1_1_repos_1_1_alquiler_repo.html#a04986e30ac536ae59f8cdbcbc5f5f138',1,'SkiRentModel.Repos.AlquilerRepo.Buscar()'],['../class_ski_rent_model_1_1_repos_1_1_categoria_repo.html#ab1fc86b3bc58e4865586698540ca3d40',1,'SkiRentModel.Repos.CategoriaRepo.Buscar()']]],
   ['buscarporcodigo_2',['BuscarPorCodigo',['../class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_material_a_p_i.html#a1f4e5a6ae4db6271f6df4de94a03b68e',1,'Proyecto_WPF_SkiRent.Controllers.MaterialAPI.BuscarPorCodigo()'],['../class_ski_rent_model_1_1_repos_1_1_material_repo.html#a3499c89426ed7954b93aed806ee42993',1,'SkiRentModel.Repos.MaterialRepo.BuscarPorCodigo()']]],
   ['buscarpordni_3',['BuscarPorDni',['../class_ski_rent_model_1_1_repos_1_1_cliente_repo.html#a870b669dd1fcd69a9c2c9fcc7a99f1f5',1,'SkiRentModel::Repos::ClienteRepo']]],

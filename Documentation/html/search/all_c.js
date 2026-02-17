@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['main_0',['Main',['../class_a_p_i_s___test_1_1_app.html#ad29640267b9e8b7dfda24af427a757de',1,'APIS_Test.App.Main()'],['../class_proyecto___w_p_f___ski_rent_1_1_app.html#a6d045e38c6bca9c6b8a6915413f61e18',1,'Proyecto_WPF_SkiRent.App.Main()'],['../class_proyecto___w_p_f___ski_rent_1_1_app.html#a6d045e38c6bca9c6b8a6915413f61e18',1,'Proyecto_WPF_SkiRent.App.Main()'],['../class_proyecto___w_p_f___ski_rent_1_1_app.html#a6d045e38c6bca9c6b8a6915413f61e18',1,'Proyecto_WPF_SkiRent.App.Main()'],['../class_proyecto___w_p_f___ski_rent_1_1_app.html#a6d045e38c6bca9c6b8a6915413f61e18',1,'Proyecto_WPF_SkiRent.App.Main()'],['../class_ski_rent_informes_1_1_app.html#a20118583f29c1f0c0978726dae2eb975',1,'SkiRentInformes.App.Main()'],['../class_ski_rent_informes_1_1_app.html#a20118583f29c1f0c0978726dae2eb975',1,'SkiRentInformes.App.Main()'],['../class_ski_rent_informes_1_1_app.html#a20118583f29c1f0c0978726dae2eb975',1,'SkiRentInformes.App.Main()'],['../class_ski_rent_informes_1_1_app.html#a20118583f29c1f0c0978726dae2eb975',1,'SkiRentInformes.App.Main()'],['../classtest_a_p_i_s_1_1_app.html#a5ebd754fe3c4085a08d3402ee1766c21',1,'testAPIS.App.Main()']]],
-  ['mainwindow_1',['MainWindow',['../class_a_p_i_s___test_1_1_main_window.html',1,'APIS_Test.MainWindow'],['../class_proyecto___w_p_f___ski_rent_1_1_main_window.html',1,'Proyecto_WPF_SkiRent.MainWindow'],['../class_proyecto___w_p_f___ski_rent_1_1_main_window.html#a6e9a66f7acc09356dbd09e867cb0d276',1,'Proyecto_WPF_SkiRent.MainWindow.MainWindow()']]],
-  ['master_20doc_20icons_20logo_20jpg_20json_20net_2',['![Logo](&lt;a href=&quot;https://raw.githubusercontent.com/JamesNK/Newtonsoft.Json/master/Doc/icons/logo.jpg&quot;&gt;https://raw.githubusercontent.com/JamesNK/Newtonsoft.Json/master/Doc/icons/logo.jpg&lt;/a&gt;) Json.NET',['../dir_f6e76525f7e6a12e3a7ebf57177ec624.html#autotoc_md0',1,'']]],
-  ['material_3',['Material',['../class_ski_rent_model_1_1_material.html',1,'SkiRentModel']]],
-  ['materialapi_4',['MaterialAPI',['../class_proyecto___w_p_f___ski_rent_1_1_controllers_1_1_material_a_p_i.html',1,'Proyecto_WPF_SkiRent::Controllers']]],
-  ['materialrepo_5',['MaterialRepo',['../class_ski_rent_model_1_1_repos_1_1_material_repo.html',1,'SkiRentModel::Repos']]],
-  ['model_6',['Model',['../namespace_model.html',1,'']]]
+  ['powertools_0',['EF6 PowerTools',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md5',1,'']]],
+  ['proyecto_5fwpf_5fskirent_1',['Proyecto_WPF_SkiRent',['../namespace_proyecto___w_p_f___ski_rent.html',1,'']]],
+  ['proyecto_5fwpf_5fskirent_3a_3acontrollers_2',['Controllers',['../namespace_proyecto___w_p_f___ski_rent_1_1_controllers.html',1,'Proyecto_WPF_SkiRent']]],
+  ['proyecto_5fwpf_5fskirent_3a_3aproperties_3',['Properties',['../namespace_proyecto___w_p_f___ski_rent_1_1_properties.html',1,'Proyecto_WPF_SkiRent']]],
+  ['proyecto_5fwpf_5fskirent_3a_3autils_4',['Utils',['../namespace_proyecto___w_p_f___ski_rent_1_1_utils.html',1,'Proyecto_WPF_SkiRent']]],
+  ['proyecto_5fwpf_5fskirent_3a_3awindows_5',['Windows',['../namespace_proyecto___w_p_f___ski_rent_1_1_windows.html',1,'Proyecto_WPF_SkiRent']]]
 ];

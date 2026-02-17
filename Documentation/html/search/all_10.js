@@ -1,16 +1,11 @@
 var searchData=
 [
-  ['serialize_20json_0',['Serialize JSON',['../dir_f6e76525f7e6a12e3a7ebf57177ec624.html#autotoc_md1',1,'']]],
-  ['skirent_20—_20gestión_20de_20alquiler_20de_20esquí_1',['🎿 SkiRent — Gestión de Alquiler de Esquí',['../md__readme.html',1,'']]],
-  ['skirententities_2',['SkiRentEntities',['../class_ski_rent_model_1_1_ski_rent_entities.html',1,'SkiRentModel']]],
-  ['skirentinformes_3',['SkiRentInformes',['../namespace_ski_rent_informes.html',1,'']]],
-  ['skirentinformes_3a_3adatasets_4',['Datasets',['../namespace_ski_rent_informes_1_1_datasets.html',1,'SkiRentInformes']]],
-  ['skirentinformes_3a_3aproperties_5',['Properties',['../namespace_ski_rent_informes_1_1_properties.html',1,'SkiRentInformes']]],
-  ['skirentmodel_6',['SkiRentModel',['../namespace_ski_rent_model.html',1,'']]],
-  ['skirentmodel_3a_3arepos_7',['Repos',['../namespace_ski_rent_model_1_1_repos.html',1,'SkiRentModel']]],
-  ['skirenttest_8',['SkiRentTest',['../namespace_ski_rent_test.html',1,'']]],
-  ['status_20and_20support_9',['Status and Support',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md6',1,'']]],
-  ['studio_10',['EF6 Tools for Visual Studio',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md9',1,'']]],
-  ['support_11',['Status and Support',['../dir_2e57c9440fadb34d94cbe1e3411971db.html#autotoc_md6',1,'']]],
-  ['sysdiagrams_12',['sysdiagrams',['../class_ski_rent_model_1_1sysdiagrams.html',1,'SkiRentModel']]]
+  ['window1_0',['Window1',['../class_proyecto___w_p_f___ski_rent_1_1_window1.html',1,'Proyecto_WPF_SkiRent.Window1'],['../class_ski_rent_informes_1_1_window1.html',1,'SkiRentInformes.Window1']]],
+  ['windowalquiler_1',['WindowAlquiler',['../class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html',1,'Proyecto_WPF_SkiRent.WindowAlquiler'],['../class_proyecto___w_p_f___ski_rent_1_1_window_alquiler.html#a1047497ae3b61d1690f4af7760e817ed',1,'Proyecto_WPF_SkiRent.WindowAlquiler.WindowAlquiler()']]],
+  ['windowcategorias_2',['WindowCategorias',['../class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html',1,'Proyecto_WPF_SkiRent.WindowCategorias'],['../class_proyecto___w_p_f___ski_rent_1_1_window_categorias.html#a254b01756d106460530f8ceb1e52e6d6',1,'Proyecto_WPF_SkiRent.WindowCategorias.WindowCategorias()']]],
+  ['windowclientes_3',['WindowClientes',['../class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html',1,'Proyecto_WPF_SkiRent.WindowClientes'],['../class_proyecto___w_p_f___ski_rent_1_1_window_clientes.html#a0acc8de77000a943037d39d46a9ed0d6',1,'Proyecto_WPF_SkiRent.WindowClientes.WindowClientes()']]],
+  ['windowinformeagrupado_4',['WindowInformeAgrupado',['../class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_window_informe_agrupado.html',1,'Proyecto_WPF_SkiRent::Windows']]],
+  ['windowinformeagrupadoparametro_5',['WindowInformeAgrupadoParametro',['../class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_window_informe_agrupado_parametro.html',1,'Proyecto_WPF_SkiRent::Windows']]],
+  ['windowinformesimple_6',['WindowInformeSimple',['../class_proyecto___w_p_f___ski_rent_1_1_windows_1_1_window_informe_simple.html',1,'Proyecto_WPF_SkiRent::Windows']]],
+  ['windowmaterial_7',['WindowMaterial',['../class_proyecto___w_p_f___ski_rent_1_1_window_material.html',1,'Proyecto_WPF_SkiRent.WindowMaterial'],['../class_proyecto___w_p_f___ski_rent_1_1_window_material.html#a95fb54cf6442bc0ba012ca1fe4ce1c60',1,'Proyecto_WPF_SkiRent.WindowMaterial.WindowMaterial()']]]
 ];
