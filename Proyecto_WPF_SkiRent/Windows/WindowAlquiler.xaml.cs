@@ -360,6 +360,12 @@ namespace Proyecto_WPF_SkiRent
                 return;
             }
 
+            if (alquilerSeleccionado.Estado != "Abierto")
+            {
+                MessageBox.Show("Solo puedes añadir pedidos a reservas en estado abierto");
+                return;
+            }
+
             if (cmbMaterialAlquiler.SelectedValue == null)
             {
                 MessageBox.Show("Selecciona un material.");
@@ -371,6 +377,7 @@ namespace Proyecto_WPF_SkiRent
                 MessageBox.Show("Selecciona cantidad.");
                 return;
             }
+
 
             int diasAlquiler = ObtenerDiasAlquiler();
             int idMaterial = (int)cmbMaterialAlquiler.SelectedValue;
